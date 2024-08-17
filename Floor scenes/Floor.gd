@@ -1,5 +1,5 @@
 extends Node2D
-var max_rooms =10
+var max_rooms =25
 
 
 
