@@ -3,6 +3,8 @@ var max_rooms = 10
 
 var num_of_rooms = 0
 
+@export var SPEED := 400
+
 @onready var f_1_starterroom = $f1_starterroom
 
 
@@ -13,4 +15,11 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	if Input.is_action_pressed("down"):
+		$Camera2D.global_position.y += SPEED * delta
+	if Input.is_action_pressed("up"):
+		$Camera2D.global_position.y -= SPEED * delta
+	if Input.is_action_pressed("right"):
+		$Camera2D.global_position.x += SPEED * delta
+	if Input.is_action_pressed("left"):
+		$Camera2D.global_position.x -= SPEED * delta
