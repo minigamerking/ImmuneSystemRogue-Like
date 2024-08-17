@@ -5,7 +5,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qxlk6"]
 size = Vector2(67.5, 225)
 
-[node name="Door" type="Area2D"]
+[node name="Door" type="StaticBody2D"]
 collision_mask = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

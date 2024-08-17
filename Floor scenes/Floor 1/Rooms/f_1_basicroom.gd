@@ -46,9 +46,11 @@ func addroom(max_rooms , num_of_rooms):
 					if u_dooravailble==true and room_id != 3:
 						newroom = room.instantiate()
 						newroom.global_position = u_room.global_position
-						newroom.d_dooravailble=true
+						newroom.d_dooravailble=false
+						
 						get_parent().add_child(newroom)
-						u_door.visible = true
+						u_door.queue_free()
+						newroom.d_door.queue_free()
 						u_dooravailble =false
 						added_rooms+=1
 				2:
@@ -56,20 +58,24 @@ func addroom(max_rooms , num_of_rooms):
 						newroom = room.instantiate()
 						newroom.global_position = d_room.global_position
 						newroom.u_dooravailble=false
+						
 						get_parent().add_child(newroom)
-						d_door.visible = true
+						newroom.u_door.queue_free()
+						d_door.queue_free()
 						d_dooravailble=false
 						added_rooms+=1 
 				3:
 					if l_dooravailble==true:
 						newroom = room.instantiate()
 						newroom.global_position = l_room.global_position
+						
 						if room_id ==3:
 							newroom.global_position.x -= 492 
 							newroom.global_position.y -= 357
 						newroom.r_dooravailble=false
 						get_parent().add_child(newroom)
-						l_door.visible = true
+						newroom.r_door.queue_free()
+						l_door.queue_free()
 						l_dooravailble = false
 						added_rooms+=1
 				4:
@@ -77,8 +83,11 @@ func addroom(max_rooms , num_of_rooms):
 						newroom = room.instantiate()
 						newroom.global_position = r_room.global_position
 						newroom.l_dooravailble=false
+						
 						get_parent().add_child(newroom)
-						r_door.visible = true
+						newroom.l_door.queue_free()
+						r_door.queue_free()
+						
 						r_dooravailble = false
 						added_rooms+=1
 		get_parent().num_of_rooms+= added_rooms
@@ -91,11 +100,13 @@ func addroom(max_rooms , num_of_rooms):
 	
 	
 	
-
 func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+	
+	if r_dooravailble==false:
+		num_of_availble_doors-=1
+	if u_dooravailble== false:
+		num_of_availble_doors-=1
+	if d_dooravailble==false:
+		num_of_availble_doors -=1
+	if l_dooravailble==false:
+		num_of_availble_doors-=1
