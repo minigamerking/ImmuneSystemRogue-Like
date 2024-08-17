@@ -37,7 +37,13 @@ func addroom(max_rooms , num_of_rooms):
 				break
 			var door_id = randi_range(1,4)
 			var room_id = randi_range(1,4)
-			
+			if num_of_rooms >= max_rooms-1:
+				room_id = 10
+			if rooms_to_add >1 and added_rooms ==0:
+				var treasure_chance = randi_range(1,2)
+				if treasure_chance ==2:
+					room_id = 11
+				
 			match room_id:
 				1:
 					room =preload("res://Floor scenes/Floor 1/Rooms/f_1_basicroom.tscn")
@@ -47,6 +53,10 @@ func addroom(max_rooms , num_of_rooms):
 					room = preload("res://Floor scenes/Floor 1/Rooms/f_1_crosssectionroom.tscn")
 				4:
 					room =preload("res://Floor scenes/Floor 1/Rooms/f_1_hallroom.tscn")
+				10:
+					room = preload("res://Floor scenes/Floor 1/Rooms/f_1_boss_room.tscn")
+				11:
+					room=preload("res://Floor scenes/Floor 1/Rooms/f_1_treasure_room.tscn")
 			match door_id :
 				1:
 					if u_dooravailble==true and room_id != 3:
@@ -75,7 +85,10 @@ func addroom(max_rooms , num_of_rooms):
 							u_door.queue_free()
 							newroom.d_door.queue_free()
 							u_dooravailble =false
+							num_of_availble_doors-=1
+							Floormanager.rooms.append(newroom)
 							added_rooms+=1
+							num_of_rooms+=1
 				2:
 					if d_dooravailble==true:
 						newroom = room.instantiate()
@@ -101,7 +114,10 @@ func addroom(max_rooms , num_of_rooms):
 							newroom.u_door.queue_free()
 							d_door.queue_free()
 							d_dooravailble=false
+							num_of_availble_doors-=1
+							Floormanager.rooms.append(newroom)
 							added_rooms+=1 
+							num_of_rooms+=1
 				3:
 					if l_dooravailble==true:
 						newroom = room.instantiate()
@@ -133,7 +149,10 @@ func addroom(max_rooms , num_of_rooms):
 							newroom.r_door.queue_free()
 							l_door.queue_free()
 							l_dooravailble = false
+							num_of_availble_doors-=1
+							Floormanager.rooms.append(newroom)
 							added_rooms+=1
+							num_of_rooms+=1
 				4:
 					if r_dooravailble==true:
 						newroom = room.instantiate()
@@ -160,18 +179,20 @@ func addroom(max_rooms , num_of_rooms):
 						else:
 							newroom.l_door.queue_free()
 							r_door.queue_free()
+							num_of_availble_doors-=1
+							Floormanager.rooms.append(newroom)
 							r_dooravailble = false
 							added_rooms+=1
+							num_of_rooms+=1
 		if fail_count>=10:
 			get_tree().reload_current_scene()
 		else:
 			get_parent().num_of_rooms+= added_rooms
-			if newroom !=null:
+			if newroom !=null :
 				print("hi")
 				newroom.addroom(max_rooms,get_parent().num_of_rooms)
 	else:
 		return
-	
 	
 	
 func _ready():
