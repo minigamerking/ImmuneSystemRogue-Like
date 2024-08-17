@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://b83b07j4ojeg0"]
+[gd_scene load_steps=9 format=3 uid="uid://b83b07j4ojeg0"]
 
 [ext_resource type="Script" path="res://Floor scenes/Floor 1/Rooms/f_1_basicroom.gd" id="1_nuekt"]
 [ext_resource type="Texture2D" uid="uid://1jl2jxa0byi2" path="res://icon.svg" id="2_ltp07"]
 [ext_resource type="PackedScene" uid="uid://cs2quat6d5vk4" path="res://Floor scenes/door.tscn" id="3_q3v6k"]
+[ext_resource type="PackedScene" uid="uid://kmfi5wgx8ig4" path="res://test__enemy.tscn" id="4_nmmug"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pqjb3"]
 texture = ExtResource("2_ltp07")
@@ -66,6 +67,9 @@ sources/1 = SubResource("TileSetAtlasSource_pqjb3")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y0atl"]
 size = Vector2(1117, 610)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nkokg"]
+size = Vector2(1056, 558)
+
 [node name="f_1_basicroom" type="Node2D"]
 script = ExtResource("1_nuekt")
 
@@ -102,9 +106,59 @@ position = Vector2(582, 17)
 rotation = 1.5708
 
 [node name="overlapping_room_dectetor" type="Area2D" parent="."]
+visible = false
 collision_layer = 4
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="overlapping_room_dectetor"]
 position = Vector2(576.5, 323)
 shape = SubResource("RectangleShape2D_y0atl")
+
+[node name="playerblockers" type="Node2D" parent="."]
+visible = false
+
+[node name="player_blocker" parent="playerblockers" instance=ExtResource("3_q3v6k")]
+position = Vector2(19, 330)
+collision_layer = 0
+collision_mask = 0
+
+[node name="player_blocker2" parent="playerblockers" instance=ExtResource("3_q3v6k")]
+position = Vector2(1129, 330)
+rotation = 3.14159
+collision_layer = 0
+collision_mask = 0
+
+[node name="player_blocker3" parent="playerblockers" instance=ExtResource("3_q3v6k")]
+position = Vector2(582, 620)
+rotation = -1.5708
+collision_layer = 0
+collision_mask = 0
+
+[node name="player_blocker4" parent="playerblockers" instance=ExtResource("3_q3v6k")]
+position = Vector2(582, 17)
+rotation = 1.5708
+collision_layer = 0
+collision_mask = 0
+
+[node name="Player_detector" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player_detector"]
+position = Vector2(572, 318)
+shape = SubResource("RectangleShape2D_nkokg")
+
+[node name="enemies" type="Node2D" parent="."]
+
+[node name="test _enemy" parent="enemies" instance=ExtResource("4_nmmug")]
+position = Vector2(285, 133)
+
+[node name="test _enemy2" parent="enemies" instance=ExtResource("4_nmmug")]
+position = Vector2(874, 136)
+
+[node name="test _enemy3" parent="enemies" instance=ExtResource("4_nmmug")]
+position = Vector2(317, 481)
+
+[node name="test _enemy4" parent="enemies" instance=ExtResource("4_nmmug")]
+position = Vector2(923, 471)
+
+[connection signal="body_entered" from="Player_detector" to="." method="_on_player_detector_body_entered"]

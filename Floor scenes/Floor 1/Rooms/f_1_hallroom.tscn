@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://c2k8kpj6t818y"]
+[gd_scene load_steps=9 format=3 uid="uid://c2k8kpj6t818y"]
 
 [ext_resource type="Script" path="res://Floor scenes/Floor 1/Rooms/f_1_hallroom.gd" id="1_v2y35"]
 [ext_resource type="Texture2D" uid="uid://1jl2jxa0byi2" path="res://icon.svg" id="2_7cy4m"]
 [ext_resource type="PackedScene" uid="uid://cs2quat6d5vk4" path="res://Floor scenes/door.tscn" id="3_ftwce"]
+[ext_resource type="PackedScene" uid="uid://kmfi5wgx8ig4" path="res://test__enemy.tscn" id="4_5gsw3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pqjb3"]
 texture = ExtResource("2_7cy4m")
@@ -66,6 +67,9 @@ sources/1 = SubResource("TileSetAtlasSource_pqjb3")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k23ub"]
 size = Vector2(518, 1849)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cs5jo"]
+size = Vector2(470, 1749)
+
 [node name="f1_hallroom" type="Node2D"]
 script = ExtResource("1_v2y35")
 
@@ -108,3 +112,52 @@ collision_mask = 4
 [node name="CollisionShape2D" type="CollisionShape2D" parent="overlapping_room_dectetor"]
 position = Vector2(594, 934.5)
 shape = SubResource("RectangleShape2D_k23ub")
+
+[node name="playerblockers" type="Node2D" parent="."]
+visible = false
+
+[node name="player_blocker" parent="playerblockers" instance=ExtResource("3_ftwce")]
+position = Vector2(339, 327)
+collision_layer = 0
+collision_mask = 0
+
+[node name="player_blocker2" parent="playerblockers" instance=ExtResource("3_ftwce")]
+position = Vector2(869, 1388)
+rotation = 3.14159
+collision_layer = 0
+collision_mask = 0
+
+[node name="player_blocker3" parent="playerblockers" instance=ExtResource("3_ftwce")]
+position = Vector2(582, 1827)
+rotation = -1.5708
+collision_layer = 0
+collision_mask = 0
+
+[node name="player_blocker4" parent="playerblockers" instance=ExtResource("3_ftwce")]
+position = Vector2(582, 17)
+rotation = 1.5708
+collision_layer = 0
+collision_mask = 0
+
+[node name="Player_detector" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player_detector"]
+position = Vector2(594, 915.5)
+shape = SubResource("RectangleShape2D_cs5jo")
+
+[node name="enemies" type="Node2D" parent="."]
+position = Vector2(581, 156)
+
+[node name="test _enemy" parent="enemies" instance=ExtResource("4_5gsw3")]
+
+[node name="test _enemy2" parent="enemies" instance=ExtResource("4_5gsw3")]
+position = Vector2(22, 321)
+
+[node name="test _enemy3" parent="enemies" instance=ExtResource("4_5gsw3")]
+position = Vector2(28, 1253)
+
+[node name="test _enemy4" parent="enemies" instance=ExtResource("4_5gsw3")]
+position = Vector2(24, 795)
+
+[connection signal="body_entered" from="Player_detector" to="." method="_on_player_detector_body_entered"]

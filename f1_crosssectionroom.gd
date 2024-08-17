@@ -174,3 +174,30 @@ func _ready():
 
 	if l_dooravailble==false:
 		num_of_availble_doors-=1
+	var enemies = $enemies.get_children()
+	for enemy in enemies:
+		enemy.connect("update_enemy_count",_on_test__enemy_update_enemy_count)
+#logic to keep player trapped till all enemies are defeated 
+
+@export var enemycount= 4
+
+func _on_test__enemy_update_enemy_count():
+	enemycount-=1
+	if enemycount == 0:
+		$playerblockers.queue_free()
+		cleared = true
+	
+	
+	
+
+var cleared = false
+
+
+func _on_player_detector_body_entered(body):
+	if cleared == false:
+		$playerblockers.visible=true
+		var doors =$playerblockers.get_children()
+		print("closing room")
+		for door in doors:
+			door.set_collision_layer_value(1,true)
+			
