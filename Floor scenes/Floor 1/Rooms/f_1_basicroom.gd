@@ -6,8 +6,8 @@ extends Node2D
 @onready var d_door = $d_Door
 @onready var u_door = $u_Door
 
+var room
 
-var F_1_BASICROOM = preload("res://Floor scenes/Floor 1/Rooms/f_1_basicroom.tscn")
 @export var num_of_availble_doors = 4
 
 var r_dooravailble=true
@@ -32,11 +32,19 @@ func addroom(max_rooms , num_of_rooms):
 		var newroom
 		while added_rooms<rooms_to_add:
 			var door_id = randi_range(1,4)
+			var room_id = randi_range(1,3)
 			
+			match room_id:
+				1:
+					room =preload("res://Floor scenes/Floor 1/Rooms/f_1_basicroom.tscn")
+				2:
+					room = preload("res://Floor scenes/Floor 1/Rooms/f_1_corner_rooms.tscn")
+				3:
+					room = preload("res://Floor scenes/Floor 1/Rooms/f_1_crosssectionroom.tscn")
 			match door_id :
 				1:
-					if u_dooravailble==true:
-						newroom = F_1_BASICROOM.instantiate()
+					if u_dooravailble==true and room_id != 3:
+						newroom = room.instantiate()
 						newroom.global_position = u_room.global_position
 						newroom.d_dooravailble=true
 						get_parent().add_child(newroom)
@@ -45,7 +53,7 @@ func addroom(max_rooms , num_of_rooms):
 						added_rooms+=1
 				2:
 					if d_dooravailble==true:
-						newroom = F_1_BASICROOM.instantiate()
+						newroom = room.instantiate()
 						newroom.global_position = d_room.global_position
 						newroom.u_dooravailble=false
 						get_parent().add_child(newroom)
@@ -54,8 +62,11 @@ func addroom(max_rooms , num_of_rooms):
 						added_rooms+=1 
 				3:
 					if l_dooravailble==true:
-						newroom = F_1_BASICROOM.instantiate()
+						newroom = room.instantiate()
 						newroom.global_position = l_room.global_position
+						if room_id ==3:
+							newroom.global_position.x -= 492 
+							newroom.global_position.y -= 357
 						newroom.r_dooravailble=false
 						get_parent().add_child(newroom)
 						l_door.visible = true
@@ -63,7 +74,7 @@ func addroom(max_rooms , num_of_rooms):
 						added_rooms+=1
 				4:
 					if r_dooravailble==true:
-						newroom = F_1_BASICROOM.instantiate()
+						newroom = room.instantiate()
 						newroom.global_position = r_room.global_position
 						newroom.l_dooravailble=false
 						get_parent().add_child(newroom)

@@ -1,8 +1,9 @@
 extends Node2D
 
+
 @onready var l_door = $l_Door
 @onready var r_door = $r_Door
-@onready var d_door = $d_Door
+
 @onready var u_door = $u_Door
 
 var room
@@ -12,11 +13,11 @@ var room
 var r_dooravailble=true
 
 var u_dooravailble=true
-var d_dooravailble=true
+
 
 var l_dooravailble=true
 # Called when the node enters the scene tree for the first time
-
+#-492,-357
 @onready var u_room = $u_room
 @onready var d_room = $d_room
 @onready var l_room = $l_room
@@ -30,19 +31,18 @@ func addroom(max_rooms , num_of_rooms):
 		var added_rooms =0
 		var newroom
 		while added_rooms<rooms_to_add:
-			var door_id = randi_range(1,4)
+			var door_id = randi_range(1,3)
 			var room_id = randi_range(1,3)
-			
 			match room_id:
 				1:
 					room =preload("res://Floor scenes/Floor 1/Rooms/f_1_basicroom.tscn")
 				2:
 					room = preload("res://Floor scenes/Floor 1/Rooms/f_1_corner_rooms.tscn")
 				3:
-					room = preload("res://Floor scenes/Floor 1/Rooms/f_1_crosssectionroom.tscn")
+					room=preload("res://Floor scenes/Floor 1/Rooms/f_1_crosssectionroom.tscn")
 			match door_id :
 				1:
-					if u_dooravailble==true and room_id != 3:
+					if u_dooravailble==true:
 						newroom = room.instantiate()
 						newroom.global_position = u_room.global_position
 						newroom.d_dooravailble=true
@@ -51,15 +51,6 @@ func addroom(max_rooms , num_of_rooms):
 						u_dooravailble =false
 						added_rooms+=1
 				2:
-					if d_dooravailble==true:
-						newroom = room.instantiate()
-						newroom.global_position = d_room.global_position
-						newroom.u_dooravailble=false
-						get_parent().add_child(newroom)
-						d_door.visible = true
-						d_dooravailble=false
-						added_rooms+=1 
-				3:
 					if l_dooravailble==true:
 						newroom = room.instantiate()
 						newroom.global_position = l_room.global_position
@@ -71,7 +62,7 @@ func addroom(max_rooms , num_of_rooms):
 						l_door.visible = true
 						l_dooravailble = false
 						added_rooms+=1
-				4:
+				3:
 					if r_dooravailble==true:
 						newroom = room.instantiate()
 						newroom.global_position = r_room.global_position
