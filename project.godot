@@ -15,6 +15,12 @@ run/main_scene="res://Floor scenes/Floor 1/Rooms/floor_template.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
+[file_customization]
+
+folder_colors={
+"res://Texture/": "teal"
+}
+
 [input]
 
 up={
