@@ -4,6 +4,7 @@ extends Node2D
 @onready var r_door = $r_Door
 @onready var d_door = $d_Door
 @onready var u_door = $u_Door
+@onready var overlapping_room_dectetor = $overlapping_room_dectetor
 
 var room
 
