@@ -22,7 +22,7 @@ var l_dooravailble=true
 @onready var d_room = $d_room
 @onready var l_room = $l_room
 @onready var r_room = $r_room
-
+#for l y -1055 x +286 for r x- 322 for u y-1219
 func addroom(max_rooms , num_of_rooms):
 	var fail_count =0
 	if max_rooms >num_of_rooms:
@@ -32,28 +32,21 @@ func addroom(max_rooms , num_of_rooms):
 		var added_rooms =0
 		var newroom
 		while added_rooms<rooms_to_add:
-			if fail_count >=10:
+			if  fail_count >= 30:
 				break
 			var door_id = randi_range(1,4)
-			var room_id = randi_range(1,4)
+			var room_id = randi_range(1,2)
 			
 			match room_id:
 				1:
 					room =preload("res://Floor scenes/Floor 1/Rooms/f_1_basicroom.tscn")
 				2:
 					room = preload("res://Floor scenes/Floor 1/Rooms/f_1_corner_rooms.tscn")
-				3:
-					room = preload("res://Floor scenes/Floor 1/Rooms/f_1_crosssectionroom.tscn")
-				4:
-					room =preload("res://Floor scenes/Floor 1/Rooms/f_1_hallroom.tscn")
 			match door_id :
 				1:
 					if u_dooravailble==true and room_id != 3:
 						newroom = room.instantiate()
 						newroom.global_position = u_room.global_position
-						if room_id == 4:
-							newroom.global_position.y -=1219
-					
 						newroom.d_dooravailble=false
 						
 						get_parent().add_child(newroom)
@@ -109,9 +102,6 @@ func addroom(max_rooms , num_of_rooms):
 						if room_id ==3:
 							newroom.global_position.x -= 492 
 							newroom.global_position.y -= 357
-						elif room_id == 4:
-							newroom.global_position.y -=1055
-							newroom.global_position.x +=286
 						newroom.r_dooravailble=false
 						get_parent().add_child(newroom)
 						await get_tree().process_frame
@@ -125,7 +115,7 @@ func addroom(max_rooms , num_of_rooms):
 						await get_tree().process_frame
 						if  newroom.overlapping_room_dectetor.has_overlapping_areas():
 							print(fail_count)
-							
+						
 							newroom.queue_free()
 							fail_count+=1
 						else:
@@ -137,9 +127,6 @@ func addroom(max_rooms , num_of_rooms):
 					if r_dooravailble==true:
 						newroom = room.instantiate()
 						newroom.global_position = r_room.global_position
-						if room_id == 4:
-							
-							newroom.global_position.x -=322
 						newroom.l_dooravailble=false
 						
 						get_parent().add_child(newroom)
@@ -171,8 +158,9 @@ func addroom(max_rooms , num_of_rooms):
 	else:
 		return
 	
+	
 func _ready():
-
+	
 	if r_dooravailble==false:
 		num_of_availble_doors-=1
 	if u_dooravailble== false:
@@ -181,4 +169,3 @@ func _ready():
 		num_of_availble_doors -=1
 	if l_dooravailble==false:
 		num_of_availble_doors-=1
-# Called every frame. 'delta' is the elapsed time since the previous frame.

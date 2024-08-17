@@ -5,6 +5,7 @@ extends Node2D
 @onready var r_door = $r_Door
 
 @onready var u_door = $u_Door
+@onready var overlapping_room_dectetor = $overlapping_room_dectetor
 
 var room
 
@@ -19,11 +20,12 @@ var l_dooravailble=true
 # Called when the node enters the scene tree for the first time
 #-492,-357
 @onready var u_room = $u_room
-@onready var d_room = $d_room
+
 @onready var l_room = $l_room
 @onready var r_room = $r_room
 
 func addroom(max_rooms , num_of_rooms):
+	var fail_count =0
 	if max_rooms >num_of_rooms:
 		var rooms_to_add= randi_range(1,num_of_availble_doors)
 		while num_of_rooms+rooms_to_add>max_rooms:
@@ -31,7 +33,9 @@ func addroom(max_rooms , num_of_rooms):
 		var added_rooms =0
 		var newroom
 		while added_rooms<rooms_to_add:
-			var door_id = randi_range(1,3)
+			if  fail_count >= 30:
+				break
+			var door_id = randi_range(1,4)
 			var room_id = randi_range(1,3)
 			
 			match room_id:
@@ -49,11 +53,25 @@ func addroom(max_rooms , num_of_rooms):
 						newroom.d_dooravailble=false
 						
 						get_parent().add_child(newroom)
-						u_door.queue_free()
-						newroom.d_door.queue_free()
-						u_dooravailble =false
-						added_rooms+=1
-			
+						await get_tree().process_frame
+						await get_tree().process_frame
+						await get_tree().process_frame
+						await get_tree().process_frame
+						await get_tree().process_frame
+						await get_tree().process_frame
+						await get_tree().process_frame
+						await get_tree().process_frame
+						await get_tree().process_frame
+						if  newroom.overlapping_room_dectetor.has_overlapping_areas():
+							print(fail_count)
+							newroom.queue_free()
+							fail_count+=1
+						else:
+							u_door.queue_free()
+							newroom.d_door.queue_free()
+							u_dooravailble =false
+							added_rooms+=1
+
 				2:
 					if l_dooravailble==true:
 						newroom = room.instantiate()
@@ -64,10 +82,25 @@ func addroom(max_rooms , num_of_rooms):
 							newroom.global_position.y -= 357
 						newroom.r_dooravailble=false
 						get_parent().add_child(newroom)
-						newroom.r_door.queue_free()
-						l_door.queue_free()
-						l_dooravailble = false
-						added_rooms+=1
+						await get_tree().process_frame
+						await get_tree().process_frame
+						await get_tree().process_frame
+						await get_tree().process_frame
+						await get_tree().process_frame
+						await get_tree().process_frame
+						await get_tree().process_frame
+						await get_tree().process_frame
+						await get_tree().process_frame
+						if  newroom.overlapping_room_dectetor.has_overlapping_areas():
+							print(fail_count)
+							
+							newroom.queue_free()
+							fail_count+=1
+						else:
+							newroom.r_door.queue_free()
+							l_door.queue_free()
+							l_dooravailble = false
+							added_rooms+=1
 				3:
 					if r_dooravailble==true:
 						newroom = room.instantiate()
@@ -75,19 +108,33 @@ func addroom(max_rooms , num_of_rooms):
 						newroom.l_dooravailble=false
 						
 						get_parent().add_child(newroom)
-						newroom.l_door.queue_free()
-						r_door.queue_free()
-						
-						r_dooravailble = false
-						added_rooms+=1
-		get_parent().num_of_rooms+= added_rooms
-		if newroom !=null:
-			print("hi")
-			newroom.addroom(max_rooms,get_parent().num_of_rooms)
+						await get_tree().process_frame
+						await get_tree().process_frame
+						await get_tree().process_frame
+						await get_tree().process_frame
+						await get_tree().process_frame
+						await get_tree().process_frame
+						await get_tree().process_frame
+						await get_tree().process_frame
+						await get_tree().process_frame
+						if  newroom.overlapping_room_dectetor.has_overlapping_areas():
+							print(fail_count)
+							fail_count+=1
+							newroom.queue_free()
+						else:
+							newroom.l_door.queue_free()
+							r_door.queue_free()
+							r_dooravailble = false
+							added_rooms+=1
+		if fail_count>=10:
+			get_tree().reload_current_scene()
+		else:
+			get_parent().num_of_rooms+= added_rooms
+			if newroom !=null:
+				print("hi")
+				newroom.addroom(max_rooms,get_parent().num_of_rooms)
 	else:
 		return
-	
-	
 	
 func _ready():
 	

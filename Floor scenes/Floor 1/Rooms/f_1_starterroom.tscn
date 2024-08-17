@@ -63,8 +63,8 @@ physics_layer_0/collision_layer = 1
 physics_layer_0/collision_mask = 2
 sources/1 = SubResource("TileSetAtlasSource_pqjb3")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_k23ub"]
-size = Vector2(1082, 573)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2pl7v"]
+size = Vector2(1135, 619)
 
 [node name="f1_starterroom" type="Node2D"]
 script = ExtResource("1_xaon0")
@@ -106,5 +106,5 @@ collision_layer = 4
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="overlapping_room_dectetor"]
-position = Vector2(573, 318.5)
-shape = SubResource("RectangleShape2D_k23ub")
+position = Vector2(572.5, 320.5)
+shape = SubResource("RectangleShape2D_2pl7v")
