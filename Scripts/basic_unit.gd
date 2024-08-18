@@ -6,6 +6,7 @@ class_name Enemy
 @onready var navigation_agent = $NavigationAgent2D
 
 @export var hp = 5
+var enabled = false
 signal update_enemy_count
 
 
@@ -41,7 +42,7 @@ func _physics_process(delta):
 		current_state = "chase"
 	
 	
-	if navigation_agent.is_target_reachable():
+	if navigation_agent.is_target_reachable() and enabled:
 		if int(navigation_agent.distance_to_target()) > 110:
 			var next_location = navigation_agent.get_next_path_position()
 			var direction = global_position.direction_to(next_location).normalized()

@@ -10,7 +10,7 @@ region = Rect2(0, 0, 32, 32)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ctqcw"]
 size = Vector2(25.6, 25.4)
 
-[node name="BasicUnit" type="CharacterBody2D"]
+[node name="BasicUnit" type="CharacterBody2D" groups=["Enemy"]]
 scale = Vector2(5, 5)
 script = ExtResource("1_pio3p")
 

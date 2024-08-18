@@ -4,18 +4,14 @@ const PROJECTILE = preload("res://Scenes/projectile.tscn")
 
 const SPEED = 600
 var can_shoot = true
+@onready var sprite_2d = $Sprite2D
+
 func _physics_process(delta):
 	# Add the gravity.
 	# Handle jump.
 
-	var direction_x = Input.get_axis("left", "right")
-	var direction_y = Input.get_axis("up","down")
-	if direction_x or direction_y:
-		velocity.x = direction_x * SPEED
-		velocity.y = direction_y *SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		velocity.y = move_toward(velocity.y,0,SPEED)
+	var direction = Input.get_vector("left","right","up","down")
+	velocity = velocity.lerp(direction * SPEED, 0.075)
 
 	move_and_slide()
 
@@ -27,6 +23,9 @@ func _process(delta):
 		newprojectile.direction = -(position - get_global_mouse_position()).normalized()
 		get_parent().add_child(newprojectile)
 		can_shoot = false
+		$projectilecd.start()
+	
+
 
 
 func _on_projectilecd_timeout():

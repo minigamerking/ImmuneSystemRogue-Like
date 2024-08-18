@@ -20,6 +20,11 @@ config/icon="res://icon.svg"
 Floormanager="*res://Floor scenes/floormanager.gd"
 Playermanager="*res://Scripts/playermanager.gd"
 
+[display]
+
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"
+
 [file_customization]
 
 folder_colors={

@@ -231,9 +231,12 @@ var cleared = false
 
 func _on_player_detector_body_entered(body):
 	if cleared == false:
+		for child in $enemies.get_children():
+			if child is Enemy:
+				child.enabled = true
 		$playerblockers.visible=true
 		var doors =$playerblockers.get_children()
 		print("closing room")
 		for door in doors:
-			door.set_collision_layer_value(1,true)
+			door.set_collision_layer_value(3,true)
 			

@@ -4,6 +4,7 @@ extends Node2D
 
 
 var num_of_rooms = 0
+var connected_enemies = false
 
 @export var SPEED := 400
 
@@ -18,12 +19,6 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
-	#if Input.is_action_pressed("down"):
-		#$Camera2D.global_position.y += SPEED * delta
-	#if Input.is_action_pressed("up"):
-		#$Camera2D.global_position.y -= SPEED * delta
-	#if Input.is_action_pressed("right"):
-		#$Camera2D.global_position.x += SPEED * delta
-	#if Input.is_action_pressed("left"):
-		#$Camera2D.global_position.x -= SPEED * delta
+	if num_of_rooms == max_rooms and not connected_enemies:
+		$player/PlayerManager.connect_enemies()
+		connected_enemies = true

@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://c881k08qyanxk"]
+[gd_scene load_steps=8 format=3 uid="uid://c881k08qyanxk"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_yil6q"]
 [ext_resource type="Texture2D" uid="uid://jyaje3fk4umg" path="res://sprites/virus.png" id="2_g6w8j"]
+[ext_resource type="Script" path="res://Scripts/playermanager.gd" id="3_d7vvm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v1ial"]
 size = Vector2(49, 55)
@@ -47,7 +48,7 @@ _data = {
 [node name="player" type="CharacterBody2D" groups=["Player"]]
 z_index = 5
 collision_layer = 2
-collision_mask = 3
+collision_mask = 7
 script = ExtResource("1_yil6q")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -66,6 +67,8 @@ autoplay = "float"
 
 [node name="projectilecd" type="Timer" parent="."]
 wait_time = 0.5
-autostart = true
+
+[node name="PlayerManager" type="Node" parent="."]
+script = ExtResource("3_d7vvm")
 
 [connection signal="timeout" from="projectilecd" to="." method="_on_projectilecd_timeout"]

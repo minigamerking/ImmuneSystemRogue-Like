@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://pg4otma48y3f"]
+
+[ext_resource type="Texture2D" uid="uid://jyaje3fk4umg" path="res://sprites/virus.png" id="1_83s5h"]
+[ext_resource type="Script" path="res://Scenes/player_clone.gd" id="1_pobmd"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ngf6m"]
+height = 34.0
+
+[node name="PlayerClone" type="CharacterBody2D"]
+collision_layer = 16
+collision_mask = 17
+script = ExtResource("1_pobmd")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_83s5h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_ngf6m")
