@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://p0vd53q4a4sq"]
+[gd_scene load_steps=9 format=3 uid="uid://p0vd53q4a4sq"]
 
 [ext_resource type="Script" path="res://Floor scenes/Floor 1/Rooms/f_1_corner_rooms.gd" id="1_y803k"]
 [ext_resource type="Texture2D" uid="uid://1jl2jxa0byi2" path="res://icon.svg" id="2_g5fas"]
 [ext_resource type="PackedScene" uid="uid://cs2quat6d5vk4" path="res://Floor scenes/door.tscn" id="3_yjjk3"]
+[ext_resource type="PackedScene" uid="uid://kmfi5wgx8ig4" path="res://Scenes/test__enemy.tscn" id="4_gh2ji"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pqjb3"]
 texture = ExtResource("2_g5fas")
@@ -63,6 +64,12 @@ physics_layer_0/collision_layer = 1
 physics_layer_0/collision_mask = 2
 sources/1 = SubResource("TileSetAtlasSource_pqjb3")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3bv21"]
+size = Vector2(1119, 614)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gyaa7"]
+size = Vector2(1056, 558)
+
 [node name="f_1_corner_rooms" type="Node2D"]
 script = ExtResource("1_y803k")
 
@@ -97,3 +104,61 @@ rotation = -1.5708
 [node name="u_Door" parent="." instance=ExtResource("3_yjjk3")]
 position = Vector2(582, 17)
 rotation = 1.5708
+
+[node name="overlapping_room_dectetor" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="overlapping_room_dectetor"]
+position = Vector2(574.5, 324)
+shape = SubResource("RectangleShape2D_3bv21")
+
+[node name="playerblockers" type="Node2D" parent="."]
+visible = false
+
+[node name="player_blocker" parent="playerblockers" instance=ExtResource("3_yjjk3")]
+position = Vector2(19, 330)
+collision_layer = 0
+collision_mask = 0
+
+[node name="player_blocker2" parent="playerblockers" instance=ExtResource("3_yjjk3")]
+position = Vector2(1129, 330)
+rotation = 3.14159
+collision_layer = 0
+collision_mask = 0
+
+[node name="player_blocker3" parent="playerblockers" instance=ExtResource("3_yjjk3")]
+position = Vector2(582, 620)
+rotation = -1.5708
+collision_layer = 0
+collision_mask = 0
+
+[node name="player_blocker4" parent="playerblockers" instance=ExtResource("3_yjjk3")]
+position = Vector2(582, 17)
+rotation = 1.5708
+collision_layer = 0
+collision_mask = 0
+
+[node name="Player_detector" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player_detector"]
+position = Vector2(572, 318)
+shape = SubResource("RectangleShape2D_gyaa7")
+
+[node name="enemies" type="Node2D" parent="."]
+position = Vector2(581, 156)
+
+[node name="test _enemy" parent="enemies" instance=ExtResource("4_gh2ji")]
+
+[node name="test _enemy2" parent="enemies" instance=ExtResource("4_gh2ji")]
+position = Vector2(22, 321)
+
+[node name="test _enemy3" parent="enemies" instance=ExtResource("4_gh2ji")]
+position = Vector2(-340, 141)
+
+[node name="test _enemy4" parent="enemies" instance=ExtResource("4_gh2ji")]
+position = Vector2(396, 147)
+
+[connection signal="body_entered" from="Player_detector" to="." method="_on_player_detector_body_entered"]
+[connection signal="body_entered" from="enemies/test _enemy" to="." method="_on_test__enemy_body_entered"]
