@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://bg33cogwnmfdf"]
+
+[ext_resource type="PackedScene" uid="uid://behqppvf6u7gt" path="res://basic_unit.tscn" id="1_plrro"]
+[ext_resource type="PackedScene" uid="uid://c881k08qyanxk" path="res://player.tscn" id="2_6bqsu"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_lqf1p"]
+vertices = PackedVector2Array(1059, 580, 153, 535, 412, 363, 778, 411, 1078, 60, 777, 156, 122, 50, 496, 156, 407, 334)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 0, 3, 5), PackedInt32Array(6, 4, 5, 7), PackedInt32Array(6, 7, 8)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(98, 40, 1089, 51, 1069, 591, 123, 544, 410, 353, 768, 400, 767, 166, 502, 166, 410, 351)])
+source_geometry_group_name = &"navigation_polygon_source_group"
+
+[node name="PracticeMainScene" type="Node2D"]
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+position = Vector2(-39, 3)
+navigation_polygon = SubResource("NavigationPolygon_lqf1p")
+constrain_avoidance = true
+
+[node name="BasicUnit" parent="." instance=ExtResource("1_plrro")]
+position = Vector2(487, 81)
+
+[node name="player" parent="." instance=ExtResource("2_6bqsu")]
+position = Vector2(247, 349)

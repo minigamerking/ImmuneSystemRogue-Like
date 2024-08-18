@@ -50,15 +50,8 @@ func addroom(max_rooms , num_of_rooms):
 						newroom.d_dooravailble=false
 						
 						get_parent().add_child(newroom)
-						await get_tree().process_frame
-						await get_tree().process_frame
-						await get_tree().process_frame
-						await get_tree().process_frame
-						await get_tree().process_frame
-						await get_tree().process_frame
-						await get_tree().process_frame
-						await get_tree().process_frame
-						await get_tree().process_frame
+						for i in range(9):
+							await get_tree().process_frame
 						if  newroom.overlapping_room_dectetor.has_overlapping_areas():
 							print(fail_count)
 							newroom.queue_free()
@@ -75,15 +68,8 @@ func addroom(max_rooms , num_of_rooms):
 						newroom.u_dooravailble=false
 						
 						get_parent().add_child(newroom)
-						await get_tree().process_frame
-						await get_tree().process_frame
-						await get_tree().process_frame
-						await get_tree().process_frame
-						await get_tree().process_frame
-						await get_tree().process_frame
-						await get_tree().process_frame
-						await get_tree().process_frame
-						await get_tree().process_frame
+						for i in range(9):
+							await get_tree().process_frame
 						
 						if  newroom.overlapping_room_dectetor.has_overlapping_areas():
 							print(fail_count)
@@ -104,15 +90,8 @@ func addroom(max_rooms , num_of_rooms):
 							newroom.global_position.y -= 357
 						newroom.r_dooravailble=false
 						get_parent().add_child(newroom)
-						await get_tree().process_frame
-						await get_tree().process_frame
-						await get_tree().process_frame
-						await get_tree().process_frame
-						await get_tree().process_frame
-						await get_tree().process_frame
-						await get_tree().process_frame
-						await get_tree().process_frame
-						await get_tree().process_frame
+						for i in range(9):
+							await get_tree().process_frame
 						if  newroom.overlapping_room_dectetor.has_overlapping_areas():
 							print(fail_count)
 						
@@ -130,15 +109,8 @@ func addroom(max_rooms , num_of_rooms):
 						newroom.l_dooravailble=false
 						
 						get_parent().add_child(newroom)
-						await get_tree().process_frame
-						await get_tree().process_frame
-						await get_tree().process_frame
-						await get_tree().process_frame
-						await get_tree().process_frame
-						await get_tree().process_frame
-						await get_tree().process_frame
-						await get_tree().process_frame
-						await get_tree().process_frame
+						for i in range(9):
+							await get_tree().process_frame
 						if  newroom.overlapping_room_dectetor.has_overlapping_areas():
 							print(fail_count)
 							fail_count+=1

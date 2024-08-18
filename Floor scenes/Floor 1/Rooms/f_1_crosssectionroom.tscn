@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cfulhs3gxua0"]
+[gd_scene load_steps=6 format=3 uid="uid://cfulhs3gxua0"]
 
 [ext_resource type="Script" path="res://f1_crosssectionroom.gd" id="1_jmim6"]
 [ext_resource type="Texture2D" uid="uid://1jl2jxa0byi2" path="res://icon.svg" id="2_8pbtd"]
@@ -63,9 +63,6 @@ physics_layer_0/collision_layer = 1
 physics_layer_0/collision_mask = 2
 sources/1 = SubResource("TileSetAtlasSource_11qfb")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_i71fe"]
-size = Vector2(1604, 1028)
-
 [node name="f1_crosssectionroom" type="Node2D"]
 position = Vector2(3, 0)
 script = ExtResource("1_jmim6")
@@ -99,6 +96,6 @@ rotation = 1.5708
 collision_layer = 4
 collision_mask = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="overlapping_room_dectetor"]
-position = Vector2(819, 527)
-shape = SubResource("RectangleShape2D_i71fe")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="overlapping_room_dectetor"]
+position = Vector2(19, 18)
+polygon = PackedVector2Array(-1, -2, 1117, -7, 1118, 291, 1600, 285, 1602, 1023, 614, 1025, 608, 604, -3, 608)
