@@ -1,5 +1,6 @@
 
 extends Node2D
+class_name BasicRoom
 
 @onready var l_door = $l_Door
 @onready var r_door = $r_Door
