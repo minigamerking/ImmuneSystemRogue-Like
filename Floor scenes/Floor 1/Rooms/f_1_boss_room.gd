@@ -8,7 +8,7 @@ extends Node2D
 @onready var overlapping_room_dectetor = $overlapping_room_dectetor
 
 var room
-
+var floor 
 @export var num_of_availble_doors = 4
 
 var r_dooravailble=true
@@ -25,3 +25,12 @@ func  addroom(max,cur):
 @onready var l_room = $l_room
 @onready var r_room = $r_room
 
+
+
+
+func _on_exit_body_entered(body):
+	match Floormanager.floor_id:
+		1:
+			Floormanager.floor_id+=1
+			floor = preload("res://Floor scenes/Floor2/floor_2.tscn")
+			get_tree().change_scene_to_packed(floor)

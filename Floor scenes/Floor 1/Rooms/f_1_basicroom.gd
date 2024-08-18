@@ -90,7 +90,7 @@ func addroom(max_rooms , num_of_rooms):
 							newroom.d_door.queue_free()
 							u_dooravailble =false
 							num_of_availble_doors-=1
-							Floormanager.rooms.append(newroom)
+							
 							added_rooms+=1
 							num_of_rooms+=1
 				2:
@@ -119,7 +119,7 @@ func addroom(max_rooms , num_of_rooms):
 							d_door.queue_free()
 							d_dooravailble=false
 							num_of_availble_doors-=1
-							Floormanager.rooms.append(newroom)
+							
 							added_rooms+=1 
 							num_of_rooms+=1
 				3:
@@ -154,7 +154,7 @@ func addroom(max_rooms , num_of_rooms):
 							l_door.queue_free()
 							l_dooravailble = false
 							num_of_availble_doors-=1
-							Floormanager.rooms.append(newroom)
+							
 							added_rooms+=1
 							num_of_rooms+=1
 				4:
@@ -184,7 +184,7 @@ func addroom(max_rooms , num_of_rooms):
 							newroom.l_door.queue_free()
 							r_door.queue_free()
 							num_of_availble_doors-=1
-							Floormanager.rooms.append(newroom)
+							
 							r_dooravailble = false
 							added_rooms+=1
 							num_of_rooms+=1
@@ -221,6 +221,7 @@ func _on_test__enemy_update_enemy_count():
 	if enemycount == 0:
 		$playerblockers.queue_free()
 		cleared = true
+	
 	
 	
 	

@@ -1,25 +1,26 @@
 extends Node2D
 
+
 @onready var l_door = $l_Door
 @onready var r_door = $r_Door
-@onready var d_door = $d_Door
+
 @onready var u_door = $u_Door
 @onready var overlapping_room_dectetor = $overlapping_room_dectetor
 
 var room
 
-@export var num_of_availble_doors = 4
+@export var num_of_availble_doors = 3
 
 var r_dooravailble=true
 
 var u_dooravailble=true
-var d_dooravailble=true
+
 
 var l_dooravailble=true
 # Called when the node enters the scene tree for the first time
-
+#-492,-357
 @onready var u_room = $u_room
-@onready var d_room = $d_room
+
 @onready var l_room = $l_room
 @onready var r_room = $r_room
 
@@ -35,7 +36,7 @@ func addroom(max_rooms , num_of_rooms):
 			if fail_count >=10:
 				break
 			var door_id = randi_range(1,4)
-			var room_id = randi_range(1,4)
+			var room_id = randi_range(1,3)
 			if num_of_rooms >= max_rooms-1:
 				room_id = 10
 			if rooms_to_add >1 and added_rooms ==0:
@@ -50,8 +51,7 @@ func addroom(max_rooms , num_of_rooms):
 					room = preload("res://Floor scenes/Floor 1/Rooms/f_1_corner_rooms.tscn")
 				3:
 					room = preload("res://Floor scenes/Floor 1/Rooms/f_1_crosssectionroom.tscn")
-				4:
-					room =preload("res://Floor scenes/Floor 1/Rooms/f_1_hallroom.tscn")
+			
 				10:
 					room = preload("res://Floor scenes/Floor 1/Rooms/f_1_boss_room.tscn")
 				11:
@@ -88,36 +88,8 @@ func addroom(max_rooms , num_of_rooms):
 							
 							added_rooms+=1
 							num_of_rooms+=1
+			
 				2:
-					if d_dooravailble==true:
-						newroom = room.instantiate()
-						newroom.global_position = d_room.global_position
-						newroom.u_dooravailble=false
-						
-						get_parent().add_child(newroom)
-						await get_tree().process_frame
-						await get_tree().process_frame
-						await get_tree().process_frame
-						await get_tree().process_frame
-						await get_tree().process_frame
-						await get_tree().process_frame
-						await get_tree().process_frame
-						await get_tree().process_frame
-						await get_tree().process_frame
-						
-						if  newroom.overlapping_room_dectetor.has_overlapping_areas():
-							print(fail_count)
-							fail_count+=1
-							newroom.queue_free()
-						else:
-							newroom.u_door.queue_free()
-							d_door.queue_free()
-							d_dooravailble=false
-							num_of_availble_doors-=1
-							
-							added_rooms+=1 
-							num_of_rooms+=1
-				3:
 					if l_dooravailble==true:
 						newroom = room.instantiate()
 						newroom.global_position = l_room.global_position
@@ -152,7 +124,7 @@ func addroom(max_rooms , num_of_rooms):
 							
 							added_rooms+=1
 							num_of_rooms+=1
-				4:
+				3:
 					if r_dooravailble==true:
 						newroom = room.instantiate()
 						newroom.global_position = r_room.global_position
@@ -192,15 +164,13 @@ func addroom(max_rooms , num_of_rooms):
 				newroom.addroom(max_rooms,get_parent().num_of_rooms)
 	else:
 		return
-	
 func _ready():
 	
 	if r_dooravailble==false:
 		num_of_availble_doors-=1
 	if u_dooravailble== false:
 		num_of_availble_doors-=1
-	if d_dooravailble==false:
-		num_of_availble_doors -=1
+
 	if l_dooravailble==false:
 		num_of_availble_doors-=1
 	var enemies = $enemies.get_children()
@@ -215,7 +185,7 @@ func _on_test__enemy_update_enemy_count():
 	if enemycount == 0:
 		$playerblockers.queue_free()
 		cleared = true
-		
+	
 	
 	
 	

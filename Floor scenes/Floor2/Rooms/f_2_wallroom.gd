@@ -1,3 +1,4 @@
+
 extends Node2D
 
 @onready var l_door = $l_Door
@@ -5,6 +6,10 @@ extends Node2D
 @onready var d_door = $d_Door
 @onready var u_door = $u_Door
 @onready var overlapping_room_dectetor = $overlapping_room_dectetor
+
+
+
+
 
 var room
 
@@ -45,13 +50,13 @@ func addroom(max_rooms , num_of_rooms):
 				
 			match room_id:
 				1:
-					room =preload("res://Floor scenes/Floor 1/Rooms/f_1_basicroom.tscn")
+					room =preload("res://Floor scenes/Floor2/Rooms/f_2_wallroom.tscn")
 				2:
-					room = preload("res://Floor scenes/Floor 1/Rooms/f_1_corner_rooms.tscn")
+					room = preload("res://Floor scenes/Floor2/Rooms/f_2_crossroom.tscn")
 				3:
-					room = preload("res://Floor scenes/Floor 1/Rooms/f_1_crosssectionroom.tscn")
+					room = preload("res://Floor scenes/Floor2/Rooms/f_2_holessectionroom.tscn")
 				4:
-					room =preload("res://Floor scenes/Floor 1/Rooms/f_1_hallroom.tscn")
+					room =preload("res://Floor scenes/Floor2/Rooms/f_2_zigroom.tscn")
 				10:
 					room = preload("res://Floor scenes/Floor 1/Rooms/f_1_boss_room.tscn")
 				11:
@@ -193,6 +198,7 @@ func addroom(max_rooms , num_of_rooms):
 	else:
 		return
 	
+	
 func _ready():
 	
 	if r_dooravailble==false:
@@ -215,7 +221,7 @@ func _on_test__enemy_update_enemy_count():
 	if enemycount == 0:
 		$playerblockers.queue_free()
 		cleared = true
-		
+	
 	
 	
 	

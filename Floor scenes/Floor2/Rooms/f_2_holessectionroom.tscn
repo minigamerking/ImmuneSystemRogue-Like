@@ -1,0 +1,168 @@
+[gd_scene load_steps=10 format=3 uid="uid://bxsool56i81ix"]
+
+[ext_resource type="Texture2D" uid="uid://1jl2jxa0byi2" path="res://icon.svg" id="1_0ksej"]
+[ext_resource type="Script" path="res://Floor scenes/Floor2/Rooms/f_2_holessectionroom.gd" id="1_l8tx2"]
+[ext_resource type="PackedScene" uid="uid://cs2quat6d5vk4" path="res://Floor scenes/door.tscn" id="2_w2hrq"]
+[ext_resource type="PackedScene" uid="uid://kmfi5wgx8ig4" path="res://Scenes/test__enemy.tscn" id="3_et808"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_11qfb"]
+texture = ExtResource("1_0ksej")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:0/0 = 0
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+2:0/0 = 0
+2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:0/0/physics_layer_0/angular_velocity = 0.0
+3:0/0 = 0
+3:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:0/0/physics_layer_0/angular_velocity = 0.0
+0:1/0 = 0
+0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:1/0/physics_layer_0/angular_velocity = 0.0
+1:1/0 = 0
+1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:1/0/physics_layer_0/angular_velocity = 0.0
+2:1/0 = 0
+2:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:1/0/physics_layer_0/angular_velocity = 0.0
+3:1/0 = 0
+3:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:1/0/physics_layer_0/angular_velocity = 0.0
+0:2/0 = 0
+0:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:2/0/physics_layer_0/angular_velocity = 0.0
+1:2/0 = 0
+1:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:2/0/physics_layer_0/angular_velocity = 0.0
+2:2/0 = 0
+2:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:2/0/physics_layer_0/angular_velocity = 0.0
+3:2/0 = 0
+3:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:2/0/physics_layer_0/angular_velocity = 0.0
+0:3/0 = 0
+0:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:3/0/physics_layer_0/angular_velocity = 0.0
+1:3/0 = 0
+1:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:3/0/physics_layer_0/angular_velocity = 0.0
+2:3/0 = 0
+2:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:3/0/physics_layer_0/angular_velocity = 0.0
+3:3/0 = 0
+3:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:3/0/physics_layer_0/angular_velocity = 0.0
+
+[sub_resource type="TileSet" id="TileSet_gksyk"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 1
+physics_layer_0/collision_mask = 2
+sources/1 = SubResource("TileSetAtlasSource_11qfb")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i71fe"]
+size = Vector2(1604, 1028)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mrdfh"]
+size = Vector2(1056, 583.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_op8kr"]
+size = Vector2(928, 681)
+
+[node name="f_2_Holessectionroom" type="Node2D"]
+position = Vector2(3, 0)
+script = ExtResource("1_l8tx2")
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_gksyk")
+format = 2
+layer_0/tile_data = PackedInt32Array(35, 1, 0, 34, 1, 0, 33, 1, 0, 32, 1, 0, 31, 1, 0, 30, 1, 0, 29, 1, 0, 28, 1, 0, 27, 1, 0, 26, 1, 0, 25, 1, 0, 24, 1, 0, 23, 1, 0, 22, 1, 0, 13, 1, 0, 12, 1, 0, 11, 1, 0, 10, 1, 0, 9, 1, 0, 8, 1, 0, 7, 1, 0, 6, 1, 0, 5, 1, 0, 4, 1, 0, 3, 1, 0, 2, 1, 0, 1, 1, 0, 0, 1, 0, 65571, 1, 0, 131107, 1, 0, 196643, 1, 0, 262179, 1, 0, 327715, 1, 0, 393251, 1, 0, 458787, 1, 0, 1245197, 1, 0, 1245196, 1, 0, 1245195, 1, 0, 1245194, 1, 0, 1245193, 1, 0, 1245192, 1, 0, 1245191, 1, 0, 1245190, 1, 0, 1245189, 1, 0, 1245188, 1, 0, 1245187, 1, 0, 1245186, 1, 0, 1245185, 1, 0, 1245184, 1, 0, 65536, 1, 0, 131072, 1, 0, 196608, 1, 0, 262144, 1, 0, 327680, 1, 0, 393216, 1, 0, 917504, 1, 0, 983040, 1, 0, 1048576, 1, 0, 1114112, 1, 0, 1179648, 1, 0, 1245203, 1, 0, 1245202, 1, 0, 1245201, 1, 0, 1245200, 1, 0, 1245199, 1, 0, 1245198, 1, 0, 524323, 1, 0, 589859, 1, 0, 1310739, 1, 0, 1376275, 1, 0, 1441811, 1, 0, 1507347, 1, 0, 1572883, 1, 0, 1638419, 1, 0, 1703955, 1, 0, 1769491, 1, 0, 1900563, 1, 0, 1966099, 1, 0, 2031635, 1, 0, 2097171, 1, 0, 2097202, 1, 0, 2031666, 1, 0, 1966130, 1, 0, 1900594, 1, 0, 1835058, 1, 0, 1769522, 1, 0, 1703986, 1, 0, 1638450, 1, 0, 1114162, 1, 0, 1048626, 1, 0, 983090, 1, 0, 917554, 1, 0, 852018, 1, 0, 786482, 1, 0, 720946, 1, 0, 655410, 1, 0, 589874, 1, 0, 589873, 1, 0, 589872, 1, 0, 589871, 1, 0, 589870, 1, 0, 589869, 1, 0, 589868, 1, 0, 589867, 1, 0, 589866, 1, 0, 589865, 1, 0, 589864, 1, 0, 589863, 1, 0, 589862, 1, 0, 589861, 1, 0, 589860, 1, 0, 2097172, 1, 0, 2097173, 1, 0, 2097174, 1, 0, 2097175, 1, 0, 2097176, 1, 0, 2097177, 1, 0, 2097178, 1, 0, 2097179, 1, 0, 2097180, 1, 0, 2097181, 1, 0, 2097182, 1, 0, 2097183, 1, 0, 2097184, 1, 0, 2097185, 1, 0, 2097186, 1, 0, 2097187, 1, 0, 2097188, 1, 0, 2097189, 1, 0, 2097190, 1, 0, 2097192, 1, 0, 2097193, 1, 0, 2097194, 1, 0, 2097195, 1, 0, 2097196, 1, 0, 2097197, 1, 0, 2097198, 1, 0, 2097199, 1, 0, 2097200, 1, 0, 2097201, 1, 0, 1835027, 1, 0, 2097191, 1, 0, 65561, 1, 0, 131097, 1, 0, 196633, 1, 0, 262169, 1, 0, 327705, 1, 0, 393241, 1, 0, 458777, 1, 0, 524313, 1, 0, 65562, 1, 0, 131098, 1, 0, 196634, 1, 0, 262170, 1, 0, 327706, 1, 0, 393242, 1, 0, 458778, 1, 0, 524314, 1, 0, 65563, 1, 0, 131099, 1, 0, 196635, 1, 0, 262171, 1, 0, 327707, 1, 0, 393243, 1, 0, 458779, 1, 0, 524315, 1, 0, 65564, 1, 0, 131100, 1, 0, 196636, 1, 0, 262172, 1, 0, 327708, 1, 0, 393244, 1, 0, 458780, 1, 0, 524316, 1, 0, 65565, 1, 0, 131101, 1, 0, 196637, 1, 0, 262173, 1, 0, 327709, 1, 0, 393245, 1, 0, 458781, 1, 0, 524317, 1, 0, 65566, 1, 0, 131102, 1, 0, 196638, 1, 0, 262174, 1, 0, 327710, 1, 0, 393246, 1, 0, 458782, 1, 0, 524318, 1, 0, 65567, 1, 0, 131103, 1, 0, 196639, 1, 0, 262175, 1, 0, 327711, 1, 0, 393247, 1, 0, 458783, 1, 0, 524319, 1, 0, 65568, 1, 0, 131104, 1, 0, 196640, 1, 0, 262176, 1, 0, 327712, 1, 0, 393248, 1, 0, 458784, 1, 0, 524320, 1, 0, 65569, 1, 0, 131105, 1, 0, 196641, 1, 0, 262177, 1, 0, 327713, 1, 0, 393249, 1, 0, 458785, 1, 0, 524321, 1, 0, 65570, 1, 0, 131106, 1, 0, 196642, 1, 0, 262178, 1, 0, 327714, 1, 0, 393250, 1, 0, 458786, 1, 0, 524322, 1, 0, 1179679, 1, 0, 1245215, 1, 0, 1310751, 1, 0, 1376287, 1, 0, 1441823, 1, 0, 1507359, 1, 0, 1572895, 1, 0, 1179680, 1, 0, 1245216, 1, 0, 1310752, 1, 0, 1376288, 1, 0, 1441824, 1, 0, 1507360, 1, 0, 1572896, 1, 0, 1179681, 1, 0, 1245217, 1, 0, 1310753, 1, 0, 1376289, 1, 0, 1441825, 1, 0, 1507361, 1, 0, 1572897, 1, 0, 1179682, 1, 0, 1245218, 1, 0, 1310754, 1, 0, 1376290, 1, 0, 1441826, 1, 0, 1507362, 1, 0, 1572898, 1, 0, 1179683, 1, 0, 1245219, 1, 0, 1310755, 1, 0, 1376291, 1, 0, 1441827, 1, 0, 1507363, 1, 0, 1572899, 1, 0, 1179684, 1, 0, 1245220, 1, 0, 1310756, 1, 0, 1376292, 1, 0, 1441828, 1, 0, 1507364, 1, 0, 1572900, 1, 0, 1179685, 1, 0, 1245221, 1, 0, 1310757, 1, 0, 1376293, 1, 0, 1441829, 1, 0, 1507365, 1, 0, 1572901, 1, 0, 1179686, 1, 0, 1245222, 1, 0, 1310758, 1, 0, 1376294, 1, 0, 1441830, 1, 0, 1507366, 1, 0, 1572902, 1, 0, 1179687, 1, 0, 1245223, 1, 0, 1310759, 1, 0, 1376295, 1, 0, 1441831, 1, 0, 1507367, 1, 0, 1572903, 1, 0, 1179688, 1, 0, 1245224, 1, 0, 1310760, 1, 0, 1376296, 1, 0, 1441832, 1, 0, 1507368, 1, 0, 1572904, 1, 0, 851974, 1, 0, 917510, 1, 0, 983046, 1, 0, 1048582, 1, 0, 1114118, 1, 0, 1179654, 1, 0, 851975, 1, 0, 917511, 1, 0, 983047, 1, 0, 1048583, 1, 0, 1114119, 1, 0, 1179655, 1, 0, 851976, 1, 0, 917512, 1, 0, 983048, 1, 0, 1048584, 1, 0, 1114120, 1, 0, 1179656, 1, 0, 851977, 1, 0, 917513, 1, 0, 983049, 1, 0, 1048585, 1, 0, 1114121, 1, 0, 1179657, 1, 0, 851978, 1, 0, 917514, 1, 0, 983050, 1, 0, 1048586, 1, 0, 1114122, 1, 0, 1179658, 1, 0, 851979, 1, 0, 917515, 1, 0, 983051, 1, 0, 1048587, 1, 0, 1114123, 1, 0, 1179659, 1, 0, 851980, 1, 0, 917516, 1, 0, 983052, 1, 0, 1048588, 1, 0, 1114124, 1, 0, 1179660, 1, 0, 851981, 1, 0, 917517, 1, 0, 983053, 1, 0, 1048589, 1, 0, 1114125, 1, 0, 1179661, 1, 0)
+
+[node name="u_room" type="Node2D" parent="."]
+position = Vector2(0, -636)
+
+[node name="l_room" type="Node2D" parent="."]
+position = Vector2(-1150, 0)
+
+[node name="r_room" type="Node2D" parent="."]
+position = Vector2(1637, 382)
+
+[node name="l_Door" parent="." instance=ExtResource("2_w2hrq")]
+position = Vector2(19, 330)
+
+[node name="r_Door" parent="." instance=ExtResource("2_w2hrq")]
+position = Vector2(1613, 690)
+rotation = 3.14159
+
+[node name="u_Door" parent="." instance=ExtResource("2_w2hrq")]
+position = Vector2(582, 17)
+rotation = 1.5708
+
+[node name="overlapping_room_dectetor" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="overlapping_room_dectetor"]
+position = Vector2(819, 527)
+shape = SubResource("RectangleShape2D_i71fe")
+
+[node name="playerblockers" type="Node2D" parent="."]
+visible = false
+
+[node name="player_blocker" parent="playerblockers" instance=ExtResource("2_w2hrq")]
+position = Vector2(19, 330)
+collision_layer = 0
+collision_mask = 0
+
+[node name="player_blocker2" parent="playerblockers" instance=ExtResource("2_w2hrq")]
+position = Vector2(1610, 690)
+rotation = 3.14159
+collision_layer = 0
+collision_mask = 0
+
+[node name="player_blocker4" parent="playerblockers" instance=ExtResource("2_w2hrq")]
+position = Vector2(582, 17)
+rotation = 1.5708
+collision_layer = 0
+collision_mask = 0
+
+[node name="Player_detector" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player_detector"]
+position = Vector2(572, 333.75)
+shape = SubResource("RectangleShape2D_mrdfh")
+
+[node name="Player_detector2" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player_detector2"]
+position = Vector2(1111, 672.5)
+shape = SubResource("RectangleShape2D_op8kr")
+
+[node name="enemies" type="Node2D" parent="."]
+position = Vector2(581, 156)
+
+[node name="test _enemy" parent="enemies" instance=ExtResource("3_et808")]
+
+[node name="test _enemy2" parent="enemies" instance=ExtResource("3_et808")]
+position = Vector2(22, 321)
+
+[node name="test _enemy6" parent="enemies" instance=ExtResource("3_et808")]
+position = Vector2(359, 632)
+
+[node name="test _enemy3" parent="enemies" instance=ExtResource("3_et808")]
+position = Vector2(-340, 141)
+
+[node name="test _enemy4" parent="enemies" instance=ExtResource("3_et808")]
+position = Vector2(396, 147)
+
+[node name="test _enemy5" parent="enemies" instance=ExtResource("3_et808")]
+position = Vector2(726, 376)
+
+[connection signal="body_entered" from="Player_detector" to="." method="_on_player_detector_body_entered"]
+[connection signal="body_entered" from="Player_detector2" to="." method="_on_player_detector_body_entered"]

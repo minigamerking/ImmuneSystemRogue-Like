@@ -1,5 +1,5 @@
 extends Node2D
-var max_rooms =25
+@export var max_rooms =5
 
 
 
@@ -9,7 +9,8 @@ var num_of_rooms = 0
 
 @onready var f_1_starterroom = $f1_starterroom
 
-
+@onready var player = $player
+const CELL = preload("res://Scenes/cell.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	f_1_starterroom.addroom(max_rooms,num_of_rooms)
