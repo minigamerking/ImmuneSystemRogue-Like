@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cc0je3wn7qcq2"]
+[gd_scene load_steps=6 format=3 uid="uid://cc0je3wn7qcq2"]
 
 [ext_resource type="Script" path="res://Floor scenes/Floor 1/Rooms/room.gd" id="1_xaon0"]
 [ext_resource type="PackedScene" uid="uid://cs2quat6d5vk4" path="res://Floor scenes/door.tscn" id="2_dlu4b"]
@@ -6,6 +6,11 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2pl7v"]
 size = Vector2(1135, 619)
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_asnft"]
+vertices = PackedVector2Array(1072, 59, 1088, 581, 58, 581, 52, 54)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+source_geometry_group_name = &"navigation_polygon_source_group"
 
 [node name="f1_starterroom" type="Node2D"]
 script = ExtResource("1_xaon0")
@@ -43,9 +48,13 @@ position = Vector2(582, 17)
 rotation = 1.5708
 
 [node name="overlapping_room_dectetor" type="Area2D" parent="."]
+visible = false
 collision_layer = 4
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="overlapping_room_dectetor"]
 position = Vector2(572.5, 320.5)
 shape = SubResource("RectangleShape2D_2pl7v")
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_asnft")

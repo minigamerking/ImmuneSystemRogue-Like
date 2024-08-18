@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://behqppvf6u7gt"]
+
+[ext_resource type="Script" path="res://Scripts/basic_unit.gd" id="1_pio3p"]
+[ext_resource type="Texture2D" uid="uid://b0n5stprt3sg7" path="res://Texture/Imported/T_Tilemap_Master.png" id="2_b2dw0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fg01c"]
+atlas = ExtResource("2_b2dw0")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ctqcw"]
+size = Vector2(25.6, 25.4)
+
+[node name="BasicUnit" type="CharacterBody2D"]
+scale = Vector2(5, 5)
+script = ExtResource("1_pio3p")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_fg01c")
+hframes = 4
+vframes = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ctqcw")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+target_desired_distance = 25.0
