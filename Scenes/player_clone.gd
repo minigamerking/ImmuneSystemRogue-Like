@@ -4,7 +4,8 @@ class_name PlayerClone
 signal die
 var speed : float
 var player : Player
-
+const PROJECTILE = preload("res://Scenes/projectile.tscn")
+var can_shoot = true
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -15,7 +16,15 @@ func _enter_tree():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if Input.is_action_pressed("leftclick") and can_shoot:
+			var newprojectile = PROJECTILE.instantiate()
+			newprojectile.global_position = global_position
+			newprojectile.direction = -(position - get_global_mouse_position()).normalized()
+			get_parent().add_child(newprojectile)
+			can_shoot = false
+			$projectilecd.start()
 	if player:
+		
 		if global_position.distance_to(player.global_position) > 600:
 			die.emit()
 			queue_free()
@@ -28,3 +37,7 @@ func _physics_process(delta):
 		velocity = Vector2()
 	
 	move_and_slide()
+
+
+func _on_projectilecd_timeout():
+	can_shoot = true

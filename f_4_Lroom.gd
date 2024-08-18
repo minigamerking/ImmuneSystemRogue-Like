@@ -1,7 +1,9 @@
 extends BasicRoom
 
-
 func _ready():
+	is_hall =true
+	r_dooravailble=false
+	u_dooravailble=false
 	
 	if r_dooravailble==false:
 		num_of_availble_doors-=1

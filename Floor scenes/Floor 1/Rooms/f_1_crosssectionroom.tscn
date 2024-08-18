@@ -118,5 +118,13 @@ position = Vector2(831, 891)
 detection_radius = 900.0
 move_speed = 200.0
 
+[node name="d_Door" parent="." instance=ExtResource("3_p2mr8")]
+visible = false
+position = Vector2(582, 620)
+rotation = -1.5708
+
+[node name="d_room" type="Node2D" parent="."]
+position = Vector2(0, 636)
+
 [connection signal="body_entered" from="Player_detector" to="." method="_on_player_detector_body_entered"]
 [connection signal="body_entered" from="Player_detector2" to="." method="_on_player_detector_body_entered"]

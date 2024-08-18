@@ -17,3 +17,8 @@ texture = ExtResource("1_83s5h")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_ngf6m")
+
+[node name="projectilecd" type="Timer" parent="."]
+wait_time = 0.5
+
+[connection signal="timeout" from="projectilecd" to="." method="_on_projectilecd_timeout"]

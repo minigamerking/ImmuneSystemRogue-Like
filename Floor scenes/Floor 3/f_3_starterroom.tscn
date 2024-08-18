@@ -1,0 +1,110 @@
+[gd_scene load_steps=7 format=3 uid="uid://cs56wrrl4dawm"]
+
+[ext_resource type="Script" path="res://f3_starterroom.gd" id="1_rw7hd"]
+[ext_resource type="Texture2D" uid="uid://1jl2jxa0byi2" path="res://icon.svg" id="2_0ete4"]
+[ext_resource type="PackedScene" uid="uid://cs2quat6d5vk4" path="res://Floor scenes/door.tscn" id="3_2h8n8"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pqjb3"]
+texture = ExtResource("2_0ete4")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:0/0 = 0
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+2:0/0 = 0
+2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:0/0/physics_layer_0/angular_velocity = 0.0
+3:0/0 = 0
+3:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:0/0/physics_layer_0/angular_velocity = 0.0
+0:1/0 = 0
+0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:1/0/physics_layer_0/angular_velocity = 0.0
+1:1/0 = 0
+1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:1/0/physics_layer_0/angular_velocity = 0.0
+2:1/0 = 0
+2:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:1/0/physics_layer_0/angular_velocity = 0.0
+3:1/0 = 0
+3:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:1/0/physics_layer_0/angular_velocity = 0.0
+0:2/0 = 0
+0:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:2/0/physics_layer_0/angular_velocity = 0.0
+1:2/0 = 0
+1:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:2/0/physics_layer_0/angular_velocity = 0.0
+2:2/0 = 0
+2:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:2/0/physics_layer_0/angular_velocity = 0.0
+3:2/0 = 0
+3:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:2/0/physics_layer_0/angular_velocity = 0.0
+0:3/0 = 0
+0:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:3/0/physics_layer_0/angular_velocity = 0.0
+1:3/0 = 0
+1:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:3/0/physics_layer_0/angular_velocity = 0.0
+2:3/0 = 0
+2:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:3/0/physics_layer_0/angular_velocity = 0.0
+3:3/0 = 0
+3:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:3/0/physics_layer_0/angular_velocity = 0.0
+
+[sub_resource type="TileSet" id="TileSet_gksyk"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 1
+physics_layer_0/collision_mask = 2
+sources/1 = SubResource("TileSetAtlasSource_pqjb3")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2pl7v"]
+size = Vector2(1135, 619)
+
+[node name="f3_starterroom" type="Node2D"]
+script = ExtResource("1_rw7hd")
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_gksyk")
+format = 2
+layer_0/tile_data = PackedInt32Array(35, 1, 0, 34, 1, 0, 33, 1, 0, 32, 1, 0, 29, 1, 0, 28, 1, 0, 27, 1, 0, 26, 1, 0, 25, 1, 0, 24, 1, 0, 23, 1, 0, 22, 1, 0, 21, 1, 0, 13, 1, 0, 12, 1, 0, 11, 1, 0, 10, 1, 0, 9, 1, 0, 8, 1, 0, 7, 1, 0, 6, 1, 0, 5, 1, 0, 4, 1, 0, 3, 1, 0, 2, 1, 0, 1, 1, 0, 0, 1, 0, 65571, 1, 0, 131107, 1, 0, 196643, 1, 0, 262179, 1, 0, 327715, 1, 0, 393251, 1, 0, 917539, 1, 0, 983075, 1, 0, 1048611, 1, 0, 1114147, 1, 0, 1179683, 1, 0, 1245219, 1, 0, 1245218, 1, 0, 1245217, 1, 0, 1245216, 1, 0, 1245215, 1, 0, 1245214, 1, 0, 1245213, 1, 0, 1245212, 1, 0, 1245211, 1, 0, 1245210, 1, 0, 1245209, 1, 0, 1245208, 1, 0, 1245207, 1, 0, 1245206, 1, 0, 1245197, 1, 0, 1245196, 1, 0, 1245195, 1, 0, 1245194, 1, 0, 1245193, 1, 0, 1245192, 1, 0, 1245191, 1, 0, 1245190, 1, 0, 1245189, 1, 0, 1245188, 1, 0, 1245187, 1, 0, 1245186, 1, 0, 1245185, 1, 0, 1245184, 1, 0, 65536, 1, 0, 131072, 1, 0, 196608, 1, 0, 262144, 1, 0, 327680, 1, 0, 393216, 1, 0, 983040, 1, 0, 1048576, 1, 0, 1114112, 1, 0, 1179648, 1, 0, 1245198, 1, 0, 917504, 1, 0, 14, 1, 0, 31, 1, 0, 30, 1, 0)
+
+[node name="u_room" type="Node2D" parent="."]
+position = Vector2(0, -636)
+
+[node name="d_room" type="Node2D" parent="."]
+position = Vector2(0, 636)
+
+[node name="l_room" type="Node2D" parent="."]
+position = Vector2(-1150, 0)
+
+[node name="r_room" type="Node2D" parent="."]
+position = Vector2(1150, 0)
+
+[node name="l_Door" parent="." instance=ExtResource("3_2h8n8")]
+position = Vector2(19, 330)
+
+[node name="r_Door" parent="." instance=ExtResource("3_2h8n8")]
+position = Vector2(1129, 330)
+rotation = 3.14159
+
+[node name="d_Door" parent="." instance=ExtResource("3_2h8n8")]
+position = Vector2(582, 620)
+rotation = -1.5708
+
+[node name="u_Door" parent="." instance=ExtResource("3_2h8n8")]
+position = Vector2(582, 17)
+rotation = 1.5708
+
+[node name="overlapping_room_dectetor" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="overlapping_room_dectetor"]
+position = Vector2(572.5, 320.5)
+shape = SubResource("RectangleShape2D_2pl7v")

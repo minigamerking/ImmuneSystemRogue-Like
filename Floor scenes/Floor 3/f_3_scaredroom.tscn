@@ -1,0 +1,166 @@
+[gd_scene load_steps=9 format=3 uid="uid://cl01k7yy3fp3n"]
+
+[ext_resource type="Script" path="res://Floor scenes/Floor 3/f_3_scaredroom.gd" id="1_n1pdf"]
+[ext_resource type="Texture2D" uid="uid://1jl2jxa0byi2" path="res://icon.svg" id="2_nvjc4"]
+[ext_resource type="PackedScene" uid="uid://cs2quat6d5vk4" path="res://Floor scenes/door.tscn" id="3_6kx4e"]
+[ext_resource type="PackedScene" uid="uid://kmfi5wgx8ig4" path="res://Scenes/test__enemy.tscn" id="4_d1252"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pqjb3"]
+texture = ExtResource("2_nvjc4")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:0/0 = 0
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+2:0/0 = 0
+2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:0/0/physics_layer_0/angular_velocity = 0.0
+3:0/0 = 0
+3:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:0/0/physics_layer_0/angular_velocity = 0.0
+0:1/0 = 0
+0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:1/0/physics_layer_0/angular_velocity = 0.0
+1:1/0 = 0
+1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:1/0/physics_layer_0/angular_velocity = 0.0
+2:1/0 = 0
+2:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:1/0/physics_layer_0/angular_velocity = 0.0
+3:1/0 = 0
+3:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:1/0/physics_layer_0/angular_velocity = 0.0
+0:2/0 = 0
+0:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:2/0/physics_layer_0/angular_velocity = 0.0
+1:2/0 = 0
+1:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:2/0/physics_layer_0/angular_velocity = 0.0
+2:2/0 = 0
+2:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:2/0/physics_layer_0/angular_velocity = 0.0
+3:2/0 = 0
+3:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:2/0/physics_layer_0/angular_velocity = 0.0
+0:3/0 = 0
+0:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:3/0/physics_layer_0/angular_velocity = 0.0
+1:3/0 = 0
+1:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:3/0/physics_layer_0/angular_velocity = 0.0
+2:3/0 = 0
+2:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:3/0/physics_layer_0/angular_velocity = 0.0
+3:3/0 = 0
+3:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:3/0/physics_layer_0/angular_velocity = 0.0
+
+[sub_resource type="TileSet" id="TileSet_gksyk"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 1
+physics_layer_0/collision_mask = 2
+sources/1 = SubResource("TileSetAtlasSource_pqjb3")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k23ub"]
+size = Vector2(518, 1849)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cs5jo"]
+size = Vector2(470, 1749)
+
+[node name="f_3_scaredroom" type="Node2D"]
+script = ExtResource("1_n1pdf")
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_gksyk")
+format = 2
+layer_0/tile_data = PackedInt32Array(26, 1, 0, 25, 1, 0, 24, 1, 0, 23, 1, 0, 22, 1, 0, 1245210, 1, 0, 1245194, 1, 0, 14, 1, 0, 1310730, 1, 0, 1376266, 1, 0, 1441802, 1, 0, 1507338, 1, 0, 1572874, 1, 0, 1638410, 1, 0, 1703946, 1, 0, 1769482, 1, 0, 1835018, 1, 0, 1900554, 1, 0, 1966090, 1, 0, 2031626, 1, 0, 1310746, 1, 0, 1376282, 1, 0, 1441818, 1, 0, 1507354, 1, 0, 1572890, 1, 0, 1638426, 1, 0, 1703962, 1, 0, 1769498, 1, 0, 1835034, 1, 0, 1900570, 1, 0, 1966106, 1, 0, 2031642, 1, 0, 2097178, 1, 0, 2162714, 1, 0, 2228250, 1, 0, 2293786, 1, 0, 2359322, 1, 0, 2424858, 1, 0, 2490394, 1, 0, 2555930, 1, 0, 2097162, 1, 0, 2162698, 1, 0, 2228234, 1, 0, 2293770, 1, 0, 2359306, 1, 0, 2424842, 1, 0, 2490378, 1, 0, 2555914, 1, 0, 2621450, 1, 0, 2686986, 1, 0, 2752522, 1, 0, 2818058, 1, 0, 2883594, 1, 0, 2949130, 1, 0, 3014666, 1, 0, 3080202, 1, 0, 3145738, 1, 0, 3211274, 1, 0, 3276810, 1, 0, 3342346, 1, 0, 3407882, 1, 0, 3473418, 1, 0, 3538954, 1, 0, 3604490, 1, 0, 3670026, 1, 0, 3080218, 1, 0, 3145754, 1, 0, 3211290, 1, 0, 3276826, 1, 0, 3342362, 1, 0, 3407898, 1, 0, 3473434, 1, 0, 3538970, 1, 0, 3604506, 1, 0, 3670042, 1, 0, 3735578, 1, 0, 3735577, 1, 0, 3735576, 1, 0, 3735575, 1, 0, 3735574, 1, 0, 3735566, 1, 0, 3735565, 1, 0, 3735564, 1, 0, 3735562, 1, 0, 3735563, 1, 0, 1179674, 1, 0, 1114138, 1, 0, 1048602, 1, 0, 983066, 1, 0, 917530, 1, 0, 851994, 1, 0, 786458, 1, 0, 720922, 1, 0, 655386, 1, 0, 589850, 1, 0, 524314, 1, 0, 458778, 1, 0, 393242, 1, 0, 327706, 1, 0, 262170, 1, 0, 196634, 1, 0, 131098, 1, 0, 65562, 1, 0, 1179658, 1, 0, 1114122, 1, 0, 1048586, 1, 0, 983050, 1, 0, 917514, 1, 0, 393226, 1, 0, 327690, 1, 0, 262154, 1, 0, 196618, 1, 0, 131082, 1, 0, 65546, 1, 0, 10, 1, 0, 11, 1, 0, 12, 1, 0, 13, 1, 0, 2621453, 1, 0, 2555917, 1, 0, 2490381, 1, 0, 2424846, 1, 0, 2359310, 1, 0, 2293774, 1, 0, 2293775, 1, 0, 2228239, 1, 0, 2162703, 1, 0, 2097168, 1, 0, 2031632, 1, 0, 1966096, 1, 0, 1966097, 1, 0, 1900561, 1, 0, 1835025, 1, 0, 1835026, 1, 0, 1769490, 1, 0, 1703954, 1, 0, 1703955, 1, 0, 1638419, 1, 0, 1572883, 1, 0, 2752525, 1, 0, 2686989, 1, 0, 2686990, 1, 0, 2621454, 1, 0, 2621455, 1, 0, 2555919, 1, 0, 2490383, 1, 0, 2490384, 1, 0, 2424848, 1, 0, 2359312, 1, 0, 2359313, 1, 0, 2293777, 1, 0, 2228241, 1, 0, 2162705, 1, 0, 2162706, 1, 0, 2097170, 1, 0, 2031634, 1, 0, 2031635, 1, 0, 1966099, 1, 0, 1900563, 1, 0, 1900564, 1, 0, 1835028, 1, 0, 1769492, 1, 0, 1769493, 1, 0, 1703957, 1, 0, 1638421, 1, 0, 1572885, 1, 0, 1572884, 1, 0, 1245196, 1, 0, 1179660, 1, 0, 1179661, 1, 0, 1114125, 1, 0, 1114126, 1, 0, 1048590, 1, 0, 1048591, 1, 0, 983055, 1, 0, 917520, 1, 0, 851984, 1, 0, 851985, 1, 0, 851986, 1, 0, 786450, 1, 0, 720915, 1, 0, 655380, 1, 0, 589844, 1, 0, 589845, 1, 0, 655381, 1, 0, 720917, 1, 0, 786453, 1, 0, 851989, 1, 0, 917525, 1, 0, 917524, 1, 0, 983060, 1, 0, 983059, 1, 0, 1048595, 1, 0, 1048594, 1, 0, 1048593, 1, 0, 1114129, 1, 0, 1114128, 1, 0, 1179664, 1, 0, 1179663, 1, 0, 1245199, 1, 0, 1245198, 1, 0, 1245197, 1, 0, 3276813, 1, 0, 3211277, 1, 0, 3145741, 1, 0, 3145742, 1, 0, 3080206, 1, 0, 3014670, 1, 0, 3014671, 1, 0, 2949135, 1, 0, 2949136, 1, 0, 2883600, 1, 0, 2883601, 1, 0, 2818065, 1, 0, 2818066, 1, 0, 2752531, 1, 0, 2752532, 1, 0, 2686996, 1, 0, 2686997, 1, 0, 2621461, 1, 0, 2621462, 1, 0, 2686998, 1, 0, 2752534, 1, 0, 2818070, 1, 0, 2883606, 1, 0, 2883605, 1, 0, 2949141, 1, 0, 2949140, 1, 0, 3014676, 1, 0, 3014675, 1, 0, 3080211, 1, 0, 3145747, 1, 0, 3145746, 1, 0, 3145745, 1, 0, 3211281, 1, 0, 3211280, 1, 0, 3276816, 1, 0, 3276815, 1, 0, 3276814, 1, 0)
+
+[node name="u_room" type="Node2D" parent="."]
+position = Vector2(0, -636)
+
+[node name="d_room" type="Node2D" parent="."]
+position = Vector2(0, 1858)
+
+[node name="l_room" type="Node2D" parent="."]
+position = Vector2(-833, 0)
+
+[node name="r_room" type="Node2D" parent="."]
+position = Vector2(865, 1051)
+
+[node name="l_Door" parent="." instance=ExtResource("3_6kx4e")]
+position = Vector2(336, 330)
+
+[node name="r_Door" parent="." instance=ExtResource("3_6kx4e")]
+position = Vector2(865, 1389)
+rotation = 3.14159
+
+[node name="d_Door" parent="." instance=ExtResource("3_6kx4e")]
+position = Vector2(582, 1824)
+rotation = -1.5708
+
+[node name="u_Door" parent="." instance=ExtResource("3_6kx4e")]
+position = Vector2(582, 17)
+rotation = 1.5708
+
+[node name="overlapping_room_dectetor" type="Area2D" parent="."]
+visible = false
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="overlapping_room_dectetor"]
+position = Vector2(594, 934.5)
+shape = SubResource("RectangleShape2D_k23ub")
+
+[node name="playerblockers" type="Node2D" parent="."]
+visible = false
+
+[node name="player_blocker" parent="playerblockers" instance=ExtResource("3_6kx4e")]
+position = Vector2(339, 327)
+collision_layer = 0
+collision_mask = 0
+
+[node name="player_blocker2" parent="playerblockers" instance=ExtResource("3_6kx4e")]
+position = Vector2(869, 1388)
+rotation = 3.14159
+collision_layer = 0
+collision_mask = 0
+
+[node name="player_blocker3" parent="playerblockers" instance=ExtResource("3_6kx4e")]
+position = Vector2(582, 1827)
+rotation = -1.5708
+collision_layer = 0
+collision_mask = 0
+
+[node name="player_blocker4" parent="playerblockers" instance=ExtResource("3_6kx4e")]
+position = Vector2(582, 17)
+rotation = 1.5708
+collision_layer = 0
+collision_mask = 0
+
+[node name="Player_detector" type="Area2D" parent="."]
+visible = false
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player_detector"]
+position = Vector2(594, 915.5)
+shape = SubResource("RectangleShape2D_cs5jo")
+
+[node name="enemies" type="Node2D" parent="."]
+position = Vector2(581, 156)
+
+[node name="test _enemy" parent="enemies" instance=ExtResource("4_d1252")]
+position = Vector2(157, 3.99996)
+
+[node name="test _enemy2" parent="enemies" instance=ExtResource("4_d1252")]
+position = Vector2(-135, 614)
+
+[node name="test _enemy3" parent="enemies" instance=ExtResource("4_d1252")]
+position = Vector2(145, 1490)
+
+[node name="test _enemy4" parent="enemies" instance=ExtResource("4_d1252")]
+position = Vector2(166, 938)
+
+[connection signal="body_entered" from="Player_detector" to="." method="_on_player_detector_body_entered"]

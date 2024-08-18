@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://cmwsn875htuci"]
+
+[ext_resource type="Script" path="res://Floor scenes/Floor 3/floor_3.gd" id="1_f1202"]
+[ext_resource type="PackedScene" uid="uid://c881k08qyanxk" path="res://Scenes/player.tscn" id="2_kxblu"]
+[ext_resource type="PackedScene" uid="uid://cs56wrrl4dawm" path="res://Floor scenes/Floor 3/f_3_starterroom.tscn" id="3_481yo"]
+
+[node name="Floor_3" type="Node2D"]
+position = Vector2(2, 0)
+script = ExtResource("1_f1202")
+
+[node name="player" parent="." instance=ExtResource("2_kxblu")]
+position = Vector2(557, 334)
+
+[node name="Camera2D" type="Camera2D" parent="player"]
+position = Vector2(0, 10)
+zoom = Vector2(0.1, 0.1)
+
+[node name="f3_starterroom" parent="." instance=ExtResource("3_481yo")]

@@ -1,5 +1,5 @@
 extends Node2D
-@export var max_rooms =5
+@export var max_rooms =25
 
 
 
@@ -8,12 +8,13 @@ var connected_enemies = false
 
 @export var SPEED := 400
 
-@onready var starterroom = $f1_starterroom
+@onready var starterroom = $f4_starterroom
 
 @onready var player = $player
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	Floormanager.floor_id =4
 	starterroom.addroom(max_rooms,num_of_rooms)
 	
 
