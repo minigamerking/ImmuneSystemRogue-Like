@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://epe22apbmbv1"]
 
 [ext_resource type="Script" path="res://Scripts/projectile.gd" id="1_an0nc"]
-[ext_resource type="Texture2D" uid="uid://gi8bkphekg3q" path="res://sprites/shot.png" id="2_7v7jo"]
+[ext_resource type="Texture2D" uid="uid://c4yskwaejgd3x" path="res://sprites/dna_b.png" id="2_nwjyb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kfov3"]
 
@@ -16,7 +16,7 @@ script = ExtResource("1_an0nc")
 shape = SubResource("RectangleShape2D_kfov3")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_7v7jo")
+texture = ExtResource("2_nwjyb")
 
 [node name="hitbox" type="Area2D" parent="."]
 
