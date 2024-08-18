@@ -4,6 +4,11 @@ const PROJECTILE = preload("res://Scenes/projectile.tscn")
 
 const SPEED = 600
 var can_shoot = true
+const D_SPEED = 10000
+var can_dash = true
+var dash_time = 6
+
+
 func _physics_process(delta):
 	# Add the gravity.
 	# Handle jump.
@@ -11,8 +16,16 @@ func _physics_process(delta):
 	var direction_x = Input.get_axis("left", "right")
 	var direction_y = Input.get_axis("up","down")
 	if direction_x or direction_y:
-		velocity.x = direction_x * SPEED
-		velocity.y = direction_y *SPEED
+		if Input.is_action_just_pressed("dash") and can_dash:
+			dash_time -= delta
+			velocity.x = direction_x * D_SPEED * delta
+			velocity.y = direction_y *D_SPEED * delta
+			print("dash")
+			can_dash = false
+			$Dash_cooldown.start()
+		else:
+			velocity.x = direction_x * SPEED
+			velocity.y = direction_y *SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.y = move_toward(velocity.y,0,SPEED)
@@ -49,3 +62,6 @@ func _process(delta):
 
 func _on_projectilecd_timeout():
 	can_shoot = true
+	
+func _on_dash_cooldown_timeout():
+	can_dash = true
