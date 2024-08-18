@@ -21,30 +21,12 @@ func _physics_process(delta):
 
 
 func _process(delta):
-	if Input.is_action_pressed("shootdown") and can_shoot:
+	if Input.is_action_pressed("leftclick") and can_shoot:
 		var newprojectile = PROJECTILE.instantiate()
-		newprojectile.global_position =self.global_position
-		newprojectile.direction= Vector2(0,1)
+		newprojectile.global_position = global_position
+		newprojectile.direction = -(position - get_global_mouse_position()).normalized()
 		get_parent().add_child(newprojectile)
-		can_shoot=false
-	elif Input.is_action_pressed("shootup") and can_shoot:
-		var newprojectile = PROJECTILE.instantiate()
-		newprojectile.global_position =self.global_position
-		newprojectile.direction= Vector2(0,-1)
-		get_parent().add_child(newprojectile)
-		can_shoot=false
-	elif Input.is_action_pressed("shootright")and can_shoot:
-		var newprojectile = PROJECTILE.instantiate()
-		newprojectile.global_position =self.global_position
-		newprojectile.direction= Vector2(1,0)
-		get_parent().add_child(newprojectile)
-		can_shoot=false
-	elif Input.is_action_pressed("shootleft") and can_shoot:
-		var newprojectile = PROJECTILE.instantiate()
-		newprojectile.global_position =self.global_position
-		newprojectile.direction= Vector2(-1,0)
-		get_parent().add_child(newprojectile)
-		can_shoot=false
+		can_shoot = false
 
 
 func _on_projectilecd_timeout():

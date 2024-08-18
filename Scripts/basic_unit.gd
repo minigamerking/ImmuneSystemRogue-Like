@@ -35,14 +35,14 @@ func _process(delta):
 		navigation_agent.set_target_position(player.global_position)
 
 func _physics_process(delta):
-	if int(global_position.distance_to(player.global_position)) > 350:
+	if int(global_position.distance_to(player.global_position)) > 550:
 			current_state = "idle"
-	if int(global_position.distance_to(player.global_position)) < 200:
+	if int(global_position.distance_to(player.global_position)) < 350:
 		current_state = "chase"
 	
 	
 	if navigation_agent.is_target_reachable():
-		if int(navigation_agent.distance_to_target()) > 80:
+		if int(navigation_agent.distance_to_target()) > 110:
 			var next_location = navigation_agent.get_next_path_position()
 			var direction = global_position.direction_to(next_location).normalized()
 			global_position += direction * delta * move_speed
