@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0n5stprt3sg7"
-path="res://.godot/imported/T_Tilemap_Master.png-39ca799a4fd726dc3ccc934c44cf8137.ctex"
+uid="uid://6urbrjglig3u"
+path="res://.godot/imported/Platelets _enemy.png-4010a73056a9fd6d2679762b782adf2e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Texture/Imported/T_Tilemap_Master.png"
-dest_files=["res://.godot/imported/T_Tilemap_Master.png-39ca799a4fd726dc3ccc934c44cf8137.ctex"]
+source_file="res://sprites/Platelets _enemy.png"
+dest_files=["res://.godot/imported/Platelets _enemy.png-4010a73056a9fd6d2679762b782adf2e.ctex"]
 
 [params]
 
