@@ -7,6 +7,7 @@ var max_cell_count = 5
 var player : Player
 var playerclone = preload("res://Scenes/player_clone.tscn")
 
+var dmglevel = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
