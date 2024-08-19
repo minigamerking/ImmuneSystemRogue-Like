@@ -1,20 +1,18 @@
 [gd_scene load_steps=3 format=3 uid="uid://cs2quat6d5vk4"]
 
-[sub_resource type="CanvasTexture" id="CanvasTexture_fnqoi"]
+[ext_resource type="Texture2D" uid="uid://cuggvqbj8147s" path="res://sprites/Door.png" id="1_n00gi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qxlk6"]
-size = Vector2(51, 225)
+size = Vector2(67.5, 225)
 
 [node name="Door" type="StaticBody2D"]
-position = Vector2(34, -1)
 collision_mask = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(0, 0, 0, 1)
-position = Vector2(1.5, 2.49999)
-scale = Vector2(49, 225)
-texture = SubResource("CanvasTexture_fnqoi")
+position = Vector2(0.5, 1.5)
+scale = Vector2(1.96875, 7.09375)
+texture = ExtResource("1_n00gi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(2.5, 3)
+position = Vector2(0.25, 2.5)
 shape = SubResource("RectangleShape2D_qxlk6")
