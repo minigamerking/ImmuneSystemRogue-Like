@@ -30,7 +30,7 @@ func _process(delta):
 			queue_free()
 
 func _physics_process(delta):
-	if global_position.distance_to(player.global_position) > 50:
+	if global_position.distance_to(player.global_position) > 100:
 		var direction = (player.position - position).normalized()
 		velocity = direction * speed
 	else:

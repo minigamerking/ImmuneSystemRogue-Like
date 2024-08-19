@@ -22,12 +22,12 @@ var current_state = "idle"
 
 var player : Player
 
-# Called when the node enters the scene tree for the first time.
+#Called when the node enters the scene tree for the first time.
 func _ready():
 	player = get_tree().get_first_node_in_group("Player")
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+#Called every frame. 'delta' is the elapsed time since the previous frame.
 func set_target():
 	if current_state == "idle":
 		if int(navigation_agent.distance_to_target()) > 10:
@@ -43,8 +43,8 @@ func path_find(delta):
 		current_state = "idle"
 	if int(global_position.distance_to(player.global_position)) < 350:
 		current_state = "chase"
-	
-	
+
+
 	if navigation_agent.is_target_reachable() and enabled:
 		if int(navigation_agent.distance_to_target()) > stopdistance:
 			var next_location = navigation_agent.get_next_path_position()
@@ -54,4 +54,3 @@ func path_find(delta):
 		current_state = "idle"
 func _physics_process(delta):
 	path_find(delta)
-	

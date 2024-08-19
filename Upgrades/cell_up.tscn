@@ -1,10 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://cic6257d4iofj"]
+[gd_scene load_steps=4 format=3 uid="uid://b7wpi3wa0e6kj"]
 
 [ext_resource type="Script" path="res://Upgrades/cell_up.gd" id="1_dwtq0"]
 [ext_resource type="Texture2D" uid="uid://bdtxeal0iqu31" path="res://sprites/division.png" id="2_1x5nm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yh3ha"]
-size = Vector2(20, 27)
+size = Vector2(23, 27)
 
 [node name="cell_up" type="Area2D"]
 collision_mask = 2
@@ -15,7 +15,7 @@ rotation = 1.5708
 texture = ExtResource("2_1x5nm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -1.5)
+position = Vector2(1.5, 1)
 shape = SubResource("RectangleShape2D_yh3ha")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
