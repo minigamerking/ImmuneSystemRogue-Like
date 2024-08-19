@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://cfulhs3gxua0"]
+[gd_scene load_steps=9 format=3 uid="uid://cfulhs3gxua0"]
 
 [ext_resource type="Script" path="res://Floor scenes/Floor 1/Rooms/f1_crosssectionroom.gd" id="1_4olwo"]
 [ext_resource type="TileSet" uid="uid://br2jrdhmn80al" path="res://Texture/ReadyForUse/TileSet_Master.tres" id="2_xqy34"]
 [ext_resource type="PackedScene" uid="uid://cs2quat6d5vk4" path="res://Floor scenes/door.tscn" id="3_p2mr8"]
-[ext_resource type="PackedScene" uid="uid://ck7kdw1ggehwl" path="res://enemies/platelets_e.tscn" id="4_su04q"]
+[ext_resource type="PackedScene" uid="uid://ck7kdw1ggehwl" path="res://enemies/virus_e.tscn" id="4_rap2x"]
+[ext_resource type="PackedScene" uid="uid://1yuid3kbfsc2" path="res://enemies/platelets_E.tscn" id="5_ohkti"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i71fe"]
 size = Vector2(1604, 1028)
@@ -93,35 +94,27 @@ shape = SubResource("RectangleShape2D_op8kr")
 
 [node name="enemies" type="Node2D" parent="."]
 
-[node name="platelets_E" parent="enemies" instance=ExtResource("4_su04q")]
-position = Vector2(545, 168)
+[node name="platelets_E" parent="enemies" instance=ExtResource("4_rap2x")]
+position = Vector2(806, 179)
 detection_radius = 900.0
-move_speed = 200.0
 
-[node name="platelets_E2" parent="enemies" instance=ExtResource("4_su04q")]
-position = Vector2(323, 396)
+[node name="platelets_E2" parent="enemies" instance=ExtResource("4_rap2x")]
+position = Vector2(429, 477)
 detection_radius = 900.0
-move_speed = 200.0
 
-[node name="platelets_E3" parent="enemies" instance=ExtResource("4_su04q")]
-position = Vector2(940, 261)
-detection_radius = 900.0
-move_speed = 200.0
-
-[node name="platelets_E6" parent="enemies" instance=ExtResource("4_su04q")]
+[node name="platelets_E6" parent="enemies" instance=ExtResource("4_rap2x")]
 position = Vector2(1366, 450)
 detection_radius = 900.0
-move_speed = 200.0
 
-[node name="platelets_E4" parent="enemies" instance=ExtResource("4_su04q")]
-position = Vector2(730, 498)
-detection_radius = 900.0
-move_speed = 200.0
-
-[node name="platelets_E5" parent="enemies" instance=ExtResource("4_su04q")]
+[node name="platelets_E5" parent="enemies" instance=ExtResource("4_rap2x")]
 position = Vector2(831, 891)
 detection_radius = 900.0
-move_speed = 200.0
+
+[node name="platelets_E7" parent="enemies" instance=ExtResource("5_ohkti")]
+position = Vector2(756, 501)
+
+[node name="platelets_E8" parent="enemies" instance=ExtResource("5_ohkti")]
+position = Vector2(1010, 391)
 
 [node name="d_Door" parent="." instance=ExtResource("3_p2mr8")]
 visible = false

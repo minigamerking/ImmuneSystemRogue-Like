@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Floor scenes/Floor5/Rooms/f_5_vert_rooms.gd" id="1_ryijb"]
 [ext_resource type="TileSet" uid="uid://br2jrdhmn80al" path="res://Texture/ReadyForUse/TileSet_Master.tres" id="2_7tpnk"]
 [ext_resource type="PackedScene" uid="uid://cs2quat6d5vk4" path="res://Floor scenes/door.tscn" id="3_2bu8m"]
-[ext_resource type="PackedScene" uid="uid://ck7kdw1ggehwl" path="res://enemies/platelets_e.tscn" id="4_dd25o"]
+[ext_resource type="PackedScene" uid="uid://ck7kdw1ggehwl" path="res://enemies/virus_e.tscn" id="4_dd25o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k34y3"]
 size = Vector2(2064, 2068)
