@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://b7fjn0b50onbs"]
+[gd_scene load_steps=7 format=3 uid="uid://b7fjn0b50onbs"]
 
 [ext_resource type="Script" path="res://Floor scenes/Floor.gd" id="1_yvjb4"]
 [ext_resource type="PackedScene" uid="uid://cc0je3wn7qcq2" path="res://Floor scenes/Floor 1/Rooms/f_1_starterroom.tscn" id="2_tunn0"]
 [ext_resource type="PackedScene" uid="uid://c881k08qyanxk" path="res://Scenes/player.tscn" id="3_hhxdy"]
 [ext_resource type="TileSet" uid="uid://br2jrdhmn80al" path="res://Texture/ReadyForUse/TileSet_Master.tres" id="4_7c2k7"]
+[ext_resource type="PackedScene" uid="uid://d16r4n38rkwgm" path="res://Upgrades/fire_up.tscn" id="5_vnjws"]
+[ext_resource type="PackedScene" uid="uid://cic6257d4iofj" path="res://Upgrades/cell_up.tscn" id="6_mwcgn"]
 
 [node name="floor_template" type="Node2D"]
 script = ExtResource("1_yvjb4")
@@ -27,3 +29,9 @@ position = Vector2(587, 306)
 [node name="Camera2D" type="Camera2D" parent="player"]
 position = Vector2(0, 10)
 zoom = Vector2(0.5, 0.5)
+
+[node name="fire_up" parent="." instance=ExtResource("5_vnjws")]
+position = Vector2(358, 337)
+
+[node name="cell_up" parent="." instance=ExtResource("6_mwcgn")]
+position = Vector2(603, 164)

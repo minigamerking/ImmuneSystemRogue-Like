@@ -23,6 +23,7 @@ func _process(delta):
 		newprojectile.direction = -(position - get_global_mouse_position()).normalized()
 		get_parent().add_child(newprojectile)
 		can_shoot = false
+		$projectilecd.wait_time = Playermanager.fire_speed
 		$projectilecd.start()
 	
 

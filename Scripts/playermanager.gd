@@ -6,8 +6,9 @@ var max_cell_count = 5
 
 var player : Player
 var playerclone = preload("res://Scenes/player_clone.tscn")
-
+var fire_speed= 0.5
 var dmglevel = 0
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -18,6 +19,12 @@ func _ready():
 func _process(delta):
 	pass
 
+func up_firespd():
+	fire_speed= fire_speed/2
+func up_maxcell():
+	max_cell_count =7
+	print("MAX CEELS"+ str(max_cell_count))
+
 
 func connect_enemies():
 	await get_tree().create_timer(0.1).timeout
@@ -26,7 +33,9 @@ func connect_enemies():
 
 
 func _enemy_on_death():
-	if randf() > 0.25 and (curr_cell_count < max_cell_count):
+	print("c_cell"+str(curr_cell_count))
+	print("m_cell"+str(max_cell_count))
+	if curr_cell_count<max_cell_count:#randf() > 0.25 and (curr_cell_count < max_cell_count):
 		curr_cell_count += 1
 		var clone = playerclone.instantiate()
 		clone.global_position = player.global_position
@@ -36,3 +45,4 @@ func _enemy_on_death():
 
 func _clone_die():
 	curr_cell_count -= 1
+	print("died")
