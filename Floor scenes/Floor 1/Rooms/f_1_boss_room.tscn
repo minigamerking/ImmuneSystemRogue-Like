@@ -3,13 +3,13 @@
 [ext_resource type="Script" path="res://Floor scenes/Floor 1/Rooms/f_1_boss_room.gd" id="1_blnyh"]
 [ext_resource type="TileSet" uid="uid://br2jrdhmn80al" path="res://Texture/ReadyForUse/TileSet_Master.tres" id="2_sgh2m"]
 [ext_resource type="PackedScene" uid="uid://cs2quat6d5vk4" path="res://Floor scenes/door.tscn" id="3_eqy74"]
-[ext_resource type="Texture2D" uid="uid://1jl2jxa0byi2" path="res://icon.svg" id="4_elkif"]
+[ext_resource type="Texture2D" uid="uid://chdy7fhmavqqj" path="res://sprites/virus_enemy_Y.png" id="4_ei1pc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2pl7v"]
 size = Vector2(1135, 619)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_nxnw3"]
-size = Vector2(107, 105)
+[sub_resource type="CircleShape2D" id="CircleShape2D_1m4v3"]
+radius = 42.0
 
 [node name="f1Boss_room" type="Node2D"]
 z_index = 4
@@ -65,10 +65,11 @@ collision_mask = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="exit"]
 modulate = Color(0, 0.612385, 0.285099, 1)
-texture = ExtResource("4_elkif")
+scale = Vector2(3, 3)
+texture = ExtResource("4_ei1pc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="exit"]
-position = Vector2(-0.5, -2.5)
-shape = SubResource("RectangleShape2D_nxnw3")
+position = Vector2(0, -1)
+shape = SubResource("CircleShape2D_1m4v3")
 
 [connection signal="body_entered" from="exit" to="." method="_on_exit_body_entered"]
