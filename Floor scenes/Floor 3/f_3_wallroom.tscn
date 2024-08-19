@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b2ccchcxgt50g"]
+[gd_scene load_steps=9 format=3 uid="uid://8lx02f0l0wkt"]
 
 [ext_resource type="Script" path="res://Floor scenes/Floor 3/f_3_wallroom.gd" id="1_7btny"]
 [ext_resource type="Texture2D" uid="uid://1jl2jxa0byi2" path="res://icon.svg" id="2_wuumj"]

@@ -100,9 +100,9 @@ func addroom(max_rooms , num_of_rooms):
 						4:
 							room =preload("res://Floor scenes/Floor 3/f_3_scaredroom.tscn")
 						10:
-							room = preload("res://Floor scenes/Floor 3/f_3_boss_room.tscn")
+							room =preload("res://Floor scenes/Floor 1/Rooms/f_1_boss_room.tscn")
 						11:
-							room=preload("res://Floor scenes/Floor 3/f_3_treasure_room.tscn")
+							room=preload("res://Floor scenes/Floor 1/Rooms/f_1_treasure_room.tscn")
 				4:
 					match room_id:
 						1:
@@ -114,9 +114,9 @@ func addroom(max_rooms , num_of_rooms):
 						4:
 							room =preload("res://Floor scenes/Floor4/Rooms/f_4_rev_lroom.tscn")
 						10:
-							room = preload("res://Floor scenes/Floor 3/f_3_boss_room.tscn")
+							room =preload("res://Floor scenes/Floor 1/Rooms/f_1_boss_room.tscn")
 						11:
-							room=preload("res://Floor scenes/Floor 3/f_3_treasure_room.tscn")
+							room=preload("res://Floor scenes/Floor 1/Rooms/f_1_treasure_room.tscn")
 				5:
 					match room_id:
 						1:
@@ -329,5 +329,5 @@ func _on_player_detector_body_entered(body):
 		var doors =$playerblockers.get_children()
 		print("closing room")
 		for door in doors:
-			door.set_collision_layer_value(3,true)
+			door.set_collision_layer_value(1,true)
 			

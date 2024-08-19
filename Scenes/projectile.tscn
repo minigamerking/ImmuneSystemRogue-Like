@@ -10,6 +10,7 @@ size = Vector2(36, 32)
 
 [node name="projectile" type="CharacterBody2D"]
 collision_layer = 8
+collision_mask = 33
 script = ExtResource("1_an0nc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -20,6 +21,7 @@ scale = Vector2(0.25, 0.25)
 texture = ExtResource("2_wgd65")
 
 [node name="hitbox" type="Area2D" parent="."]
+collision_mask = 33
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
 position = Vector2(0, -1)
