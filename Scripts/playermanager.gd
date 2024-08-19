@@ -6,7 +6,7 @@ var max_cell_count = 5
 
 var player : Player
 var playerclone = preload("res://Scenes/player_clone.tscn")
-
+var fire_speed= 0.5
 var dmglevel = 0
 
 
@@ -18,6 +18,12 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
+
+func up_firespd():
+	fire_speed= fire_speed/2
+func up_maxcell():
+	max_cell_count =7
+	print("MAX CEELS"+ str(max_cell_count))
 
 
 func connect_enemies():
