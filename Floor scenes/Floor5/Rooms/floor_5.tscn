@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dnm5p8obceeme"]
+[gd_scene load_steps=6 format=3 uid="uid://dnm5p8obceeme"]
 
 [ext_resource type="Script" path="res://Floor_5.gd" id="1_vjaw6"]
 [ext_resource type="TileSet" uid="uid://br2jrdhmn80al" path="res://Texture/ReadyForUse/TileSet_Master.tres" id="2_qlc4x"]
 [ext_resource type="PackedScene" uid="uid://c881k08qyanxk" path="res://Scenes/player.tscn" id="3_pl4tv"]
 [ext_resource type="PackedScene" uid="uid://ds1mnk3jon1ih" path="res://Floor scenes/Floor5/Rooms/f_5_starterroom.tscn" id="4_u8eu2"]
+[ext_resource type="PackedScene" uid="uid://dq48mais20lyi" path="res://Scenes/load_screen.tscn" id="5_oppt4"]
 
 [node name="Floor_5" type="Node2D"]
 script = ExtResource("1_vjaw6")
@@ -25,3 +26,9 @@ position = Vector2(1048, 1031)
 position = Vector2(0, 10)
 
 [node name="f5_starterroom" parent="." instance=ExtResource("4_u8eu2")]
+
+[node name="Load screen" parent="." instance=ExtResource("5_oppt4")]
+offset_left = 237.0
+offset_top = 482.0
+offset_right = 237.0
+offset_bottom = 482.0

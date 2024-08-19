@@ -29,6 +29,7 @@ func  addroom(max,cur):
 
 
 func _on_exit_body_entered(body):
+	Floormanager.floorgenerated = false
 	match Floormanager.floor_id:
 		1:
 			Floormanager.floor_id+=1

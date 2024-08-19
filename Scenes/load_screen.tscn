@@ -1,0 +1,34 @@
+[gd_scene load_steps=4 format=3 uid="uid://dq48mais20lyi"]
+
+[ext_resource type="Script" path="res://Scenes/load_screen.gd" id="1_5ndho"]
+[ext_resource type="Texture2D" uid="uid://cuggvqbj8147s" path="res://sprites/Door.png" id="1_dqy5s"]
+[ext_resource type="FontFile" uid="uid://dcs2ufu8dcnys" path="res://GomePixel-ARJd7.otf" id="2_bdwxx"]
+
+[node name="Load screen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5ndho")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+modulate = Color(1, 0.316539, 0.318284, 1)
+offset_right = 1154.0
+offset_bottom = 647.0
+texture = ExtResource("1_dqy5s")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer"]
+offset_left = 138.0
+offset_top = 137.0
+offset_right = 972.0
+offset_bottom = 446.0
+theme_override_fonts/normal_font = ExtResource("2_bdwxx")
+theme_override_font_sizes/normal_font_size = 48
+text = "You are a virus.
+Your mission is to take over this body and infect larger and larger cells.
+Your first stop...The bloodstream
+"

@@ -9,11 +9,11 @@ var can_shoot = true
 func _physics_process(delta):
 	# Add the gravity.
 	# Handle jump.
+	if Floormanager.floorgenerated ==true:
+		var direction = Input.get_vector("left","right","up","down")
+		velocity = velocity.lerp(direction * SPEED, 0.075)
 
-	var direction = Input.get_vector("left","right","up","down")
-	velocity = velocity.lerp(direction * SPEED, 0.075)
-
-	move_and_slide()
+		move_and_slide()
 
 
 func _process(delta):

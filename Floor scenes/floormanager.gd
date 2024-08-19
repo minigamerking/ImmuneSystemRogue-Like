@@ -1,7 +1,7 @@
 extends Node
 
 var floor_id =1
-
+var floorgenerated= false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
