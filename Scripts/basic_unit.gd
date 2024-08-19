@@ -1,8 +1,8 @@
 extends CharacterBody2D
 class_name Enemy
 
-@export var detection_radius := 200.0
-@export var move_speed := 50.0
+@export var detection_radius := 1000.0
+@export var move_speed := 200
 @onready var navigation_agent = $NavigationAgent2D
 
 @export var hp = 5

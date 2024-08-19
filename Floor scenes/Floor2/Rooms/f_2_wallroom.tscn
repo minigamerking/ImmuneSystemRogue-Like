@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://1jl2jxa0byi2" path="res://icon.svg" id="2_1h0s0"]
 [ext_resource type="Texture2D" uid="uid://brooue1hbfwx5" path="res://Texture/ReadyForUse/T_Tilemap_Master.png" id="2_dn1r8"]
 [ext_resource type="PackedScene" uid="uid://cs2quat6d5vk4" path="res://Floor scenes/door.tscn" id="3_llt3c"]
-[ext_resource type="PackedScene" uid="uid://ck7kdw1ggehwl" path="res://enemies/platelets_e.tscn" id="5_bbkja"]
+[ext_resource type="PackedScene" uid="uid://ck7kdw1ggehwl" path="res://enemies/virus_e.tscn" id="5_bbkja"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o2k63"]
 texture = ExtResource("2_dn1r8")
