@@ -27,7 +27,10 @@ func _process(delta):
 		$projectilecd.start()
 	
 
-
+func _ready():
+	match Floormanager.floor_id:
+		2:
+			sprite_2d.texture =preload("res://sprites/Platelets _enemy.png")
 
 func _on_projectilecd_timeout():
 	can_shoot = true

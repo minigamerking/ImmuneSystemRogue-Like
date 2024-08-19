@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const SPEED = 900
+const SPEED = 700
 
 var direction: Vector2 = Vector2(0,1)
 @export var dmg = 1

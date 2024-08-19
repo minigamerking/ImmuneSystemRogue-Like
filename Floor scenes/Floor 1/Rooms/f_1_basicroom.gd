@@ -275,6 +275,7 @@ func addroom(max_rooms , num_of_rooms):
 								added_rooms+=1
 								num_of_rooms+=1
 		if fail_count>=10:
+			print("reset")
 			get_tree().reload_current_scene()
 		else:
 			get_parent().num_of_rooms+= added_rooms

@@ -89,52 +89,52 @@ shape = SubResource("RectangleShape2D_mnasu")
 [node name="enemies" type="Node2D" parent="."]
 position = Vector2(581, 156)
 
-[node name="platelets_E" parent="." instance=ExtResource("4_qgabr")]
-position = Vector2(480, 644)
+[node name="platelets_E" parent="enemies" instance=ExtResource("4_qgabr")]
+position = Vector2(-101, 488)
 scale = Vector2(1, 1)
 
-[node name="platelets_E2" parent="." instance=ExtResource("4_qgabr")]
-position = Vector2(383, 507)
+[node name="platelets_E2" parent="enemies" instance=ExtResource("4_qgabr")]
+position = Vector2(-198, 351)
 scale = Vector2(1, 1)
 
-[node name="platelets_E3" parent="." instance=ExtResource("4_qgabr")]
-position = Vector2(730, 1277)
+[node name="platelets_E3" parent="enemies" instance=ExtResource("4_qgabr")]
+position = Vector2(149, 1121)
 scale = Vector2(1, 1)
 
-[node name="platelets_E4" parent="." instance=ExtResource("4_qgabr")]
-position = Vector2(909, 1434)
+[node name="platelets_E4" parent="enemies" instance=ExtResource("4_qgabr")]
+position = Vector2(328, 1278)
 scale = Vector2(1, 1)
 
-[node name="platelets_E5" parent="." instance=ExtResource("4_qgabr")]
-position = Vector2(1109, 1800)
+[node name="platelets_E5" parent="enemies" instance=ExtResource("4_qgabr")]
+position = Vector2(528, 1644)
 scale = Vector2(1, 1)
 
-[node name="platelets_E6" parent="." instance=ExtResource("4_qgabr")]
-position = Vector2(1109, 1706)
+[node name="platelets_E6" parent="enemies" instance=ExtResource("4_qgabr")]
+position = Vector2(528, 1550)
 scale = Vector2(1, 1)
 
-[node name="virus" parent="." instance=ExtResource("5_qpn4h")]
-position = Vector2(750, 324)
+[node name="virus" parent="enemies" instance=ExtResource("5_qpn4h")]
+position = Vector2(169, 168)
 scale = Vector2(2, 2)
 
-[node name="virus2" parent="." instance=ExtResource("5_qpn4h")]
-position = Vector2(689, 640)
+[node name="virus2" parent="enemies" instance=ExtResource("5_qpn4h")]
+position = Vector2(108, 484)
 scale = Vector2(2, 2)
 
-[node name="virus3" parent="." instance=ExtResource("5_qpn4h")]
-position = Vector2(496, 1219)
+[node name="virus3" parent="enemies" instance=ExtResource("5_qpn4h")]
+position = Vector2(-85, 1063)
 scale = Vector2(2, 2)
 
-[node name="virus4" parent="." instance=ExtResource("5_qpn4h")]
-position = Vector2(575, 1756)
+[node name="virus4" parent="enemies" instance=ExtResource("5_qpn4h")]
+position = Vector2(-6, 1600)
 scale = Vector2(2, 2)
 
-[node name="virus5" parent="." instance=ExtResource("5_qpn4h")]
-position = Vector2(1246, 1561)
+[node name="virus5" parent="enemies" instance=ExtResource("5_qpn4h")]
+position = Vector2(665, 1405)
 scale = Vector2(2, 2)
 
-[node name="virus6" parent="." instance=ExtResource("5_qpn4h")]
-position = Vector2(1612, 1756)
+[node name="virus6" parent="enemies" instance=ExtResource("5_qpn4h")]
+position = Vector2(1031, 1600)
 scale = Vector2(2, 2)
 
 [connection signal="body_entered" from="Player_detector" to="." method="_on_player_detector_body_entered"]
