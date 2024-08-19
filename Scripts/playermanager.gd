@@ -9,6 +9,7 @@ var playerclone = preload("res://Scenes/player_clone.tscn")
 
 var dmglevel = 0
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	player = get_tree().get_first_node_in_group("Player")
@@ -26,7 +27,9 @@ func connect_enemies():
 
 
 func _enemy_on_death():
-	if randf() > 0.25 and (curr_cell_count < max_cell_count):
+	print("c_cell"+str(curr_cell_count))
+	print("m_cell"+str(max_cell_count))
+	if curr_cell_count<max_cell_count:#randf() > 0.25 and (curr_cell_count < max_cell_count):
 		curr_cell_count += 1
 		var clone = playerclone.instantiate()
 		clone.global_position = player.global_position
@@ -36,3 +39,4 @@ func _enemy_on_death():
 
 func _clone_die():
 	curr_cell_count -= 1
+	print("died")
