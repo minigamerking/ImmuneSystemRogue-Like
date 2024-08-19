@@ -8,7 +8,7 @@ class_name Enemy
 @export var hp = 5
 var enabled = false
 signal update_enemy_count
-
+var stopdistance = 100
 
 func takedmg(dmg):
 	hp-=dmg
@@ -28,24 +28,30 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func set_target():
 	if current_state == "idle":
 		if int(navigation_agent.distance_to_target()) > 10:
 			navigation_agent.set_target_position(regular_pos)
 	if current_state == "chase":
 		navigation_agent.set_target_position(player.global_position)
 
-func _physics_process(delta):
+
+func _process(delta):
+	set_target()
+func path_find(delta):
 	if int(global_position.distance_to(player.global_position)) > 550:
-			current_state = "idle"
+		current_state = "idle"
 	if int(global_position.distance_to(player.global_position)) < 350:
 		current_state = "chase"
 	
 	
 	if navigation_agent.is_target_reachable() and enabled:
-		if int(navigation_agent.distance_to_target()) > 110:
+		if int(navigation_agent.distance_to_target()) > stopdistance:
 			var next_location = navigation_agent.get_next_path_position()
 			var direction = global_position.direction_to(next_location).normalized()
 			global_position += direction * delta * move_speed
 	else:
 		current_state = "idle"
+func _physics_process(delta):
+	path_find(delta)
+	
