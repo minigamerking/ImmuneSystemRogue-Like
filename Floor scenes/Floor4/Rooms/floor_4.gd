@@ -1,5 +1,5 @@
 extends Node2D
-@export var max_rooms =25
+@export var max_rooms =7
 
 
 
