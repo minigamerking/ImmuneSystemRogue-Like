@@ -8,6 +8,23 @@ const ENEMY_PROJECTILE = preload("res://enemies/enemy_projectile.tscn")
 func _ready():
 	player = get_tree().get_first_node_in_group("Player")
 	stopdistance = 270
+	
+	match Floormanager.floor_id:
+		2:
+			sprite_2d.texture =preload("res://sprites/virus_enemy_P.png")
+		3:
+			sprite_2d.texture =preload("res://sprites/red_BC.png")
+		4:
+			sprite_2d.texture= preload("res://sprites/white_BC.png")
+		5:
+			var texture_chance = randi_range(2,4)
+			match texture_chance:
+				2:
+					sprite_2d.texture =preload("res://sprites/virus_enemy_P.png")
+				3:
+					sprite_2d.texture =preload("res://sprites/red_BC.png")
+				4:
+					sprite_2d.texture= preload("res://sprites/white_BC.png")
 
 func _process(delta):
 	set_target()

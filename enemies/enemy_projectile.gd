@@ -14,8 +14,11 @@ func _physics_process(delta):
 	velocity= SPEED* direction
 	
 	move_and_slide()
-	
 
+
+func _ready():
+	if Floormanager.floor_id >=3:
+		proj_sprite.texture =preload("res://sprites/antibody.png")
 
 func _on_hitbox_body_entered(body):
 	#if body is Player:
