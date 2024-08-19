@@ -57,7 +57,7 @@ func addroom(max_rooms , num_of_rooms):
 				room_id = 10
 			if rooms_to_add >1 and added_rooms ==0:
 				var treasure_chance = randi_range(1,2)
-				if treasure_chance ==2:
+				if treasure_chance ==2 and Floormanager.floor_id !=5:
 					room_id = 11
 			match  Floormanager.floor_id:
 				1:
@@ -117,13 +117,26 @@ func addroom(max_rooms , num_of_rooms):
 							room = preload("res://Floor scenes/Floor 3/f_3_boss_room.tscn")
 						11:
 							room=preload("res://Floor scenes/Floor 3/f_3_treasure_room.tscn")
+				5:
+					match room_id:
+						1:
+							room =preload("res://Floor scenes/Floor5/Rooms/f_5_diarooms.tscn")
+						2:
+							room = preload("res://Floor scenes/Floor5/Rooms/f_5_holerooms.tscn")
+						3:
+							room =preload("res://Floor scenes/Floor5/Rooms/f_5_hor_rooms.tscn")
+						4:
+							room = preload("res://Floor scenes/Floor5/Rooms/f_5_vert_rooms.tscn")
+						10:
+							room = preload("res://Floor scenes/Floor5/Rooms/f_5_bossroom.tscn")
+					
 			match door_id :
 				1:
 					if u_dooravailble==true:
 						newroom = room.instantiate()
 						if newroom.d_dooravailble==true:
 							newroom.global_position = u_room.global_position
-							if room_id == 4:
+							if room_id == 4 and Floormanager.floor_id!=5:
 								
 								
 								newroom.global_position.y -=1219
@@ -189,14 +202,14 @@ func addroom(max_rooms , num_of_rooms):
 						if newroom.r_dooravailble==true:
 							newroom.global_position = l_room.global_position
 							
-							if room_id ==3:
+							if room_id ==3 and Floormanager.floor_id !=5:
 								if Floormanager.floor_id == 4:
 									newroom.global_position.x -= 708
 									newroom.global_position.y -= 1264
 								else:
 									newroom.global_position.x -= 492 
 									newroom.global_position.y -= 357
-							elif room_id == 4:
+							elif room_id == 4 and Floormanager.floor_id !=5:
 								if Floormanager.floor_id == 4:
 									newroom.global_position.y -=77
 									newroom.global_position.x +=770
@@ -234,7 +247,7 @@ func addroom(max_rooms , num_of_rooms):
 						newroom = room.instantiate()
 						if newroom.l_dooravailble==true:
 							newroom.global_position = r_room.global_position
-							if room_id == 4:
+							if room_id == 4 and Floormanager.floor_id !=5:
 								
 								newroom.global_position.x -=322
 							newroom.l_dooravailble=false
