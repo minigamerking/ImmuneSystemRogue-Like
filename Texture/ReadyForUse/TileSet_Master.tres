@@ -1,9 +1,9 @@
 [gd_resource type="TileSet" load_steps=3 format=3 uid="uid://br2jrdhmn80al"]
 
-[ext_resource type="Texture2D" uid="uid://brooue1hbfwx5" path="res://Texture/ReadyForUse/T_Tilemap_Master.png" id="1_hydja"]
+[ext_resource type="Texture2D" uid="uid://b0n5stprt3sg7" path="res://Texture/Imported/T_Tilemap_Master.png" id="1_2g51i"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5qh1m"]
-texture = ExtResource("1_hydja")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_idcop"]
+texture = ExtResource("1_2g51i")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -166,4 +166,4 @@ texture_region_size = Vector2i(32, 32)
 tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
 navigation_layer_0/layers = 1
-sources/0 = SubResource("TileSetAtlasSource_5qh1m")
+sources/2 = SubResource("TileSetAtlasSource_idcop")
