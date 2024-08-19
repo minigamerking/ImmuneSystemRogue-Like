@@ -6,7 +6,9 @@ class_name Enemy
 @onready var navigation_agent = $NavigationAgent2D
 
 @export var hp = 5
+
 var enabled = false
+
 signal update_enemy_count
 
 
@@ -21,10 +23,12 @@ var current_state = "idle"
 @onready var regular_pos = global_position
 
 var player : Player
+var collider : Area2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	player = get_tree().get_first_node_in_group("Player")
+	collider = player.find_child("EnemyCollider")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -43,9 +47,13 @@ func _physics_process(delta):
 	
 	
 	if navigation_agent.is_target_reachable() and enabled:
-		if int(navigation_agent.distance_to_target()) > 110:
+		if not collider.overlaps_body(self):
 			var next_location = navigation_agent.get_next_path_position()
 			var direction = global_position.direction_to(next_location).normalized()
-			global_position += direction * delta * move_speed
+			velocity = direction * move_speed
+		elif collider.overlaps_body(self):
+			velocity = Vector2()
+		move_and_slide()
 	else:
 		current_state = "idle"
+	

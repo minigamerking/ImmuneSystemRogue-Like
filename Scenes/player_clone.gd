@@ -27,7 +27,6 @@ func _process(delta):
 		
 		if global_position.distance_to(player.global_position) > 600:
 			die.emit()
-			queue_free()
 
 func _physics_process(delta):
 	if global_position.distance_to(player.global_position) > 100:

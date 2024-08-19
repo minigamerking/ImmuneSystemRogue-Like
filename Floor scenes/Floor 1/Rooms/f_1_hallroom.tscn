@@ -94,21 +94,17 @@ shape = SubResource("RectangleShape2D_cs5jo")
 [node name="platelets_E" parent="enemies" instance=ExtResource("4_dld3k")]
 position = Vector2(607, 205)
 detection_radius = 900.0
-move_speed = 200.0
 
 [node name="platelets_E2" parent="enemies" instance=ExtResource("4_dld3k")]
 position = Vector2(596, 640)
 detection_radius = 900.0
-move_speed = 200.0
 
 [node name="platelets_E3" parent="enemies" instance=ExtResource("4_dld3k")]
 position = Vector2(598, 1066)
 detection_radius = 900.0
-move_speed = 200.0
 
 [node name="platelets_E4" parent="enemies" instance=ExtResource("4_dld3k")]
 position = Vector2(621, 1546)
 detection_radius = 900.0
-move_speed = 200.0
 
 [connection signal="body_entered" from="Player_detector" to="." method="_on_player_detector_body_entered"]

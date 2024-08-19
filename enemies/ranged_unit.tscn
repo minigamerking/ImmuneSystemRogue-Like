@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://cw2vv27fnvcsb"]
+
+[ext_resource type="Texture2D" uid="uid://567if35uid3c" path="res://sprites/virus_enemy_P.png" id="1_m1ogj"]
+
+[node name="RangedUnit" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("1_m1ogj")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
