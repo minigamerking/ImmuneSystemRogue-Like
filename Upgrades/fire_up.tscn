@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://d16r4n38rkwgm"]
+
+[ext_resource type="Script" path="res://Upgrades/fire_up.gd" id="1_k2jtc"]
+[ext_resource type="Texture2D" uid="uid://rep2quutlo6b" path="res://sprites/fireup.png" id="2_hqhyn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yh3ha"]
+size = Vector2(20, 27)
+
+[node name="fire_up" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_k2jtc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_hqhyn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1.5)
+shape = SubResource("RectangleShape2D_yh3ha")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

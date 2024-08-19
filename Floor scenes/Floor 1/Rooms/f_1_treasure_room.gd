@@ -7,7 +7,7 @@ extends Node2D
 @onready var overlapping_room_dectetor = $overlapping_room_dectetor
 
 var room
-
+var upgrade=preload("res://Upgrades/dmg_up.tscn")
 @export var num_of_availble_doors = 4
 
 var r_dooravailble=true
@@ -24,3 +24,13 @@ func  addroom(max,cur):
 @onready var l_room = $l_room
 @onready var r_room = $r_room
 
+func  _ready():
+	var upgrade_id =2
+	match upgrade_id:
+		1:
+			upgrade =preload("res://Upgrades/dmg_up.tscn")
+		2:
+			upgrade= preload("res://Upgrades/cell_up.tscn")
+	var new_upgrade = upgrade.instantiate()
+	new_upgrade.global_position = $upgradepoint.global_position
+	get_parent().add_child(new_upgrade)

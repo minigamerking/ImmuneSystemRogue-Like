@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://jyaje3fk4umg"
-path="res://.godot/imported/virus.png-8ce21b29c36c62929e3510f237726b9c.ctex"
+uid="uid://rep2quutlo6b"
+path="res://.godot/imported/fireup.png-0776002a07430e95a8070597a8b77090.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/virus.png"
-dest_files=["res://.godot/imported/virus.png-8ce21b29c36c62929e3510f237726b9c.ctex"]
+source_file="res://sprites/fireup.png"
+dest_files=["res://.godot/imported/fireup.png-0776002a07430e95a8070597a8b77090.ctex"]
 
 [params]
 

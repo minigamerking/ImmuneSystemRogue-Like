@@ -12,6 +12,7 @@ size = Vector2(25.6, 25.4)
 
 [node name="BasicUnit" type="CharacterBody2D" groups=["Enemy"]]
 scale = Vector2(5, 5)
+collision_layer = 32
 script = ExtResource("1_pio3p")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

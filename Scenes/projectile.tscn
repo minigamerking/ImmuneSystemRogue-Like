@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://epe22apbmbv1"]
 
 [ext_resource type="Script" path="res://Scripts/projectile.gd" id="1_an0nc"]
-[ext_resource type="Texture2D" uid="uid://1jl2jxa0byi2" path="res://icon.svg" id="2_wgd65"]
+[ext_resource type="Texture2D" uid="uid://cquw1k3vykol1" path="res://sprites/dna_b.png" id="2_dht4n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kfov3"]
 
@@ -10,16 +10,19 @@ size = Vector2(36, 32)
 
 [node name="projectile" type="CharacterBody2D"]
 collision_layer = 8
+collision_mask = 33
 script = ExtResource("1_an0nc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_kfov3")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("2_wgd65")
+position = Vector2(1, 0)
+scale = Vector2(1.072, 1)
+texture = ExtResource("2_dht4n")
 
 [node name="hitbox" type="Area2D" parent="."]
+collision_mask = 33
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
 position = Vector2(0, -1)
