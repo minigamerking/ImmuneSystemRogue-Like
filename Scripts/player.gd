@@ -33,13 +33,13 @@ func _process(delta):
 func change_outfit():
 	match Floormanager.floor_id:
 		2:
-			sprite_2d.texture =preload("res://sprites/platelet_infected.png")
+			sprite_2d.texture =load("res://sprites/platelet_infected.png")
 		3:
-			sprite_2d.texture =preload("res://sprites/infected_red_BC.png")
+			sprite_2d.texture =load("res://sprites/infected_red_BC.png")
 		4:
-			sprite_2d.texture= preload("res://sprites/infected_white_BC.png")
+			sprite_2d.texture= load("res://sprites/infected_white_BC.png")
 		5:
-			sprite_2d.texture=preload("res://sprites/Killer_T_infected.png")
+			sprite_2d.texture=load("res://sprites/Killer_T_infected.png")
 
 func _ready():
 	change_outfit()
