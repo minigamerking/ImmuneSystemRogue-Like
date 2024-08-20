@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://c881k08qyanxk"]
+[gd_scene load_steps=24 format=3 uid="uid://c881k08qyanxk"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_yil6q"]
 [ext_resource type="Texture2D" uid="uid://bdymw02rhys4r" path="res://sprites/player_S_virus.png" id="2_6awh5"]
@@ -15,7 +15,6 @@
 [ext_resource type="AudioStream" uid="uid://bbtdmqb1f45gp" path="res://Audio/SoundFX/8-19-24_Rogue-Lite-GMTK_VirusDeath_03.wav" id="11_1tyh3"]
 [ext_resource type="AudioStream" uid="uid://c3o1r74ad7p4v" path="res://Audio/SoundFX/8-19-24_Rogue-Lite-GMTK_VirusDeath_04.wav" id="12_ik7wa"]
 [ext_resource type="AudioStream" uid="uid://k0q6kbyosih6" path="res://Audio/SoundFX/8-19-24_Rogue-Lite-GMTK_Upgrade_01.wav" id="13_nliiv"]
-[ext_resource type="FontFile" uid="uid://dcs2ufu8dcnys" path="res://GomePixel-ARJd7.otf" id="16_ufyg8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4qwng"]
 
@@ -147,15 +146,6 @@ volume_db = 5.0
 [node name="Upgrade" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("13_nliiv")
 volume_db = 1.5
-
-[node name="Label" type="Label" parent="."]
-offset_left = -37.0
-offset_top = -94.0
-offset_right = 35.0
-offset_bottom = -19.0
-theme_override_fonts/font = ExtResource("16_ufyg8")
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [connection signal="timeout" from="projectilecd" to="." method="_on_projectilecd_timeout"]
 [connection signal="body_entered" from="EnemyCollider" to="PlayerManager" method="_on_enemy_collider_body_entered"]

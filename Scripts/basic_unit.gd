@@ -33,20 +33,20 @@ var player : Player
 func _ready():
 	match Floormanager.floor_id:
 		2:
-			sprite_2d.texture =load("res://sprites/red_BC.png")
+			sprite_2d.texture =preload("res://sprites/red_BC.png")
 		3:
-			sprite_2d.texture =load("res://sprites/white_BC.png")
+			sprite_2d.texture =preload("res://sprites/white_BC.png")
 		4:
-			sprite_2d.texture= load("res://sprites/Killer_T.png")
+			sprite_2d.texture= preload("res://sprites/Killer_T.png")
 		5:
 			var texture_chance = randi_range(2,4)
 			match texture_chance:
 				2:
-					sprite_2d.texture =load("res://sprites/red_BC.png")
+					sprite_2d.texture =preload("res://sprites/red_BC.png")
 				3:
-						sprite_2d.texture =load("res://sprites/white_BC.png")
+						sprite_2d.texture =preload("res://sprites/white_BC.png")
 				4:
-					sprite_2d.texture= load("res://sprites/Killer_T.png")
+					sprite_2d.texture= preload("res://sprites/Killer_T.png")
 	player = get_tree().get_first_node_in_group("Player")
 
 

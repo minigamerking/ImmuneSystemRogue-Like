@@ -11,20 +11,20 @@ func _ready():
 	
 	match Floormanager.floor_id:
 		2:
-			sprite_2d.texture =load("res://sprites/virus_enemy_P.png")
+			sprite_2d.texture =preload("res://sprites/virus_enemy_P.png")
 		3:
-			sprite_2d.texture =load("res://sprites/red_BC.png")
+			sprite_2d.texture =preload("res://sprites/red_BC.png")
 		4:
-			sprite_2d.texture= load("res://sprites/white_BC.png")
+			sprite_2d.texture= preload("res://sprites/white_BC.png")
 		5:
 			var texture_chance = randi_range(2,4)
 			match texture_chance:
 				2:
-					sprite_2d.texture =load("res://sprites/virus_enemy_P.png")
+					sprite_2d.texture =preload("res://sprites/virus_enemy_P.png")
 				3:
-					sprite_2d.texture =load("res://sprites/red_BC.png")
+					sprite_2d.texture =preload("res://sprites/red_BC.png")
 				4:
-					sprite_2d.texture= load("res://sprites/white_BC.png")
+					sprite_2d.texture= preload("res://sprites/white_BC.png")
 
 func _process(delta):
 	set_target()

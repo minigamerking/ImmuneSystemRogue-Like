@@ -39,13 +39,13 @@ func addroom(max_rooms , num_of_rooms):
 			
 			match room_id:
 				1:
-					room =load("res://Floor scenes/Floor 1/Rooms/f_1_basicroom.tscn")
+					room =preload("res://Floor scenes/Floor 1/Rooms/f_1_basicroom.tscn")
 				2:
-					room = load("res://Floor scenes/Floor 1/Rooms/f_1_corner_rooms.tscn")
+					room = preload("res://Floor scenes/Floor 1/Rooms/f_1_corner_rooms.tscn")
 				3:
-					room = load("res://Floor scenes/Floor 1/Rooms/f_1_crosssectionroom.tscn")
+					room = preload("res://Floor scenes/Floor 1/Rooms/f_1_crosssectionroom.tscn")
 				4:
-					room =load("res://Floor scenes/Floor 1/Rooms/f_1_hallroom.tscn")
+					room =preload("res://Floor scenes/Floor 1/Rooms/f_1_hallroom.tscn")
 			match door_id :
 				1:
 					if u_dooravailble==true and room_id != 3:
