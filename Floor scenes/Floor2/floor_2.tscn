@@ -3,9 +3,9 @@
 [ext_resource type="Script" path="res://Floor scenes/Floor2/Floor_2.gd" id="1_s8lp8"]
 [ext_resource type="PackedScene" uid="uid://c1gkpacd0hgsv" path="res://Floor scenes/Floor2/Rooms/f_2_starterroom.tscn" id="3_8h0sg"]
 [ext_resource type="TileSet" uid="uid://br2jrdhmn80al" path="res://Texture/ReadyForUse/TileSet_Master.tres" id="4_m6qjc"]
-[ext_resource type="PackedScene" path="res://Scenes/load_screen.tscn" id="5_x8cra"]
+[ext_resource type="PackedScene" uid="uid://dq48mais20lyi" path="res://Scenes/load_screen.tscn" id="5_x8cra"]
 
-[node name="Floor_2" type="Node2D"]
+[node name="Floor_2" type="Node2D" groups=["Floor"]]
 script = ExtResource("1_s8lp8")
 
 [node name="f2_starterroom" parent="." instance=ExtResource("3_8h0sg")]

@@ -27,6 +27,8 @@ func _process(delta):
 		$projectilecd.wait_time = Playermanager.fire_speed
 
 		$projectilecd.start()
+	if velocity != Vector2() and not $Footsteps.playing:
+		$Footsteps.play()
 
 func change_outfit():
 	match Floormanager.floor_id:

@@ -5,7 +5,7 @@
 [ext_resource type="TileSet" uid="uid://br2jrdhmn80al" path="res://Texture/ReadyForUse/TileSet_Master.tres" id="4_7c2k7"]
 [ext_resource type="PackedScene" uid="uid://dq48mais20lyi" path="res://Scenes/load_screen.tscn" id="7_5f1vy"]
 
-[node name="floor_template" type="Node2D"]
+[node name="floor_template" type="Node2D" groups=["Floor"]]
 script = ExtResource("1_yvjb4")
 max_rooms = 10
 

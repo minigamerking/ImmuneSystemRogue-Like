@@ -5,7 +5,7 @@
 [ext_resource type="TileSet" uid="uid://br2jrdhmn80al" path="res://Texture/ReadyForUse/TileSet_Master.tres" id="3_jggd1"]
 [ext_resource type="PackedScene" uid="uid://dq48mais20lyi" path="res://Scenes/load_screen.tscn" id="5_e5ahm"]
 
-[node name="Floor-4" type="Node2D"]
+[node name="Floor-4" type="Node2D" groups=["Floor"]]
 script = ExtResource("1_on2j4")
 
 [node name="f4_starterroom" parent="." instance=ExtResource("2_ybuoj")]

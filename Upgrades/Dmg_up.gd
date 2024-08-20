@@ -2,6 +2,6 @@ extends Area2D
 
 
 func _on_body_entered(body):
-	Playermanager.dmg_level()
+	body.find_child("PlayerManager").dmg_level()
 	
 	queue_free()
