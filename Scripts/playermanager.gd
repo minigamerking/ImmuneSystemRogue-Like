@@ -60,10 +60,16 @@ func up_firespd():
 	fire_upgrade +=2
 	fire_speed = fire_speed/ 2
 	upgrade.play()
+	$"../Label".text = "More\nFirerate"
+	await get_tree().create_timer(1).timeout
+	$"../Label".text = ""
 
 func up_maxcell():
 	clone_upgrade += 1
 	upgrade.play()
+	$"../Label".text = "More\nClones"
+	await get_tree().create_timer(1).timeout
+	$"../Label".text = ""
 	
 func dmg_level():
 	dmglevel += 1
@@ -76,14 +82,23 @@ func health_up():
 	health_upgrade += 1
 	health += 1
 	upgrade.play()
+	$"../Label".text = "More\nHealth"
+	await get_tree().create_timer(1).timeout
+	$"../Label".text = ""
 
 func luck_high():
 	luck_upgrade += 1
 	upgrade.play()
+	$"../Label".text = "More\nLuck"
+	await get_tree().create_timer(1).timeout
+	$"../Label".text = ""
 
 func shoot_clone():
 	clone_shoot_upgrade = 1
 	upgrade.play()
+	$"../Label".text = "Shooting\nClones"
+	await get_tree().create_timer(1).timeout
+	$"../Label".text = ""
 
 func connect_enemies():
 	for child in get_tree().get_nodes_in_group("Enemy"):
