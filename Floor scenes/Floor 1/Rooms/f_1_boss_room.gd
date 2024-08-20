@@ -28,8 +28,6 @@ func _ready():
 			var newboss = boss.instantiate()
 			$enemies.add_child(newboss)
 			newboss.global_position=$"boss spawn".global_position
-		_:
-			Floormanager.bossdefeated = true
 
 
 var floor
