@@ -25,6 +25,7 @@ func _process(delta):
 		get_parent().add_child(newprojectile)
 		can_shoot = false
 		$projectilecd.wait_time = Playermanager.fire_speed
+
 		$projectilecd.start()
 
 func change_outfit():

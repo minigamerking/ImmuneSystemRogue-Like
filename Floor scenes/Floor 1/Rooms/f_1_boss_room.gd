@@ -17,12 +17,24 @@ func _ready():
 	var boss
 	match Floormanager.floor_id:
 		1:
-			boss =preload("res://enemies/floor_1_boss.tscn")
+			boss =load("res://enemies/floor_1_boss.tscn")
 			var newboss = boss.instantiate()
 			$enemies.add_child(newboss)
 			newboss.global_position=$"boss spawn".global_position
 		2:
-			boss= preload("res://enemies/f_2_boss.tscn")
+			boss= load("res://enemies/f_2_boss.tscn")
+			var newboss = boss.instantiate()
+			$enemies.add_child(newboss)
+			newboss.global_position=$"boss spawn".global_position
+			
+		3:
+			boss= load("res://enemies/f_3_boss.tscn")
+			var newboss = boss.instantiate()
+			$enemies.add_child(newboss)
+			newboss.global_position=$"boss spawn".global_position
+			
+		4:
+			boss= load("res://enemies/f_4_boss.tscn")
 			var newboss = boss.instantiate()
 			$enemies.add_child(newboss)
 			newboss.global_position=$"boss spawn".global_position
@@ -48,7 +60,7 @@ func _on_exit_body_entered(body):
 			2:
 				Floormanager.floor_id+=1
 				floor = preload("res://Floor scenes/Floor 3/floor_3.tscn")
-				dungeon.find_child("floor_2").queue_free()
+				dungeon.find_child("Floor_2").queue_free()
 				dungeon.add_child(floor.instantiate())
 				dungeon.get_parent().find_child("player").global_position = Vector2(587,306)
 			3:

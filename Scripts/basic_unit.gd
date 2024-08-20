@@ -18,6 +18,7 @@ func takedmg(dmg):
 		update_enemy_count.emit()
 		death.play()
 		enabled= false
+		self.set_collision_layer_value(6,false)
 		await  death.finished
 		queue_free()
 
