@@ -38,11 +38,15 @@ func _ready():
 			var newboss = boss.instantiate()
 			$enemies.add_child(newboss)
 			newboss.global_position=$"boss spawn".global_position
-			
+		5:
+			boss= load("res://enemies/f_4_boss.tscn")
+			var newboss = boss.instantiate()
+			$enemies.add_child(newboss)
+			newboss.global_position=$"boss spawn".global_position
 
 
 var floor
-
+var endscreen
 
 
 func _on_exit_body_entered(body):
@@ -75,3 +79,7 @@ func _on_exit_body_entered(body):
 				dungeon.find_child("floor_4").queue_free()
 				dungeon.add_child(floor.instantiate())
 				dungeon.get_parent().find_child("player").global_position = Vector2(587,306)
+			5:
+				endscreen=preload("res://enemies/end_screen.tscn")
+				var newend =endscreen.instantiate()
+				dungeon.add_child(endscreen)
