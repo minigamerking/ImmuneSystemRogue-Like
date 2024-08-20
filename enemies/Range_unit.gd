@@ -8,6 +8,8 @@ const ENEMY_PROJECTILE = preload("res://enemies/enemy_projectile.tscn")
 func _ready():
 	player = get_tree().get_first_node_in_group("Player")
 	stopdistance = 270
+	shooting_cd.one_shot = true
+	shooting_cd.autostart = false
 	
 	match Floormanager.floor_id:
 		2:
@@ -36,6 +38,7 @@ func _process(delta):
 			
 			get_parent().add_child(new_projectile)
 			new_projectile.global_position = self.global_position
+			shooting_cd.start()
 			canshoot = false
 	
 func _physics_process(delta):

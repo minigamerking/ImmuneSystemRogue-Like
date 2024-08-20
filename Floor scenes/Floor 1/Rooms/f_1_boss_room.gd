@@ -54,13 +54,14 @@ func _on_exit_body_entered(body):
 	if Floormanager.bossdefeated== true:
 		Floormanager.floorgenerated = false
 		Floormanager.bossdefeated = false
+		body.find_child("PlayerManager").health = body.find_child("PlayerManager").max_health
 		match Floormanager.floor_id:
 			1:
 				Floormanager.floor_id+=1
 				floor = preload("res://Floor scenes/Floor2/floor_2.tscn")
 				get_tree().get_first_node_in_group("Floor").queue_free()
 				dungeon.add_child(floor.instantiate())
-				get_tree().get_first_node_in_group("Player").global_position = Vector2(587,306)
+				body.global_position = Vector2(587,306)
 			2:
 				Floormanager.floor_id+=1
 				floor = preload("res://Floor scenes/Floor 3/floor_3.tscn")

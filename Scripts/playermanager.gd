@@ -44,6 +44,7 @@ func _process(delta):
 	elif health <= 0 and curr_cell_count <= 1:
 		#player.find_child("Death").play()
 		#await player.find_child("Death").finished
+		Floormanager.floor_id = 1
 		get_tree().reload_current_scene()
 		reset_upgrades()
 		
@@ -104,6 +105,7 @@ func shoot_clone():
 func connect_enemies():
 	for child in get_tree().get_nodes_in_group("Enemy"):
 		child.update_enemy_count.connect(_enemy_on_death)
+	health = max_health
 	
 
 

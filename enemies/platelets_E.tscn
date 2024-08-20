@@ -24,6 +24,7 @@ shape = SubResource("CircleShape2D_pq36v")
 target_desired_distance = 25.0
 
 [node name="shooting_cd" type="Timer" parent="."]
+one_shot = true
 autostart = true
 
 [node name="death" type="AudioStreamPlayer2D" parent="."]

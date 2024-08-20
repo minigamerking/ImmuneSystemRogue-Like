@@ -17,7 +17,7 @@ func _physics_process(delta):
 	move_and_slide()
 	
 func _ready():
-	match Playermanager.dmglevel:
+	match get_tree().get_first_node_in_group("Player").find_child("PlayerManager").dmglevel:
 		0:
 			dmg =1
 		1:
