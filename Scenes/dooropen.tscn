@@ -1,14 +1,36 @@
-[gd_scene load_steps=4 format=3 uid="uid://bmq3vbtbagt8c"]
+[gd_scene load_steps=10 format=3 uid="uid://bmq3vbtbagt8c"]
 
 [ext_resource type="AudioStream" uid="uid://cu2e5ka2djgcr" path="res://Audio/SoundFX/8-19-24_Rogue-Lite-GMTK_DoorOpens_01.wav" id="1_ba8wa"]
 [ext_resource type="AudioStream" uid="uid://cluvbo07seo7q" path="res://Audio/SoundFX/8-19-24_Rogue-Lite-GMTK_DoorLocks_01.wav" id="2_idiaq"]
+[ext_resource type="AudioStream" uid="uid://cv1t14n57g57n" path="res://Audio/SoundFX/8-19-24_Rogue-Lite-GMTK_DoorOpens_02.wav" id="2_jdwx5"]
 [ext_resource type="Script" path="res://Scenes/dooropen.gd" id="2_wu4ak"]
+[ext_resource type="AudioStream" uid="uid://bkk0jj7mse3d1" path="res://Audio/SoundFX/8-19-24_Rogue-Lite-GMTK_DoorOpens_03.wav" id="3_r3j12"]
+[ext_resource type="AudioStream" uid="uid://s0rdhfhu5sgn" path="res://Audio/SoundFX/8-19-24_Rogue-Lite-GMTK_DoorLocks_02.wav" id="6_6gspj"]
+[ext_resource type="AudioStream" uid="uid://b17v4p01spk6c" path="res://Audio/SoundFX/8-19-24_Rogue-Lite-GMTK_DoorLocks_03.wav" id="7_lhyvq"]
 
-[node name="dooropen" type="AudioStreamPlayer2D"]
-stream = ExtResource("1_ba8wa")
-max_distance = 1e+06
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_eyu3h"]
+random_volume_offset_db = 1.2
+streams_count = 3
+stream_0/stream = ExtResource("1_ba8wa")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("2_jdwx5")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("3_r3j12")
+stream_2/weight = 1.0
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_6gko5"]
+random_volume_offset_db = 1.2
+streams_count = 3
+stream_0/stream = ExtResource("2_idiaq")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("6_6gspj")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("7_lhyvq")
+stream_2/weight = 1.0
+
+[node name="dooropen" type="AudioStreamPlayer"]
+stream = SubResource("AudioStreamRandomizer_eyu3h")
 script = ExtResource("2_wu4ak")
 
-[node name="doorclose" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("2_idiaq")
-max_distance = 100000.0
+[node name="doorclose" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_6gko5")

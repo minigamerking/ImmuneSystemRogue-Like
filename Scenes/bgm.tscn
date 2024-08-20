@@ -1,10 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://clhadaqlg8qb5"]
 
-[ext_resource type="AudioStream" uid="uid://i3so2fln12ax" path="res://Audio/8-16-24_Rogue-Lite-Jam_Level_DRAFT2.wav" id="1_p6s3i"]
+[ext_resource type="AudioStream" uid="uid://i3so2fln12ax" path="res://Audio/Music/8-16-24_Rogue-Lite-Jam_Level_DRAFT2.wav" id="1_p6s3i"]
 [ext_resource type="Script" path="res://bgm.gd" id="2_buctc"]
 
 [node name="bgm" type="AudioStreamPlayer2D"]
 stream = ExtResource("1_p6s3i")
+volume_db = -7.5
 autoplay = true
 max_distance = 1e+06
 script = ExtResource("2_buctc")
