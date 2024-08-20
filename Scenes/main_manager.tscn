@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://c6ywubrb5vb81"]
+[gd_scene load_steps=6 format=3 uid="uid://c6ywubrb5vb81"]
 
 [ext_resource type="PackedScene" uid="uid://b7fjn0b50onbs" path="res://Floor scenes/floor_template.tscn" id="1_qf2dv"]
 [ext_resource type="Script" path="res://Scenes/DungeonHandler.gd" id="1_uvoah"]
 [ext_resource type="PackedScene" uid="uid://c881k08qyanxk" path="res://Scenes/player.tscn" id="2_ibt6x"]
+[ext_resource type="Texture2D" uid="uid://byvmkrqon1mtw" path="res://sprites/health_heart.png" id="4_55sgx"]
+[ext_resource type="Texture2D" uid="uid://c2y5oc6n6l84y" path="res://sprites/frame_empty.png" id="4_b5ytu"]
 
 [node name="MainManager" type="Node2D"]
 
@@ -17,6 +19,26 @@ script = ExtResource("1_uvoah")
 
 [node name="player" parent="." instance=ExtResource("2_ibt6x")]
 position = Vector2(585, 317)
+
+[node name="HealthHeart" type="Sprite2D" parent="player"]
+position = Vector2(-523, 249)
+scale = Vector2(2, 2)
+texture = ExtResource("4_55sgx")
+
+[node name="HealthHeart2" type="Sprite2D" parent="player"]
+position = Vector2(-477, 249)
+scale = Vector2(2, 2)
+texture = ExtResource("4_55sgx")
+
+[node name="HealthHeart3" type="Sprite2D" parent="player"]
+position = Vector2(-433, 249)
+scale = Vector2(2, 2)
+texture = ExtResource("4_55sgx")
+
+[node name="Frame" type="Sprite2D" parent="player"]
+position = Vector2(-476, 248)
+scale = Vector2(2, 2)
+texture = ExtResource("4_b5ytu")
 
 [node name="Camera2D" type="Camera2D" parent="player" groups=["MainCam"]]
 

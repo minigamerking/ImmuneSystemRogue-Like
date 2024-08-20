@@ -22,7 +22,6 @@ var health_upgrade = 0
 var clone_shoot_upgrade = 0
 var luck_upgrade = 0
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	player = get_tree().get_first_node_in_group("Player")

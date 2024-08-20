@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Floor scenes/Floor4/Rooms/floor_4.gd" id="1_on2j4"]
 [ext_resource type="PackedScene" uid="uid://5succ2ehm213" path="res://Floor scenes/Floor4/Rooms/f_4_starterroom.tscn" id="2_ybuoj"]
 [ext_resource type="TileSet" uid="uid://br2jrdhmn80al" path="res://Texture/ReadyForUse/TileSet_Master.tres" id="3_jggd1"]
-[ext_resource type="PackedScene" path="res://Scenes/load_screen.tscn" id="5_e5ahm"]
+[ext_resource type="PackedScene" uid="uid://dq48mais20lyi" path="res://Scenes/load_screen.tscn" id="5_e5ahm"]
 
 [node name="Floor-4" type="Node2D"]
 script = ExtResource("1_on2j4")
