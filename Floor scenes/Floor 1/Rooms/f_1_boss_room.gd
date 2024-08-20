@@ -1,51 +1,43 @@
 
-extends Node2D
+extends BasicRoom
+@onready var enemies = $enemies
 
-@onready var l_door = $l_Door
-@onready var r_door = $r_Door
-@onready var d_door = $d_Door
-@onready var u_door = $u_Door
-@onready var overlapping_room_dectetor = $overlapping_room_dectetor
-
-var room
-var floor 
-@export var num_of_availble_doors = 4
-
-var r_dooravailble=true
-
-var u_dooravailble=true
-var d_dooravailble=true
-
-var l_dooravailble=true
-# Called when the node enters the scene tree for the first time
-func  addroom(max,cur):
-	return
-@onready var u_room = $u_room
-@onready var d_room = $d_room
-@onready var l_room = $l_room
-@onready var r_room = $r_room
-
-
-
-
-func _on_exit_body_entered(body):
-	Floormanager.floorgenerated = false
+func _ready():
+	
+	if r_dooravailble==false:
+		num_of_availble_doors-=1
+	if u_dooravailble== false:
+		num_of_availble_doors-=1
+	if d_dooravailble==false:
+		num_of_availble_doors -=1
+	if l_dooravailble==false:
+		num_of_availble_doors-=1
+	var enemies = $enemies.get_children()
+	enemycount = enemies.size()
+	for enemy in enemies:
+		enemy.connect("update_enemy_count",_on_test__enemy_update_enemy_count)
+	var boss
 	match Floormanager.floor_id:
 		1:
-			Floormanager.floor_id+=1
-			floor = preload("res://Floor scenes/Floor2/floor_2.tscn")
-			get_tree().change_scene_to_packed(floor)
+			
+			boss = preload("res://enemies/floor_1_boss.tscn")
+			var newboss = boss.instantiate()
+			$enemies.add_child(newboss)
+			newboss.global_position =$"boss spawn".global_position
+			
 		2:
-			Floormanager.floor_id+=1
-			floor = preload("res://Floor scenes/Floor 3/floor_3.tscn")
-			get_tree().change_scene_to_packed(floor)
-		3:
-			Floormanager.floor_id+=1
-			floor = preload("res://Floor scenes/Floor4/Rooms/floor_4.tscn")
-			get_tree().change_scene_to_packed(floor)
-		4:
-			Floormanager.floor_id+=1
-			floor = preload("res://Floor scenes/Floor5/Rooms/floor_5.tscn")
-			get_tree().change_scene_to_packed(floor)
 		
+			boss = preload("res://enemies/floor_1_boss.tscn")
+			var newboss = boss.instantiate()
+			$enemies.add_child(newboss)
+			newboss.global_position =$"boss spawn".global_position
+		#3:
+			#Floormanager.floor_id+=1
+			#floor = preload("res://Floor scenes/Floor4/Rooms/floor_4.tscn")
+			#get_tree().change_scene_to_packed(floor)
+		#4:
+			#Floormanager.floor_id+=1
+			#floor = preload("res://Floor scenes/Floor5/Rooms/floor_5.tscn")
+			#get_tree().change_scene_to_packed(floor)
+		#
 			

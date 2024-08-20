@@ -1,18 +1,16 @@
-[gd_scene load_steps=7 format=3 uid="uid://dn4j6bjwcdnra"]
+[gd_scene load_steps=6 format=3 uid="uid://dn4j6bjwcdnra"]
 
 [ext_resource type="Script" path="res://Floor scenes/Floor 1/Rooms/f_1_boss_room.gd" id="1_blnyh"]
 [ext_resource type="TileSet" uid="uid://br2jrdhmn80al" path="res://Texture/ReadyForUse/TileSet_Master.tres" id="2_sgh2m"]
 [ext_resource type="PackedScene" uid="uid://cs2quat6d5vk4" path="res://Floor scenes/door.tscn" id="3_eqy74"]
-[ext_resource type="Texture2D" uid="uid://chdy7fhmavqqj" path="res://sprites/virus_enemy_Y.png" id="4_ei1pc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2pl7v"]
 size = Vector2(1135, 619)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_1m4v3"]
-radius = 42.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6wkgm"]
+size = Vector2(1056, 558)
 
 [node name="f1Boss_room" type="Node2D"]
-z_index = 4
 script = ExtResource("1_blnyh")
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -59,17 +57,45 @@ collision_mask = 4
 position = Vector2(572.5, 320.5)
 shape = SubResource("RectangleShape2D_2pl7v")
 
-[node name="exit" type="Area2D" parent="."]
-position = Vector2(584, 305)
+[node name="playerblockers" type="Node2D" parent="."]
+visible = false
+
+[node name="player_blocker" parent="playerblockers" instance=ExtResource("3_eqy74")]
+position = Vector2(19, 330)
+collision_layer = 0
+collision_mask = 0
+
+[node name="player_blocker2" parent="playerblockers" instance=ExtResource("3_eqy74")]
+position = Vector2(1129, 330)
+rotation = 3.14159
+collision_layer = 0
+collision_mask = 0
+
+[node name="player_blocker3" parent="playerblockers" instance=ExtResource("3_eqy74")]
+position = Vector2(582, 620)
+rotation = -1.5708
+collision_layer = 0
+collision_mask = 0
+
+[node name="player_blocker4" parent="playerblockers" instance=ExtResource("3_eqy74")]
+position = Vector2(582, 17)
+rotation = 1.5708
+collision_layer = 0
+collision_mask = 0
+
+[node name="Player_detector" type="Area2D" parent="."]
 collision_mask = 2
 
-[node name="Sprite2D" type="Sprite2D" parent="exit"]
-modulate = Color(0, 0.612385, 0.285099, 1)
-scale = Vector2(3, 3)
-texture = ExtResource("4_ei1pc")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player_detector"]
+visible = false
+position = Vector2(572, 318)
+shape = SubResource("RectangleShape2D_6wkgm")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="exit"]
-position = Vector2(0, -1)
-shape = SubResource("CircleShape2D_1m4v3")
+[node name="enemies" type="Node2D" parent="."]
+position = Vector2(581, 156)
 
-[connection signal="body_entered" from="exit" to="." method="_on_exit_body_entered"]
+[node name="boss spawn" type="Node2D" parent="."]
+position = Vector2(574, 323)
+scale = Vector2(-0.139178, 1.00791)
+
+[connection signal="body_entered" from="Player_detector" to="." method="_on_player_detector_body_entered"]
