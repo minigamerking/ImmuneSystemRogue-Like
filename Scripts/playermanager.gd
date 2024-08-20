@@ -43,8 +43,8 @@ func _process(delta):
 		_clone_die(clones.pick_random())
 		health = max_health
 	elif health == 0 and curr_cell_count <= 1:
-		player.find_child("Death").play()
-		await player.find_child("Death").finished
+		#player.find_child("Death").play()
+		#await player.find_child("Death").finished
 		get_tree().reload_current_scene()
 		reset_upgrades()
 		

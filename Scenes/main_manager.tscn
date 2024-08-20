@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://c881k08qyanxk" path="res://Scenes/player.tscn" id="2_ibt6x"]
 [ext_resource type="Texture2D" uid="uid://byvmkrqon1mtw" path="res://sprites/health_heart.png" id="4_55sgx"]
 [ext_resource type="Texture2D" uid="uid://c2y5oc6n6l84y" path="res://sprites/frame_empty.png" id="4_b5ytu"]
-[ext_resource type="Texture2D" path="res://sprites/healthheart_gold.png" id="6_iogil"]
+[ext_resource type="Texture2D" uid="uid://du1c8340mrwhj" path="res://sprites/healthheart_gold.png" id="6_iogil"]
 [ext_resource type="Script" path="res://Scenes/ui_elementsd.gd" id="6_r1s48"]
 
 [node name="MainManager" type="Node2D"]
