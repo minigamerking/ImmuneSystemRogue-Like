@@ -37,7 +37,6 @@ func _process(delta):
 			get_parent().add_child(new_projectile)
 			new_projectile.global_position = self.global_position
 			canshoot = false
-			print("shooting")
 	
 func _physics_process(delta):
 	path_find(delta)

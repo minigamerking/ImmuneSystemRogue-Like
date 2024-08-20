@@ -68,7 +68,6 @@ func addroom(max_rooms , num_of_rooms):
 						await get_tree().process_frame
 						await get_tree().process_frame
 						if  newroom.overlapping_room_dectetor.has_overlapping_areas():
-							print(fail_count)
 							newroom.queue_free()
 							fail_count+=1
 						else:
@@ -94,7 +93,6 @@ func addroom(max_rooms , num_of_rooms):
 						await get_tree().process_frame
 						
 						if  newroom.overlapping_room_dectetor.has_overlapping_areas():
-							print(fail_count)
 							fail_count+=1
 							newroom.queue_free()
 						else:
@@ -125,7 +123,6 @@ func addroom(max_rooms , num_of_rooms):
 						await get_tree().process_frame
 						await get_tree().process_frame
 						if  newroom.overlapping_room_dectetor.has_overlapping_areas():
-							print(fail_count)
 							
 							newroom.queue_free()
 							fail_count+=1
@@ -154,7 +151,6 @@ func addroom(max_rooms , num_of_rooms):
 						await get_tree().process_frame
 						await get_tree().process_frame
 						if  newroom.overlapping_room_dectetor.has_overlapping_areas():
-							print(fail_count)
 							fail_count+=1
 							newroom.queue_free()
 						else:
@@ -167,7 +163,6 @@ func addroom(max_rooms , num_of_rooms):
 		else:
 			get_parent().num_of_rooms+= added_rooms
 			if newroom !=null:
-				print("hi")
 				newroom.addroom(max_rooms,get_parent().num_of_rooms)
 	else:
 		return
