@@ -275,6 +275,7 @@ func addroom(max_rooms , num_of_rooms):
 								added_rooms+=1
 								num_of_rooms+=1
 		if fail_count>=10:
+			print("reset")
 			get_tree().reload_current_scene()
 		else:
 			get_parent().num_of_rooms+= added_rooms
@@ -298,8 +299,8 @@ func _ready():
 		num_of_availble_doors-=1
 	
 	var enemies = $enemies.get_children()
-	enemycount = enemies.size()
 	for enemy in enemies:
+		enemycount += 1
 		enemy.connect("update_enemy_count",_on_test__enemy_update_enemy_count)
 #logic to keep player trapped till all enemies are defeated 
 
@@ -330,4 +331,3 @@ func _on_player_detector_body_entered(body):
 		print("closing room")
 		for door in doors:
 			door.set_collision_layer_value(1,true)
-			

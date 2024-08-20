@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://c6ywubrb5vb81"]
+
+[ext_resource type="PackedScene" uid="uid://b7fjn0b50onbs" path="res://Floor scenes/floor_template.tscn" id="1_qf2dv"]
+[ext_resource type="PackedScene" uid="uid://c881k08qyanxk" path="res://Scenes/player.tscn" id="2_ibt6x"]
+
+[node name="MainManager" type="Node2D"]
+
+[node name="DungeonHandler" type="Node2D" parent="."]
+
+[node name="floor_template" parent="DungeonHandler" instance=ExtResource("1_qf2dv")]
+
+[node name="AudioHandler" type="Node2D" parent="."]
+
+[node name="player" parent="." instance=ExtResource("2_ibt6x")]
+position = Vector2(585, 317)
+
+[node name="Camera2D" type="Camera2D" parent="player" groups=["MainCam"]]

@@ -107,4 +107,7 @@ detection_radius = 900.0
 position = Vector2(621, 1546)
 detection_radius = 900.0
 
+[node name="CameraPos" type="Marker2D" parent="."]
+position = Vector2(576, 320)
+
 [connection signal="body_entered" from="Player_detector" to="." method="_on_player_detector_body_entered"]

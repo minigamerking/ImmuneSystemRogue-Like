@@ -9,11 +9,11 @@ var can_shoot = true
 func _physics_process(delta):
 	# Add the gravity.
 	# Handle jump.
+	if Floormanager.floorgenerated ==true:
+		var direction = Input.get_vector("left","right","up","down")
+		velocity = velocity.lerp(direction * SPEED, 0.075)
 
-	var direction = Input.get_vector("left","right","up","down")
-	velocity = velocity.lerp(direction * SPEED, 0.075)
-
-	move_and_slide()
+		move_and_slide()
 
 
 func _process(delta):
@@ -27,7 +27,16 @@ func _process(delta):
 		$projectilecd.start()
 	
 
-
+func _ready():
+	match Floormanager.floor_id:
+		2:
+			sprite_2d.texture =preload("res://sprites/Platelets _enemy.png")
+		3:
+			sprite_2d.texture =preload("res://sprites/infected_red_BC.png")
+		4:
+			sprite_2d.texture= preload("res://sprites/infected_white_BC.png")
+		5:
+			sprite_2d.texture=preload("res://sprites/Killer_T_infected.png")
 
 func _on_projectilecd_timeout():
 	can_shoot = true

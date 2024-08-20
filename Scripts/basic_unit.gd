@@ -4,13 +4,14 @@ class_name Enemy
 @export var detection_radius := 1000.0
 @export var move_speed := 200
 @onready var navigation_agent = $NavigationAgent2D
+@onready var sprite_2d = $Sprite2D
 
 @export var hp = 5
 
 var enabled = false
 
 signal update_enemy_count
-
+var stopdistance = 100
 
 func takedmg(dmg):
 	hp-=dmg
@@ -25,27 +26,46 @@ var current_state = "idle"
 var player : Player
 var collider : Area2D
 
-# Called when the node enters the scene tree for the first time.
+#Called when the node enters the scene tree for the first time.
 func _ready():
+	match Floormanager.floor_id:
+		2:
+			sprite_2d.texture =preload("res://sprites/red_BC.png")
+		3:
+			sprite_2d.texture =preload("res://sprites/white_BC.png")
+		4:
+			sprite_2d.texture= preload("res://sprites/Killer_T.png")
+		5:
+			var texture_chance = randi_range(2,4)
+			match texture_chance:
+				2:
+					sprite_2d.texture =preload("res://sprites/red_BC.png")
+				3:
+						sprite_2d.texture =preload("res://sprites/white_BC.png")
+				4:
+					sprite_2d.texture= preload("res://sprites/Killer_T.png")
 	player = get_tree().get_first_node_in_group("Player")
 	collider = player.find_child("EnemyCollider")
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+#Called every frame. 'delta' is the elapsed time since the previous frame.
+func set_target():
 	if current_state == "idle":
 		if int(navigation_agent.distance_to_target()) > 10:
 			navigation_agent.set_target_position(regular_pos)
 	if current_state == "chase":
 		navigation_agent.set_target_position(player.global_position)
 
-func _physics_process(delta):
+
+func _process(delta):
+	set_target()
+func path_find(delta):
 	if int(global_position.distance_to(player.global_position)) > 550:
-			current_state = "idle"
+		current_state = "idle"
 	if int(global_position.distance_to(player.global_position)) < 350:
 		current_state = "chase"
-	
-	
+
+
 	if navigation_agent.is_target_reachable() and enabled:
 		if not collider.overlaps_body(self):
 			var next_location = navigation_agent.get_next_path_position()
@@ -56,4 +76,5 @@ func _physics_process(delta):
 		move_and_slide()
 	else:
 		current_state = "idle"
-	
+func _physics_process(delta):
+	path_find(delta)

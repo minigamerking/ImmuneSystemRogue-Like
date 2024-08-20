@@ -15,6 +15,13 @@ var enemy_in_range = false
 
 var clones = []
 
+# Upgrades Had
+var fire_upgrade = 0
+var clone_upgrade = 0
+var health_upgrade = 0
+var clone_shoot_upgrade = 0
+var luck_upgrade = 0
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

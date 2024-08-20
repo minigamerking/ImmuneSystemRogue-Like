@@ -96,32 +96,26 @@ shape = SubResource("RectangleShape2D_op8kr")
 [node name="platelets_E" parent="enemies" instance=ExtResource("4_su04q")]
 position = Vector2(545, 168)
 detection_radius = 900.0
-move_speed = 200.0
 
 [node name="platelets_E2" parent="enemies" instance=ExtResource("4_su04q")]
 position = Vector2(323, 396)
 detection_radius = 900.0
-move_speed = 200.0
 
 [node name="platelets_E3" parent="enemies" instance=ExtResource("4_su04q")]
 position = Vector2(940, 261)
 detection_radius = 900.0
-move_speed = 200.0
 
 [node name="platelets_E6" parent="enemies" instance=ExtResource("4_su04q")]
 position = Vector2(1366, 450)
 detection_radius = 900.0
-move_speed = 200.0
 
 [node name="platelets_E4" parent="enemies" instance=ExtResource("4_su04q")]
 position = Vector2(730, 498)
 detection_radius = 900.0
-move_speed = 200.0
 
 [node name="platelets_E5" parent="enemies" instance=ExtResource("4_su04q")]
 position = Vector2(831, 891)
 detection_radius = 900.0
-move_speed = 200.0
 
 [node name="d_Door" parent="." instance=ExtResource("3_p2mr8")]
 visible = false

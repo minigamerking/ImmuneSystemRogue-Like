@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Floor scenes/Floor2/Rooms/f_2_holessectionroom.gd" id="1_l8tx2"]
 [ext_resource type="Texture2D" uid="uid://brooue1hbfwx5" path="res://Texture/ReadyForUse/T_Tilemap_Master.png" id="2_1cnua"]
 [ext_resource type="PackedScene" uid="uid://cs2quat6d5vk4" path="res://Floor scenes/door.tscn" id="2_w2hrq"]
-[ext_resource type="PackedScene" uid="uid://ck7kdw1ggehwl" path="res://enemies/virus_e.tscn" id="5_33yja"]
+[ext_resource type="PackedScene" uid="uid://ck7kdw1ggehwl" path="res://enemies/virus_e.tscn" id="5_n8rba"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_08it0"]
 vertices = PackedVector2Array(16, 16, -16, 16, -16, -16, 16, -16)
@@ -298,6 +298,13 @@ rotation = 3.14159
 position = Vector2(582, 17)
 rotation = 1.5708
 
+[node name="d_Door" parent="." instance=ExtResource("2_w2hrq")]
+visible = false
+position = Vector2(582, 17)
+rotation = 1.5708
+collision_layer = 0
+collision_mask = 0
+
 [node name="overlapping_room_dectetor" type="Area2D" parent="."]
 collision_layer = 4
 collision_mask = 4
@@ -343,22 +350,22 @@ shape = SubResource("RectangleShape2D_op8kr")
 [node name="enemies" type="Node2D" parent="."]
 position = Vector2(581, 156)
 
-[node name="platelets_E2" parent="enemies" instance=ExtResource("5_33yja")]
+[node name="platelets_E2" parent="enemies" instance=ExtResource("5_n8rba")]
 position = Vector2(1, 2)
 
-[node name="platelets_E" parent="enemies" instance=ExtResource("5_33yja")]
+[node name="platelets_E" parent="enemies" instance=ExtResource("5_n8rba")]
 position = Vector2(-343, 141)
 
-[node name="platelets_E3" parent="enemies" instance=ExtResource("5_33yja")]
+[node name="platelets_E3" parent="enemies" instance=ExtResource("5_n8rba")]
 position = Vector2(397, 243)
 
-[node name="platelets_E4" parent="enemies" instance=ExtResource("5_33yja")]
+[node name="platelets_E4" parent="enemies" instance=ExtResource("5_n8rba")]
 position = Vector2(105, 323)
 
-[node name="platelets_E5" parent="enemies" instance=ExtResource("5_33yja")]
+[node name="platelets_E5" parent="enemies" instance=ExtResource("5_n8rba")]
 position = Vector2(773, 355)
 
-[node name="platelets_E6" parent="enemies" instance=ExtResource("5_33yja")]
+[node name="platelets_E6" parent="enemies" instance=ExtResource("5_n8rba")]
 position = Vector2(299, 711)
 
 [connection signal="body_entered" from="Player_detector" to="." method="_on_player_detector_body_entered"]

@@ -53,3 +53,6 @@ shape = SubResource("RectangleShape2D_2pl7v")
 
 [node name="upgradepoint" type="Node2D" parent="."]
 position = Vector2(575, 311)
+
+[node name="CameraPos" type="Marker2D" parent="."]
+position = Vector2(576, 324)

@@ -50,3 +50,6 @@ collision_mask = 4
 [node name="CollisionShape2D" type="CollisionShape2D" parent="overlapping_room_dectetor"]
 position = Vector2(572.5, 320.5)
 shape = SubResource("RectangleShape2D_2pl7v")
+
+[node name="CameraPos" type="Marker2D" parent="."]
+position = Vector2(576, 320)
