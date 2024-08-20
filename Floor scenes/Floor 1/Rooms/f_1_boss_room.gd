@@ -1,8 +1,10 @@
 
 extends BasicRoom
 
+var dungeon
+
 func _ready():
-	
+	dungeon = get_tree().get_first_node_in_group("DungeonHandler")
 	if r_dooravailble==false:
 		num_of_availble_doors-=1
 	if u_dooravailble== false:
@@ -26,7 +28,8 @@ func _ready():
 			var newboss = boss.instantiate()
 			$enemies.add_child(newboss)
 			newboss.global_position=$"boss spawn".global_position
-			
+		_:
+			Floormanager.bossdefeated = true
 
 
 var floor
@@ -37,29 +40,29 @@ func _on_exit_body_entered(body):
 	if Floormanager.bossdefeated== true:
 		Floormanager.floorgenerated = false
 		Floormanager.bossdefeated = false
-		var dungeon = get_parent().get_parent()
 		match Floormanager.floor_id:
 			1:
 				Floormanager.floor_id+=1
 				floor = preload("res://Floor scenes/Floor2/floor_2.tscn")
-				dungeon.find_child("floor_template").queue_free()
+				get_tree().get_first_node_in_group("Floor").queue_free()
 				dungeon.add_child(floor.instantiate())
-				dungeon.get_parent().find_child("player").global_position = Vector2(587,306)
+				get_tree().get_first_node_in_group("Player").global_position = Vector2(587,306)
 			2:
 				Floormanager.floor_id+=1
 				floor = preload("res://Floor scenes/Floor 3/floor_3.tscn")
-				dungeon.find_child("floor_2").queue_free()
+				print(get_tree().get_first_node_in_group("Floor"))
+				get_tree().get_first_node_in_group("Floor").queue_free()
 				dungeon.add_child(floor.instantiate())
-				dungeon.get_parent().find_child("player").global_position = Vector2(587,306)
+				get_tree().get_first_node_in_group("Player").global_position = Vector2(587,306)
 			3:
 				Floormanager.floor_id+=1
 				floor = preload("res://Floor scenes/Floor4/Rooms/floor_4.tscn")
-				dungeon.find_child("floor_3").queue_free()
+				get_tree().get_first_node_in_group("Floor").queue_free()
 				dungeon.add_child(floor.instantiate())
-				dungeon.get_parent().find_child("player").global_position = Vector2(587,306)
+				get_tree().get_first_node_in_group("Player").global_position = Vector2(587,306)
 			4:
 				Floormanager.floor_id+=1
 				floor = preload("res://Floor scenes/Floor5/Rooms/floor_5.tscn")
-				dungeon.find_child("floor_4").queue_free()
+				get_tree().get_first_node_in_group("Floor").queue_free()
 				dungeon.add_child(floor.instantiate())
-				dungeon.get_parent().find_child("player").global_position = Vector2(587,306)
+				get_tree().get_first_node_in_group("Player").global_position = Vector2(587,306)

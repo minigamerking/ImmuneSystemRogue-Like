@@ -31,6 +31,8 @@ func _ready():
 func _process(delta):
 	max_cell_count = 5 + clone_upgrade * 2
 	max_health = 3 + health_upgrade
+	if max_health > 6 : max_health = 6
+	if health > 6: health = 6
 	luck = 0.25 - luck_upgrade * 0.01
 	fire_speed = 0.5 - fire_upgrade * 0.05
 	if luck < 0: luck = 0
@@ -39,6 +41,8 @@ func _process(delta):
 		_clone_die(clones.pick_random())
 		health = max_health
 	elif health == 0 and curr_cell_count <= 1:
+		player.find_child("Death").play()
+		await player.find_child("Death").finished
 		get_tree().reload_current_scene()
 		reset_upgrades()
 		

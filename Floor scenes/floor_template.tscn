@@ -4,10 +4,10 @@
 [ext_resource type="PackedScene" uid="uid://cc0je3wn7qcq2" path="res://Floor scenes/Floor 1/Rooms/f_1_starterroom.tscn" id="2_tunn0"]
 [ext_resource type="TileSet" uid="uid://br2jrdhmn80al" path="res://Texture/ReadyForUse/TileSet_Master.tres" id="4_7c2k7"]
 [ext_resource type="PackedScene" uid="uid://bgmsbos70bcue" path="res://Upgrades/fire_up.tscn" id="5_vnjws"]
-[ext_resource type="PackedScene" uid="uid://cic6257d4iofj" path="res://Upgrades/cell_up.tscn" id="6_mwcgn"]
-[ext_resource type="PackedScene" path="res://Scenes/load_screen.tscn" id="7_5f1vy"]
+[ext_resource type="PackedScene" uid="uid://b7wpi3wa0e6kj" path="res://Upgrades/cell_up.tscn" id="6_mwcgn"]
+[ext_resource type="PackedScene" uid="uid://dq48mais20lyi" path="res://Scenes/load_screen.tscn" id="7_5f1vy"]
 
-[node name="floor_template" type="Node2D"]
+[node name="floor_template" type="Node2D" groups=["Floor"]]
 script = ExtResource("1_yvjb4")
 max_rooms = 10
 

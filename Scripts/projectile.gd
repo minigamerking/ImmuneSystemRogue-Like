@@ -18,8 +18,8 @@ func _physics_process(delta):
 	
 func _ready():
 	match Playermanager.dmglevel:
-		#0:
-			#dmg =1
+		0:
+			dmg =1
 		1:
 			dmg =2
 		2:

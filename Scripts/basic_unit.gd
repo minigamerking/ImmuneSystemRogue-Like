@@ -13,13 +13,14 @@ signal update_enemy_count
 var stopdistance = 100
 
 func takedmg(dmg):
-	hp-=dmg
-	if hp <=0:
-		update_enemy_count.emit()
-		death.play()
-		enabled= false
-		await  death.finished
-		queue_free()
+	if enabled:
+		hp-=dmg
+		if hp <=0:
+			update_enemy_count.emit()
+			death.play()
+			enabled= false
+			await  death.finished
+			queue_free()
 
 var current_state = "idle"
 
