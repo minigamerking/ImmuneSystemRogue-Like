@@ -12,14 +12,49 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if playermanager.health == 2:
-		$CanvasLayer/HBoxContainer/Heart3.visible = false
-	if playermanager.health == 1:
-		$CanvasLayer/HBoxContainer/Heart2.visible = false
-	if playermanager.health == 0:
-		$CanvasLayer/HBoxContainer/Heart1.visible = false
-	if playermanager.health == 3:
-		$CanvasLayer/HBoxContainer/Heart1.visible = true
-		$CanvasLayer/HBoxContainer/Heart2.visible = true
-		$CanvasLayer/HBoxContainer/Heart3.visible = true
+	if playermanager.health <= 3:
+		$CanvasLayer/GoldHealth/Heart1.visible = false
+		$CanvasLayer/GoldHealth/Heart2.visible = false
+		$CanvasLayer/GoldHealth/Heart3.visible = false
+		$CanvasLayer/NinePatchRect2.visible = false
+	if playermanager.health > 3:
+		$CanvasLayer/NinePatchRect2.visible = true
+	match playermanager.health:
+		0:
+			$CanvasLayer/RegularHealth/Heart1.visible = false
+			$CanvasLayer/RegularHealth/Heart2.visible = false
+			$CanvasLayer/RegularHealth/Heart3.visible = false
+		1:
+			$CanvasLayer/RegularHealth/Heart1.visible = true
+			$CanvasLayer/RegularHealth/Heart2.visible = false
+			$CanvasLayer/RegularHealth/Heart3.visible = false
+		2:
+			$CanvasLayer/RegularHealth/Heart1.visible = true
+			$CanvasLayer/RegularHealth/Heart2.visible = true
+			$CanvasLayer/RegularHealth/Heart3.visible = false
+		3:
+			$CanvasLayer/RegularHealth/Heart1.visible = true
+			$CanvasLayer/RegularHealth/Heart2.visible = true
+			$CanvasLayer/RegularHealth/Heart3.visible = true
+		4:
+			$CanvasLayer/RegularHealth/Heart1.visible = true
+			$CanvasLayer/RegularHealth/Heart2.visible = true
+			$CanvasLayer/RegularHealth/Heart3.visible = true
+			$CanvasLayer/GoldHealth/Heart1.visible = true
+			$CanvasLayer/GoldHealth/Heart2.visible = false
+			$CanvasLayer/GoldHealth/Heart3.visible = false
+		5:
+			$CanvasLayer/RegularHealth/Heart1.visible = true
+			$CanvasLayer/RegularHealth/Heart2.visible = true
+			$CanvasLayer/RegularHealth/Heart3.visible = true
+			$CanvasLayer/GoldHealth/Heart1.visible = true
+			$CanvasLayer/GoldHealth/Heart2.visible = true
+			$CanvasLayer/GoldHealth/Heart3.visible = false
+		6:
+			$CanvasLayer/RegularHealth/Heart1.visible = true
+			$CanvasLayer/RegularHealth/Heart2.visible = true
+			$CanvasLayer/RegularHealth/Heart3.visible = true
+			$CanvasLayer/GoldHealth/Heart1.visible = true
+			$CanvasLayer/GoldHealth/Heart2.visible = true
+			$CanvasLayer/GoldHealth/Heart3.visible = true
 		

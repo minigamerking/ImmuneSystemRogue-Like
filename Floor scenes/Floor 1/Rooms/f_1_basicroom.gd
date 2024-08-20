@@ -63,72 +63,72 @@ func addroom(max_rooms , num_of_rooms):
 				1:
 					match room_id:
 						1:
-							room =preload("res://Floor scenes/Floor 1/Rooms/f_1_basicroom.tscn")
+							room =load("res://Floor scenes/Floor 1/Rooms/f_1_basicroom.tscn")
 						2:
-							room = preload("res://Floor scenes/Floor 1/Rooms/f_1_corner_rooms.tscn")
+							room = load("res://Floor scenes/Floor 1/Rooms/f_1_corner_rooms.tscn")
 						3:
-							room = preload("res://Floor scenes/Floor 1/Rooms/f_1_crosssectionroom.tscn")
+							room = load("res://Floor scenes/Floor 1/Rooms/f_1_crosssectionroom.tscn")
 						4:
-							room =preload("res://Floor scenes/Floor 1/Rooms/f_1_hallroom.tscn")
+							room =load("res://Floor scenes/Floor 1/Rooms/f_1_hallroom.tscn")
 						10:
-							room = preload("res://Floor scenes/Floor 1/Rooms/f_1_boss_room.tscn")
+							room = load("res://Floor scenes/Floor 1/Rooms/f_1_boss_room.tscn")
 						11:
-							room=preload("res://Floor scenes/Floor 1/Rooms/f_1_treasure_room.tscn")
+							room=load("res://Floor scenes/Floor 1/Rooms/f_1_treasure_room.tscn")
 				2:
 					match room_id:
 						1:
-							room =preload("res://Floor scenes/Floor2/Rooms/f_2_wallroom.tscn")
+							room =load("res://Floor scenes/Floor2/Rooms/f_2_wallroom.tscn")
 						2:
-							room = preload("res://Floor scenes/Floor2/Rooms/f_2_crossroom.tscn")
+							room = load("res://Floor scenes/Floor2/Rooms/f_2_crossroom.tscn")
 						3:
-							room = preload("res://Floor scenes/Floor2/Rooms/f_2_holessectionroom.tscn")
+							room = load("res://Floor scenes/Floor2/Rooms/f_2_holessectionroom.tscn")
 						4:
-							room =preload("res://Floor scenes/Floor2/Rooms/f_2_zigroom.tscn")
+							room =load("res://Floor scenes/Floor2/Rooms/f_2_zigroom.tscn")
 						10:
-							room = preload("res://Floor scenes/Floor 1/Rooms/f_1_boss_room.tscn")
+							room = load("res://Floor scenes/Floor 1/Rooms/f_1_boss_room.tscn")
 						11:
-							room=preload("res://Floor scenes/Floor 1/Rooms/f_1_treasure_room.tscn")
+							room=load("res://Floor scenes/Floor 1/Rooms/f_1_treasure_room.tscn")
 				3:
 					
 					match room_id:
 						1:
-							room =preload("res://Floor scenes/Floor 3/f_3_cystroom.tscn")
+							room =load("res://Floor scenes/Floor 3/f_3_cystroom.tscn")
 						2:
-							room = preload("res://Floor scenes/Floor 3/f_3_wallroom.tscn")
+							room = load("res://Floor scenes/Floor 3/f_3_wallroom.tscn")
 						3:
-							room = preload("res://Floor scenes/Floor 3/f_3_pathroom.tscn")
+							room = load("res://Floor scenes/Floor 3/f_3_pathroom.tscn")
 						4:
-							room =preload("res://Floor scenes/Floor 3/f_3_scaredroom.tscn")
+							room =load("res://Floor scenes/Floor 3/f_3_scaredroom.tscn")
 						10:
-							room =preload("res://Floor scenes/Floor 1/Rooms/f_1_boss_room.tscn")
+							room =load("res://Floor scenes/Floor 1/Rooms/f_1_boss_room.tscn")
 						11:
-							room=preload("res://Floor scenes/Floor 1/Rooms/f_1_treasure_room.tscn")
+							room=load("res://Floor scenes/Floor 1/Rooms/f_1_treasure_room.tscn")
 				4:
 					match room_id:
 						1:
-							room =preload("res://Floor scenes/Floor4/Rooms/f_4_plusroom.tscn")
+							room =load("res://Floor scenes/Floor4/Rooms/f_4_plusroom.tscn")
 						2:
-							room = preload("res://Floor scenes/Floor4/Rooms/f_4_diamondroom.tscn")
+							room = load("res://Floor scenes/Floor4/Rooms/f_4_diamondroom.tscn")
 						3:
-							room = preload("res://Floor scenes/Floor4/Rooms/f_4_lroom.tscn")
+							room = load("res://Floor scenes/Floor4/Rooms/f_4_lroom.tscn")
 						4:
-							room =preload("res://Floor scenes/Floor4/Rooms/f_4_rev_lroom.tscn")
+							room =load("res://Floor scenes/Floor4/Rooms/f_4_rev_lroom.tscn")
 						10:
-							room =preload("res://Floor scenes/Floor 1/Rooms/f_1_boss_room.tscn")
+							room =load("res://Floor scenes/Floor 1/Rooms/f_1_boss_room.tscn")
 						11:
-							room=preload("res://Floor scenes/Floor 1/Rooms/f_1_treasure_room.tscn")
+							room=load("res://Floor scenes/Floor 1/Rooms/f_1_treasure_room.tscn")
 				5:
 					match room_id:
 						1:
-							room =preload("res://Floor scenes/Floor5/Rooms/f_5_diarooms.tscn")
+							room =load("res://Floor scenes/Floor5/Rooms/f_5_diarooms.tscn")
 						2:
-							room = preload("res://Floor scenes/Floor5/Rooms/f_5_holerooms.tscn")
+							room = load("res://Floor scenes/Floor5/Rooms/f_5_holerooms.tscn")
 						3:
-							room =preload("res://Floor scenes/Floor5/Rooms/f_5_hor_rooms.tscn")
+							room =load("res://Floor scenes/Floor5/Rooms/f_5_hor_rooms.tscn")
 						4:
-							room = preload("res://Floor scenes/Floor5/Rooms/f_5_vert_rooms.tscn")
+							room = load("res://Floor scenes/Floor5/Rooms/f_5_vert_rooms.tscn")
 						10:
-							room = preload("res://Floor scenes/Floor5/Rooms/f_5_bossroom.tscn")
+							room = load("res://Floor scenes/Floor5/Rooms/f_5_bossroom.tscn")
 					
 			match door_id :
 				1:

@@ -21,6 +21,7 @@ var clone_upgrade = 0
 var health_upgrade = 0
 var clone_shoot_upgrade = 0
 var luck_upgrade = 0
+@onready var upgrade = $"../Upgrade"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -38,11 +39,12 @@ func _process(delta):
 	if luck < 0: luck = 0
 	if can_be_hurt and enemy_in_range: takedmg()
 	if health == 0 and curr_cell_count > 1:
+		player.find_child("Death").play()
 		_clone_die(clones.pick_random())
 		health = max_health
 	elif health == 0 and curr_cell_count <= 1:
-		player.find_child("Death").play()
-		await player.find_child("Death").finished
+		#player.find_child("Death").play()
+		#await player.find_child("Death").finished
 		get_tree().reload_current_scene()
 		reset_upgrades()
 		
@@ -57,22 +59,46 @@ func reset_upgrades():
 func up_firespd():
 	fire_upgrade +=2
 	fire_speed = fire_speed/ 2
+	upgrade.play()
+	$"../Label".text = "More\nFirerate"
+	await get_tree().create_timer(1).timeout
+	$"../Label".text = ""
 
 func up_maxcell():
 	clone_upgrade += 1
+	upgrade.play()
+	$"../Label".text = "More\nClones"
+	await get_tree().create_timer(1).timeout
+	$"../Label".text = ""
 	
 func dmg_level():
 	dmglevel += 1
+	upgrade.play()
+	$"../Label".text = "More\nDamage"
+	await get_tree().create_timer(1).timeout
+	$"../Label".text = ""
 
 func health_up():
 	health_upgrade += 1
 	health += 1
+	upgrade.play()
+	$"../Label".text = "More\nHealth"
+	await get_tree().create_timer(1).timeout
+	$"../Label".text = ""
 
 func luck_high():
 	luck_upgrade += 1
+	upgrade.play()
+	$"../Label".text = "More\nLuck"
+	await get_tree().create_timer(1).timeout
+	$"../Label".text = ""
 
 func shoot_clone():
 	clone_shoot_upgrade = 1
+	upgrade.play()
+	$"../Label".text = "Shooting\nClones"
+	await get_tree().create_timer(1).timeout
+	$"../Label".text = ""
 
 func connect_enemies():
 	for child in get_tree().get_nodes_in_group("Enemy"):

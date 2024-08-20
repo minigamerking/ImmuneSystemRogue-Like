@@ -1,13 +1,21 @@
-[gd_scene load_steps=15 format=3 uid="uid://c881k08qyanxk"]
+[gd_scene load_steps=25 format=3 uid="uid://c881k08qyanxk"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_yil6q"]
 [ext_resource type="Texture2D" uid="uid://bdymw02rhys4r" path="res://sprites/player_S_virus.png" id="2_6awh5"]
 [ext_resource type="Script" path="res://Scripts/playermanager.gd" id="3_d7vvm"]
 [ext_resource type="AudioStream" uid="uid://dvyfoxfpprmos" path="res://Audio/SoundFX/8-19-24_Rogue-Lite-GMTK_Projectiles_01.wav" id="4_3fpii"]
 [ext_resource type="AudioStream" uid="uid://2luuwfa3sy2t" path="res://Audio/SoundFX/8-19-24_Rogue-Lite-GMTK_FleshFootsteps_01.wav" id="5_11ja8"]
+[ext_resource type="AudioStream" uid="uid://dkpqoal1yihxh" path="res://Audio/SoundFX/8-19-24_Rogue-Lite-GMTK_Projectiles_02.wav" id="5_q4jmi"]
+[ext_resource type="AudioStream" uid="uid://b2sdaxpaaejff" path="res://Audio/SoundFX/8-19-24_Rogue-Lite-GMTK_Projectiles_03.wav" id="6_k68er"]
 [ext_resource type="AudioStream" uid="uid://bhwrjewbrbxau" path="res://Audio/SoundFX/8-19-24_Rogue-Lite-GMTK_FleshFootsteps_02.wav" id="6_scgp8"]
 [ext_resource type="AudioStream" uid="uid://dixm2kn0upbmk" path="res://Audio/SoundFX/8-19-24_Rogue-Lite-GMTK_FleshFootsteps_03.wav" id="7_8psbj"]
 [ext_resource type="AudioStream" uid="uid://vljdq5nq54gh" path="res://Audio/SoundFX/8-19-24_Rogue-Lite-GMTK_FleshFootsteps_04.wav" id="8_8u1tw"]
+[ext_resource type="AudioStream" uid="uid://dug22u0rjm3hc" path="res://Audio/SoundFX/8-19-24_Rogue-Lite-GMTK_VirusDeath_01.wav" id="9_42dln"]
+[ext_resource type="AudioStream" uid="uid://bgx1t3mm73chm" path="res://Audio/SoundFX/8-19-24_Rogue-Lite-GMTK_VirusDeath_02.wav" id="10_656x5"]
+[ext_resource type="AudioStream" uid="uid://bbtdmqb1f45gp" path="res://Audio/SoundFX/8-19-24_Rogue-Lite-GMTK_VirusDeath_03.wav" id="11_1tyh3"]
+[ext_resource type="AudioStream" uid="uid://c3o1r74ad7p4v" path="res://Audio/SoundFX/8-19-24_Rogue-Lite-GMTK_VirusDeath_04.wav" id="12_ik7wa"]
+[ext_resource type="AudioStream" uid="uid://k0q6kbyosih6" path="res://Audio/SoundFX/8-19-24_Rogue-Lite-GMTK_Upgrade_01.wav" id="13_nliiv"]
+[ext_resource type="FontFile" uid="uid://dcs2ufu8dcnys" path="res://GomePixel-ARJd7.otf" id="16_ufyg8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4qwng"]
 
@@ -52,6 +60,16 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1mvly"]
 size = Vector2(38, 38)
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_cc2j0"]
+random_volume_offset_db = 1.2
+streams_count = 3
+stream_0/stream = ExtResource("4_3fpii")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("5_q4jmi")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("6_k68er")
+stream_2/weight = 1.0
+
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_5ul2k"]
 random_pitch = 1.15
 random_volume_offset_db = 1.6
@@ -63,6 +81,18 @@ stream_1/weight = 1.0
 stream_2/stream = ExtResource("7_8psbj")
 stream_2/weight = 1.0
 stream_3/stream = ExtResource("8_8u1tw")
+stream_3/weight = 1.0
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_73ieu"]
+random_volume_offset_db = 1.2
+streams_count = 4
+stream_0/stream = ExtResource("9_42dln")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("10_656x5")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("11_1tyh3")
+stream_2/weight = 1.0
+stream_3/stream = ExtResource("12_ik7wa")
 stream_3/weight = 1.0
 
 [node name="player" type="CharacterBody2D" groups=["Player"]]
@@ -104,11 +134,28 @@ wait_time = 1.5
 one_shot = true
 
 [node name="projectile" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("4_3fpii")
+stream = SubResource("AudioStreamRandomizer_cc2j0")
 
 [node name="Footsteps" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStreamRandomizer_5ul2k")
 volume_db = 4.5
+
+[node name="Death" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamRandomizer_73ieu")
+volume_db = 5.0
+
+[node name="Upgrade" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("13_nliiv")
+volume_db = 1.5
+
+[node name="Label" type="Label" parent="."]
+offset_left = -37.0
+offset_top = -94.0
+offset_right = 35.0
+offset_bottom = -19.0
+theme_override_fonts/font = ExtResource("16_ufyg8")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="timeout" from="projectilecd" to="." method="_on_projectilecd_timeout"]
 [connection signal="body_entered" from="EnemyCollider" to="PlayerManager" method="_on_enemy_collider_body_entered"]
