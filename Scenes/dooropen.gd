@@ -1,4 +1,4 @@
-extends AudioStreamPlayer2D
+extends AudioStreamPlayer
 @onready var dooropen = $"."
 
 @onready var doorclose = $doorclose

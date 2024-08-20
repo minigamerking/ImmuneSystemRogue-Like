@@ -302,19 +302,7 @@ func _ready():
 func _on_test__enemy_update_enemy_count():
 	enemycount-=1
 	if enemycount == 0:
-		var open_sound = AudioStreamPlayer2D.new()
-		var stream = AudioStreamRandomizer.new()
-		var first_sound = AudioStreamWAV.new()
-		var sec_sound = AudioStreamWAV.new()
-		var thi_sound = AudioStreamWAV.new()
-		first_sound.data = FileAccess.open("res://Audio/SoundFX/8-19-24_Rogue-Lite-GMTK_DoorOpens_01.wav",FileAccess.READ)
-		sec_sound.data = FileAccess.open("res://Audio/SoundFX/8-19-24_Rogue-Lite-GMTK_DoorOpens_02.wav",FileAccess.READ)
-		thi_sound.data = FileAccess.open("res://Audio/SoundFX/8-19-24_Rogue-Lite-GMTK_DoorOpens_03.wav",FileAccess.READ)
-		stream.add_stream(-1,first_sound)
-		stream.add_stream(-1,sec_sound)
-		stream.add_stream(-1,thi_sound)
-		get_parent().add_child(open_sound)
-		open_sound.play()
+		Dooropen.dooropen.play()
 		$playerblockers.queue_free()
 		cleared = true
 	
@@ -330,19 +318,7 @@ func _on_player_detector_body_entered(body):
 		for child in $enemies.get_children():
 			if child is Enemy:
 				child.enabled = true
-		var close_sound = AudioStreamPlayer2D.new()
-		var stream = AudioStreamRandomizer.new()
-		var first_sound = AudioStreamWAV.new()
-		var sec_sound = AudioStreamWAV.new()
-		var thi_sound = AudioStreamWAV.new()
-		first_sound.data = FileAccess.open("res://Audio/SoundFX/8-19-24_Rogue-Lite-GMTK_DoorLocks_01.wav",FileAccess.READ)
-		sec_sound.data = FileAccess.open("res://Audio/SoundFX/8-19-24_Rogue-Lite-GMTK_DoorLocks_02.wav",FileAccess.READ)
-		thi_sound.data = FileAccess.open("res://Audio/SoundFX/8-19-24_Rogue-Lite-GMTK_DoorLocks_03.wav",FileAccess.READ)
-		stream.add_stream(-1,first_sound)
-		stream.add_stream(-1,sec_sound)
-		stream.add_stream(-1,thi_sound)
-		get_parent().add_child(close_sound)
-		close_sound.play()
+		Dooropen.doorclose.play()
 		$playerblockers.visible=true
 		var doors =$playerblockers.get_children()
 		for door in doors:

@@ -7,7 +7,6 @@
 size = Vector2(21, 21)
 
 [node name="HealthUp" type="Area2D"]
-collision_mask = 2
 script = ExtResource("1_ey2xy")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

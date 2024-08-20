@@ -5,6 +5,7 @@
 
 [node name="bgm" type="AudioStreamPlayer2D"]
 stream = ExtResource("1_p6s3i")
+volume_db = -7.5
 autoplay = true
 max_distance = 1e+06
 script = ExtResource("2_buctc")
