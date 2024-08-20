@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://1yuid3kbfsc2"]
+[gd_scene load_steps=5 format=3 uid="uid://1yuid3kbfsc2"]
 
 [ext_resource type="Script" path="res://enemies/Range_unit.gd" id="1_nuw7u"]
 [ext_resource type="Texture2D" uid="uid://c6pboh6rcr5mm" path="res://sprites/platelet.png" id="2_jvfkg"]
+[ext_resource type="AudioStream" uid="uid://c3o1r74ad7p4v" path="res://Audio/SoundFX/8-19-24_Rogue-Lite-GMTK_VirusDeath_04.wav" id="3_g6ec2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pq36v"]
 radius = 13.0015
@@ -24,5 +25,8 @@ target_desired_distance = 25.0
 
 [node name="shooting_cd" type="Timer" parent="."]
 autostart = true
+
+[node name="death" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_g6ec2")
 
 [connection signal="timeout" from="shooting_cd" to="." method="_on_shooting_cd_timeout"]

@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://duxttt1k1use0"]
+[gd_scene load_steps=6 format=3 uid="uid://duxttt1k1use0"]
 
 [ext_resource type="Script" path="res://enemies/enemy_projectile.gd" id="1_irgd3"]
 [ext_resource type="Texture2D" uid="uid://c6w0kybxrje33" path="res://sprites/platelet_proj.png" id="2_fnt7s"]
+[ext_resource type="AudioStream" uid="uid://b2sdaxpaaejff" path="res://Audio/SoundFX/8-19-24_Rogue-Lite-GMTK_Projectiles_03.wav" id="3_q3xub"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kfov3"]
 
@@ -27,5 +28,9 @@ collision_mask = 3
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
 position = Vector2(0.5, -1)
 shape = SubResource("RectangleShape2D_462b2")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_q3xub")
+autoplay = true
 
 [connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]

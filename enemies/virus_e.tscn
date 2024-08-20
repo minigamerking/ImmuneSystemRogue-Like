@@ -1,13 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://ck7kdw1ggehwl"]
+[gd_scene load_steps=5 format=3 uid="uid://ck7kdw1ggehwl"]
 
 [ext_resource type="Script" path="res://Scripts/basic_unit.gd" id="1_y4anj"]
 [ext_resource type="Texture2D" uid="uid://iptopf0ui4js" path="res://sprites/virus_enemy_B.png" id="2_bgt6d"]
+[ext_resource type="AudioStream" uid="uid://bbtdmqb1f45gp" path="res://Audio/SoundFX/8-19-24_Rogue-Lite-GMTK_VirusDeath_03.wav" id="3_ehity"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pq36v"]
 radius = 14.6014
 
 [node name="virus_e" type="CharacterBody2D" groups=["Enemy"]]
-
 scale = Vector2(5, 5)
 collision_layer = 32
 collision_mask = 3
@@ -22,3 +22,6 @@ shape = SubResource("CircleShape2D_pq36v")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 target_desired_distance = 25.0
+
+[node name="death" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_ehity")

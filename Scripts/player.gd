@@ -18,6 +18,7 @@ func _physics_process(delta):
 
 func _process(delta):
 	if Input.is_action_pressed("leftclick") and can_shoot:
+		$projectile.play()
 		var newprojectile = PROJECTILE.instantiate()
 		newprojectile.global_position = global_position
 		newprojectile.direction = -(position - get_global_mouse_position()).normalized()

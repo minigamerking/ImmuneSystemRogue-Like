@@ -304,6 +304,7 @@ func _on_test__enemy_update_enemy_count():
 	if enemycount == 0:
 		$playerblockers.queue_free()
 		cleared = true
+		Dooropen.dooropen.play()
 	
 	
 	
@@ -313,6 +314,7 @@ var cleared = false
 
 
 func _on_player_detector_body_entered(body):
+	Dooropen.doorclose.play()
 	if cleared == false:
 		for child in $enemies.get_children():
 			if child is Enemy:

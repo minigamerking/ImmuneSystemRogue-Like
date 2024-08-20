@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://c881k08qyanxk"]
+[gd_scene load_steps=11 format=3 uid="uid://c881k08qyanxk"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_yil6q"]
 [ext_resource type="Texture2D" uid="uid://bdymw02rhys4r" path="res://sprites/player_S_virus.png" id="2_6awh5"]
 [ext_resource type="Script" path="res://Scripts/playermanager.gd" id="3_d7vvm"]
+[ext_resource type="AudioStream" uid="uid://dvyfoxfpprmos" path="res://Audio/SoundFX/8-19-24_Rogue-Lite-GMTK_Projectiles_01.wav" id="4_3fpii"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ychgq"]
 
@@ -91,6 +92,9 @@ shape = SubResource("RectangleShape2D_1mvly")
 [node name="HurtTimer" type="Timer" parent="."]
 wait_time = 1.5
 one_shot = true
+
+[node name="projectile" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_3fpii")
 
 [connection signal="timeout" from="projectilecd" to="." method="_on_projectilecd_timeout"]
 [connection signal="body_entered" from="EnemyCollider" to="PlayerManager" method="_on_enemy_collider_body_entered"]

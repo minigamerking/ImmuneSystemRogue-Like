@@ -5,6 +5,7 @@ class_name Enemy
 @export var move_speed := 200
 @onready var navigation_agent = $NavigationAgent2D
 @onready var sprite_2d = $Sprite2D
+@onready var death = $death as AudioStreamPlayer2D
 
 @export var hp = 5
 var enabled = false
@@ -15,6 +16,9 @@ func takedmg(dmg):
 	hp-=dmg
 	if hp <=0:
 		update_enemy_count.emit()
+		death.play()
+		enabled= false
+		await  death.finished
 		queue_free()
 
 var current_state = "idle"

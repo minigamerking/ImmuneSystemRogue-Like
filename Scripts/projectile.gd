@@ -4,7 +4,7 @@ extends CharacterBody2D
 const SPEED = 900
 
 var direction: Vector2 = Vector2(0,1)
-@export var dmg = 1
+@export var dmg = 100
 @onready var proj_sprite = $Sprite2D
 
 func _physics_process(delta):
@@ -18,8 +18,8 @@ func _physics_process(delta):
 	
 func _ready():
 	match Playermanager.dmglevel:
-		0:
-			dmg =1
+		#0:
+			#dmg =1
 		1:
 			dmg =2
 		2:

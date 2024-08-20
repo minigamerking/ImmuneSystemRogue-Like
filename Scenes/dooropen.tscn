@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://bmq3vbtbagt8c"]
+
+[ext_resource type="AudioStream" uid="uid://cu2e5ka2djgcr" path="res://Audio/SoundFX/8-19-24_Rogue-Lite-GMTK_DoorOpens_01.wav" id="1_ba8wa"]
+[ext_resource type="AudioStream" uid="uid://cluvbo07seo7q" path="res://Audio/SoundFX/8-19-24_Rogue-Lite-GMTK_DoorLocks_01.wav" id="2_idiaq"]
+[ext_resource type="Script" path="res://Scenes/dooropen.gd" id="2_wu4ak"]
+
+[node name="dooropen" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_ba8wa")
+max_distance = 1e+06
+script = ExtResource("2_wu4ak")
+
+[node name="doorclose" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_idiaq")
+max_distance = 100000.0
