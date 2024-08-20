@@ -72,7 +72,7 @@ func up_maxcell():
 func dmg_level():
 	dmglevel += 1
 	upgrade.play()
-	$"../CanvasLayer/Label".text = "More\nDamage"
+	$"../Label".text = "More\nDamage"
 	await get_tree().create_timer(1).timeout
 	$"../Label".text = ""
 
