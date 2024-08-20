@@ -1,19 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://ck7kdw1ggehwl"]
+[gd_scene load_steps=4 format=3 uid="uid://cpeaq34wqvoq4"]
 
-[ext_resource type="Script" path="res://Scripts/basic_unit.gd" id="1_y4anj"]
-[ext_resource type="Texture2D" uid="uid://iptopf0ui4js" path="res://sprites/virus_enemy_B.png" id="2_bgt6d"]
+[ext_resource type="Script" path="res://Scripts/basic_unit.gd" id="1_6yi5i"]
+[ext_resource type="Texture2D" uid="uid://iptopf0ui4js" path="res://sprites/virus_enemy_B.png" id="2_62sfp"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pq36v"]
-radius = 14.6014
+radius = 14.4347
 
-[node name="platelets_E" type="CharacterBody2D" groups=["Enemy"]]
+[node name="virius_e" type="CharacterBody2D" groups=["Enemy"]]
 scale = Vector2(5, 5)
 collision_layer = 32
 collision_mask = 3
-script = ExtResource("1_y4anj")
+script = ExtResource("1_6yi5i")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_bgt6d")
+texture = ExtResource("2_62sfp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(2.98023e-08, -2.98023e-08)

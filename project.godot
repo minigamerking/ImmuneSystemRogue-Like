@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Immune System Rogue-like"
-run/main_scene="res://Floor scenes/floor_template.tscn"
+run/main_scene="res://Scenes/main_manager.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 

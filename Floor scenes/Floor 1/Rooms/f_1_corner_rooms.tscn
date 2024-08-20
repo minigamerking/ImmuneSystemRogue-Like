@@ -4,7 +4,7 @@
 [ext_resource type="TileSet" uid="uid://br2jrdhmn80al" path="res://Texture/ReadyForUse/TileSet_Master.tres" id="2_8402m"]
 [ext_resource type="PackedScene" uid="uid://cs2quat6d5vk4" path="res://Floor scenes/door.tscn" id="3_yjjk3"]
 [ext_resource type="PackedScene" uid="uid://ck7kdw1ggehwl" path="res://enemies/virus_e.tscn" id="4_nqim3"]
-[ext_resource type="PackedScene" uid="uid://1yuid3kbfsc2" path="res://enemies/platelets_E.tscn" id="5_nh4ba"]
+[ext_resource type="PackedScene" path="res://enemies/platelets_E.tscn" id="5_nh4ba"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3bv21"]
 size = Vector2(1119, 614)
