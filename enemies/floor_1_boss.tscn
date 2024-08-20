@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://u5q5dkaw8mcd"]
+
+[ext_resource type="Script" path="res://enemies/F1_boss.gd" id="1_jm24y"]
+[ext_resource type="Texture2D" uid="uid://c6pboh6rcr5mm" path="res://sprites/platelet.png" id="2_imius"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pq36v"]
+radius = 14.6014
+
+[node name="boss" type="CharacterBody2D" groups=["Enemy"]]
+scale = Vector2(10, 10)
+collision_layer = 32
+collision_mask = 3
+script = ExtResource("1_jm24y")
+hp = 100
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.44636, 0.00985881, 1.68458e-07, 1)
+texture = ExtResource("2_imius")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(2.98023e-08, -2.98023e-08)
+shape = SubResource("CircleShape2D_pq36v")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+target_desired_distance = 25.0

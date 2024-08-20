@@ -29,7 +29,7 @@ func _process(delta):
 func change_outfit():
 	match Floormanager.floor_id:
 		2:
-			sprite_2d.texture =preload("res://sprites/Platelets _enemy.png")
+			sprite_2d.texture =preload("res://sprites/platelet.png")
 		3:
 			sprite_2d.texture =preload("res://sprites/infected_red_BC.png")
 		4:
