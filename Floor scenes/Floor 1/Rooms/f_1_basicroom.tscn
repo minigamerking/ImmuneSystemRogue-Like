@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Floor scenes/Floor 1/Rooms/f_1_basicroom.gd" id="1_nuekt"]
 [ext_resource type="TileSet" uid="uid://br2jrdhmn80al" path="res://Texture/ReadyForUse/TileSet_Master.tres" id="2_5tl04"]
 [ext_resource type="PackedScene" uid="uid://cs2quat6d5vk4" path="res://Floor scenes/door.tscn" id="3_q3v6k"]
-[ext_resource type="PackedScene" uid="uid://ck7kdw1ggehwl" path="res://enemies/virus_e.tscn" id="4_yel6v"]
+[ext_resource type="PackedScene" uid="uid://ck7kdw1ggehwl" path="res://enemies/virus_e.tscn" id="4_fnkay"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y0atl"]
 size = Vector2(1117, 610)
@@ -94,19 +94,19 @@ shape = SubResource("RectangleShape2D_nkokg")
 
 [node name="enemies" type="Node2D" parent="."]
 
-[node name="platelets_E" parent="enemies" instance=ExtResource("4_yel6v")]
+[node name="platelets_E" parent="enemies" instance=ExtResource("4_fnkay")]
 position = Vector2(261, 142)
 detection_radius = 900.0
 
-[node name="platelets_E2" parent="enemies" instance=ExtResource("4_yel6v")]
+[node name="platelets_E2" parent="enemies" instance=ExtResource("4_fnkay")]
 position = Vector2(275, 472)
 detection_radius = 900.0
 
-[node name="platelets_E3" parent="enemies" instance=ExtResource("4_yel6v")]
+[node name="platelets_E3" parent="enemies" instance=ExtResource("4_fnkay")]
 position = Vector2(890, 161)
 detection_radius = 900.0
 
-[node name="platelets_E4" parent="enemies" instance=ExtResource("4_yel6v")]
+[node name="platelets_E4" parent="enemies" instance=ExtResource("4_fnkay")]
 position = Vector2(894, 470)
 detection_radius = 900.0
 

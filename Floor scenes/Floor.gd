@@ -17,8 +17,8 @@ var connected_enemies = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	starterroom.addroom(max_rooms,num_of_rooms)
-	
-	
+
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
