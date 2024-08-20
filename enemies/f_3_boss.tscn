@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://dpxyd0vtt8dpv"]
+
+[ext_resource type="Script" path="res://enemies/F1_boss.gd" id="1_sq2m8"]
+[ext_resource type="Texture2D" uid="uid://bh5fma12eesxi" path="res://sprites/white_BC.png" id="2_vfgqn"]
+[ext_resource type="AudioStream" uid="uid://bbtdmqb1f45gp" path="res://Audio/SoundFX/8-19-24_Rogue-Lite-GMTK_VirusDeath_03.wav" id="3_odwau"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pq36v"]
+radius = 14.6014
+
+[node name="f_3 boss" type="CharacterBody2D" groups=["Enemy"]]
+scale = Vector2(10, 10)
+collision_layer = 32
+collision_mask = 3
+script = ExtResource("1_sq2m8")
+hp = 35
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.321728, 0.321728, 0.321728, 1)
+texture = ExtResource("2_vfgqn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(2.98023e-08, -2.98023e-08)
+shape = SubResource("CircleShape2D_pq36v")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+target_desired_distance = 25.0
+
+[node name="death" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_odwau")

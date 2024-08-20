@@ -1,22 +1,21 @@
-[gd_scene load_steps=5 format=3 uid="uid://3xfu8tnoo6kd"]
+[gd_scene load_steps=5 format=3 uid="uid://df7henbnd6snf"]
 
-[ext_resource type="Script" path="res://enemies/F_2boss.gd" id="1_7qgrd"]
-[ext_resource type="Texture2D" uid="uid://dpmmh8asq6rq4" path="res://sprites/red_BC.png" id="2_m3wcm"]
-[ext_resource type="AudioStream" uid="uid://bbtdmqb1f45gp" path="res://Audio/SoundFX/8-19-24_Rogue-Lite-GMTK_VirusDeath_03.wav" id="3_gfsew"]
+[ext_resource type="Script" path="res://enemies/F_2boss.gd" id="1_npts0"]
+[ext_resource type="Texture2D" uid="uid://chdy7fhmavqqj" path="res://sprites/virus_enemy_Y.png" id="2_0hjq2"]
+[ext_resource type="AudioStream" uid="uid://bbtdmqb1f45gp" path="res://Audio/SoundFX/8-19-24_Rogue-Lite-GMTK_VirusDeath_03.wav" id="3_cbc2b"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pq36v"]
 radius = 8.19383
 
-[node name="F_2boss" type="CharacterBody2D" groups=["Enemy"]]
-scale = Vector2(12, 12)
+[node name="F_5boss" type="CharacterBody2D" groups=["Enemy"]]
+scale = Vector2(30, 30)
 collision_layer = 32
 collision_mask = 3
-script = ExtResource("1_7qgrd")
-hp = 25
+script = ExtResource("1_npts0")
+hp = 30
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(0.766189, 0.563646, 0.939409, 1)
-texture = ExtResource("2_m3wcm")
+texture = ExtResource("2_0hjq2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(2.98023e-08, -2.98023e-08)
@@ -26,10 +25,10 @@ shape = SubResource("CircleShape2D_pq36v")
 target_desired_distance = 25.0
 
 [node name="shooting_cd" type="Timer" parent="."]
-wait_time = 0.3
+wait_time = 0.1
 autostart = true
 
 [node name="death" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_gfsew")
+stream = ExtResource("3_cbc2b")
 
 [connection signal="timeout" from="shooting_cd" to="." method="_on_shooting_cd_timeout"]

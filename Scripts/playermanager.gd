@@ -55,7 +55,8 @@ func reset_upgrades():
 	dmglevel = 0
 
 func up_firespd():
-	fire_speed /= 2
+	fire_upgrade +=2
+	fire_speed = fire_speed/ 2
 
 func up_maxcell():
 	clone_upgrade += 1

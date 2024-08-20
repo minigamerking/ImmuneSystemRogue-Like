@@ -15,7 +15,7 @@ func _ready():
 func _process(delta):
 	set_target()
 	if navigation_agent.is_target_reachable() and enabled and canshoot ==true:
-		if int(navigation_agent.distance_to_target()) <= stopdistance:
+		if int(navigation_agent.distance_to_target()):
 			var new_projectile = ENEMY_PROJECTILE.instantiate()
 			var direction = (player.global_position- self.global_position).normalized()
 			new_projectile.direction = direction

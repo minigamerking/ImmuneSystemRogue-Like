@@ -1,0 +1,71 @@
+[gd_scene load_steps=4 format=3 uid="uid://dy71h0s1bxkxo"]
+
+[ext_resource type="Script" path="res://End screen.gd" id="1_tu3bl"]
+[ext_resource type="Texture2D" uid="uid://cuggvqbj8147s" path="res://sprites/Door.png" id="2_5auc3"]
+[ext_resource type="FontFile" uid="uid://dcs2ufu8dcnys" path="res://GomePixel-ARJd7.otf" id="3_qdx8t"]
+
+[node name="End screen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tu3bl")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+modulate = Color(1, 0.316539, 0.318284, 1)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_5auc3")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -417.0
+offset_top = -154.5
+offset_right = 417.0
+offset_bottom = 154.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("3_qdx8t")
+theme_override_font_sizes/normal_font_size = 48
+text = "You have done it....this body is yours to command now.......But you arent satisfied you wish spread even farther and infect others"
+
+[node name="replay game" type="Button" parent="CanvasLayer"]
+offset_left = 200.0
+offset_top = 425.0
+offset_right = 407.0
+offset_bottom = 493.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/replay game"]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 18.0
+offset_right = 177.0
+offset_bottom = 58.0
+theme_override_fonts/normal_font = ExtResource("3_qdx8t")
+text = "Replay Game"
+
+[node name="quit" type="Button" parent="CanvasLayer"]
+offset_left = 669.0
+offset_top = 425.0
+offset_right = 876.0
+offset_bottom = 493.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/quit"]
+layout_mode = 0
+offset_left = 53.0
+offset_top = 19.0
+offset_right = 151.0
+offset_bottom = 59.0
+theme_override_fonts/normal_font = ExtResource("3_qdx8t")
+text = "Quit game"

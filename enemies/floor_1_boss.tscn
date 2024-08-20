@@ -12,6 +12,7 @@ scale = Vector2(10, 10)
 collision_layer = 32
 collision_mask = 3
 script = ExtResource("1_jm24y")
+hp = 20
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(0.44636, 0.00985881, 1.68458e-07, 1)
