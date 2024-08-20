@@ -272,6 +272,39 @@ func addroom(max_rooms , num_of_rooms):
 								num_of_rooms+=1
 		if fail_count>=10:
 			get_tree().reload_current_scene()
+			#var floor
+			#var dungeon = get_tree().get_first_node_in_group("DungeonHandler")
+			#match Floormanager.floor_id:
+				#1:
+					#
+					#floor = load("res://Floor scenes/floor_template.tscn")
+					#get_tree().get_first_node_in_group("Floor").queue_free()
+					#dungeon.add_child(floor.instantiate())
+					#get_tree().get_first_node_in_group("Player").global_position = Vector2(587,306)
+				#2:
+					#
+					#floor = load("res://Floor scenes/Floor2/floor_2.tscn")
+					#print(get_tree().get_first_node_in_group("Floor"))
+					#get_tree().get_first_node_in_group("Floor").queue_free()
+					#dungeon.add_child(floor.instantiate())
+					#get_tree().get_first_node_in_group("Player").global_position = Vector2(587,306)
+				#3:
+					#
+					#floor = load("res://Floor scenes/Floor 3/floor_3.tscn")
+					#get_tree().get_first_node_in_group("Floor").queue_free()
+					#dungeon.add_child(floor.instantiate())
+					#get_tree().get_first_node_in_group("Player").global_position = Vector2(587,306)
+				#4:
+					#
+					#floor = load("res://Floor scenes/Floor4/Rooms/floor_4.tscn")
+					#get_tree().get_first_node_in_group("Floor").queue_free()
+					#dungeon.add_child(floor.instantiate())
+					#get_tree().get_first_node_in_group("Player").global_position = Vector2(587,306)
+				#5:
+					#floor = load("res://Floor scenes/Floor5/Rooms/floor_5.tscn")
+					#get_tree().get_first_node_in_group("Floor").queue_free()
+					#dungeon.add_child(floor.instantiate())
+					#get_tree().get_first_node_in_group("Player").global_position = Vector2(587,306)
 		else:
 			get_parent().num_of_rooms+= added_rooms
 			if newroom !=null :
