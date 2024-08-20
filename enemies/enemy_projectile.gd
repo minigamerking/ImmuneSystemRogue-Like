@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name EnemyBullet
 
 const SPEED = 700
 
@@ -21,6 +22,6 @@ func _ready():
 		proj_sprite.texture =preload("res://sprites/antibody.png")
 
 func _on_hitbox_body_entered(body):
-	#if body is Player:
-	#	body.takedmg(dmg)
+	if body is Player:
+		body.find_child("PlayerManager").takedmg()
 	queue_free()

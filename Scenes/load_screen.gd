@@ -12,7 +12,7 @@ func _ready():
 		4:
 			rich_text_label.text = "The lungs now remain a shell of thier former self ,\n But it matters not for you have bested the White blood cell and lay claim to it as your host\n No stopping now go for the heart"
 		5:
-			rich_text_label.text = "The heart beaten and batter.\nNot even the might Killer T Cells could stand up to you\n time to finish this......its the for the brain"
+			rich_text_label.text = "The heart beaten and batter.\nNot even the might Killer T Cells could stand up to you\n time to finish this......penetrate the brain's defense"
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

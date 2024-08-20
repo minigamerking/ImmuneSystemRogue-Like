@@ -13,6 +13,7 @@ size = Vector2(1042, 532)
 
 [node name="f_1_basicroom" type="Node2D"]
 script = ExtResource("1_nuekt")
+enemycount = 4
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("2_5tl04")

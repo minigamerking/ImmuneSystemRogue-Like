@@ -23,7 +23,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if num_of_rooms == max_rooms and not connected_enemies:
-		$player/PlayerManager.connect_enemies()
+		get_parent().get_parent().find_child("player").find_child("PlayerManager").connect_enemies()
 		connected_enemies = true
 		load_screen.queue_free()
 		Floormanager.floorgenerated = true

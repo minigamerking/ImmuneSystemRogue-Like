@@ -14,6 +14,7 @@ size = Vector2(1056, 558)
 
 [node name="f_4_plusroom" type="Node2D"]
 script = ExtResource("1_0yqjp")
+enemycount = 16
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("2_nobr7")

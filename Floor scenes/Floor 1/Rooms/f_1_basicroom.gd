@@ -280,12 +280,11 @@ func addroom(max_rooms , num_of_rooms):
 		else:
 			get_parent().num_of_rooms+= added_rooms
 			if newroom !=null :
-				print("hi")
 				newroom.addroom(max_rooms,get_parent().num_of_rooms)
 	else:
 		return
 	
-var enemycount= 0
+@export var enemycount = 0
 func _ready():
 	
 	
@@ -300,7 +299,6 @@ func _ready():
 	
 	var enemies = $enemies.get_children()
 	for enemy in enemies:
-		enemycount += 1
 		enemy.connect("update_enemy_count",_on_test__enemy_update_enemy_count)
 #logic to keep player trapped till all enemies are defeated 
 

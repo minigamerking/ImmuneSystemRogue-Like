@@ -25,9 +25,8 @@ func _process(delta):
 		can_shoot = false
 		$projectilecd.wait_time = Playermanager.fire_speed
 		$projectilecd.start()
-	
 
-func _ready():
+func change_outfit():
 	match Floormanager.floor_id:
 		2:
 			sprite_2d.texture =preload("res://sprites/Platelets _enemy.png")
@@ -37,6 +36,9 @@ func _ready():
 			sprite_2d.texture= preload("res://sprites/infected_white_BC.png")
 		5:
 			sprite_2d.texture=preload("res://sprites/Killer_T_infected.png")
+
+func _ready():
+	change_outfit()
 
 func _on_projectilecd_timeout():
 	can_shoot = true

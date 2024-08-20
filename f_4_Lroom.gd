@@ -14,6 +14,5 @@ func _ready():
 	if l_dooravailble==false:
 		num_of_availble_doors-=1
 	var enemies = $enemies.get_children()
-	enemycount = enemies.size()
 	for enemy in enemies:
 		enemy.connect("update_enemy_count",_on_test__enemy_update_enemy_count)

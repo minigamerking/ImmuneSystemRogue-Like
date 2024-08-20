@@ -17,6 +17,7 @@ size = Vector2(928, 681)
 [node name="f1_crosssectionroom" type="Node2D"]
 position = Vector2(3, 0)
 script = ExtResource("1_4olwo")
+enemycount = 6
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("2_xqy34")

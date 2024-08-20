@@ -18,11 +18,17 @@ func _physics_process(delta):
 	
 func _ready():
 	match Playermanager.dmglevel:
+		0:
+			dmg =1
 		1:
 			dmg =2
 		2:
 			dmg = 4
+		3:
+			dmg = 4
 		4:
+			dmg = 8
+		_:
 			dmg = 8
 
 func _on_hitbox_body_entered(body):

@@ -269,6 +269,7 @@ size = Vector2(928, 681)
 [node name="f_2_Holessectionroom" type="Node2D"]
 position = Vector2(3, 0)
 script = ExtResource("1_l8tx2")
+enemycount = 6
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_gksyk")

@@ -16,6 +16,7 @@ size = Vector2(1558, 1770)
 script = ExtResource("1_uoeiy")
 r_dooravailble = false
 u_dooravailble = false
+enemycount = 13
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("2_mxtpw")

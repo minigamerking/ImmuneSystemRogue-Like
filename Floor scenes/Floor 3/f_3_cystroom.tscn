@@ -4,7 +4,7 @@
 [ext_resource type="TileSet" uid="uid://br2jrdhmn80al" path="res://Texture/ReadyForUse/TileSet_Master.tres" id="2_npwrn"]
 [ext_resource type="PackedScene" uid="uid://cs2quat6d5vk4" path="res://Floor scenes/door.tscn" id="3_1wrm5"]
 [ext_resource type="PackedScene" uid="uid://ck7kdw1ggehwl" path="res://enemies/virus_e.tscn" id="4_qbyuj"]
-[ext_resource type="PackedScene" uid="uid://1yuid3kbfsc2" path="res://enemies/platelets_E.tscn" id="5_bxixy"]
+[ext_resource type="PackedScene" path="res://enemies/platelets_E.tscn" id="5_bxixy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y0atl"]
 size = Vector2(1117, 610)
@@ -14,6 +14,7 @@ size = Vector2(1056, 558)
 
 [node name="f_3_cystroom" type="Node2D"]
 script = ExtResource("1_jbwuk")
+enemycount = 7
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("2_npwrn")

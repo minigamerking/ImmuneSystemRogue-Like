@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://dh43xlfdum64w"]
+
+[ext_resource type="Script" path="res://Upgrades/luck_upgrade.gd" id="1_1yilg"]
+[ext_resource type="Texture2D" uid="uid://rb0aevie7nr5" path="res://sprites/T_Powerups.png" id="2_3qvss"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lt1tx"]
+size = Vector2(29, 30)
+
+[node name="LuckUpgrade" type="Area2D"]
+script = ExtResource("1_1yilg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_3qvss")
+hframes = 10
+frame = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_lt1tx")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,20 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://cmwsn875htuci"]
+[gd_scene load_steps=5 format=3 uid="uid://cmwsn875htuci"]
 
 [ext_resource type="Script" path="res://Floor scenes/Floor 3/floor_3.gd" id="1_f1202"]
-[ext_resource type="PackedScene" uid="uid://c881k08qyanxk" path="res://Scenes/player.tscn" id="2_kxblu"]
 [ext_resource type="PackedScene" uid="uid://cs56wrrl4dawm" path="res://Floor scenes/Floor 3/f_3_starterroom.tscn" id="3_481yo"]
 [ext_resource type="TileSet" uid="uid://br2jrdhmn80al" path="res://Texture/ReadyForUse/TileSet_Master.tres" id="4_g5sal"]
-[ext_resource type="PackedScene" uid="uid://dq48mais20lyi" path="res://Scenes/load_screen.tscn" id="5_1vl8c"]
+[ext_resource type="PackedScene" path="res://Scenes/load_screen.tscn" id="5_1vl8c"]
 
 [node name="Floor_3" type="Node2D"]
 position = Vector2(2, 0)
 script = ExtResource("1_f1202")
-
-[node name="player" parent="." instance=ExtResource("2_kxblu")]
-position = Vector2(557, 334)
-
-[node name="Camera2D" type="Camera2D" parent="player"]
-position = Vector2(0, 10)
 
 [node name="f3_starterroom" parent="." instance=ExtResource("3_481yo")]
 
