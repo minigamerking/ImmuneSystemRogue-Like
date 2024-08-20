@@ -21,6 +21,7 @@ var clone_upgrade = 0
 var health_upgrade = 0
 var clone_shoot_upgrade = 0
 var luck_upgrade = 0
+@onready var upgrade = $"../Upgrade"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -38,6 +39,7 @@ func _process(delta):
 	if luck < 0: luck = 0
 	if can_be_hurt and enemy_in_range: takedmg()
 	if health == 0 and curr_cell_count > 1:
+		player.find_child("Death").play()
 		_clone_die(clones.pick_random())
 		health = max_health
 	elif health == 0 and curr_cell_count <= 1:
@@ -57,22 +59,28 @@ func reset_upgrades():
 func up_firespd():
 	fire_upgrade +=2
 	fire_speed = fire_speed/ 2
+	upgrade.play()
 
 func up_maxcell():
 	clone_upgrade += 1
+	upgrade.play()
 	
 func dmg_level():
 	dmglevel += 1
+	upgrade.play()
 
 func health_up():
 	health_upgrade += 1
 	health += 1
+	upgrade.play()
 
 func luck_high():
 	luck_upgrade += 1
+	upgrade.play()
 
 func shoot_clone():
 	clone_shoot_upgrade = 1
+	upgrade.play()
 
 func connect_enemies():
 	for child in get_tree().get_nodes_in_group("Enemy"):
