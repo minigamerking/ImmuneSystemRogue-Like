@@ -1,6 +1,5 @@
-[gd_scene load_steps=6 format=3 uid="uid://cs2quat6d5vk4"]
+[gd_scene load_steps=5 format=3 uid="uid://cs2quat6d5vk4"]
 
-[ext_resource type="Texture2D" uid="uid://cuggvqbj8147s" path="res://sprites/Door.png" id="1_n00gi"]
 [ext_resource type="Texture2D" uid="uid://brooue1hbfwx5" path="res://Texture/ReadyForUse/T_Tilemap_Master.png" id="2_cwpmk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qxlk6"]
@@ -72,10 +71,9 @@ collision_mask = 2
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0.5, 1.5)
 scale = Vector2(1.96875, 7.09375)
-texture = ExtResource("1_n00gi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.25, 2.5)
+position = Vector2(-3, 7)
 shape = SubResource("RectangleShape2D_qxlk6")
 
 [node name="TileMap" type="TileMap" parent="."]
