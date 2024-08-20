@@ -5,7 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://c3o1r74ad7p4v" path="res://Audio/SoundFX/8-19-24_Rogue-Lite-GMTK_VirusDeath_04.wav" id="3_g6ec2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pq36v"]
-radius = 13.0015
+radius = 9.20217
 
 [node name="platelets_E" type="CharacterBody2D" groups=["Enemy"]]
 scale = Vector2(5, 5)
@@ -17,7 +17,7 @@ script = ExtResource("1_nuw7u")
 texture = ExtResource("2_jvfkg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(2.98023e-08, -2.98023e-08)
+position = Vector2(1.77636e-15, 1)
 shape = SubResource("CircleShape2D_pq36v")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
