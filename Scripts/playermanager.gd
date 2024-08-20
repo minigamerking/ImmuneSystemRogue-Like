@@ -32,17 +32,16 @@ func _ready():
 func _process(delta):
 	max_cell_count = 5 + clone_upgrade * 2
 	max_health = 3 + health_upgrade
-	if max_health > 6 : max_health = 6
-	if health > 6: health = 6
 	luck = 0.25 - luck_upgrade * 0.01
 	fire_speed = 0.5 - fire_upgrade * 0.05
 	if luck < 0: luck = 0
-	if can_be_hurt and enemy_in_range: takedmg()
+	if can_be_hurt and enemy_in_range: 
+		takedmg()
 	if health == 0 and curr_cell_count > 1:
 		player.find_child("Death").play()
 		_clone_die(clones.pick_random())
 		health = max_health
-	elif health == 0 and curr_cell_count <= 1:
+	elif health <= 0 and curr_cell_count <= 1:
 		#player.find_child("Death").play()
 		#await player.find_child("Death").finished
 		get_tree().reload_current_scene()
@@ -81,6 +80,8 @@ func dmg_level():
 func health_up():
 	health_upgrade += 1
 	health += 1
+	if max_health > 6 : max_health = 6
+	if health > 6: health = 6
 	upgrade.play()
 	$"../Label".text = "More\nHealth"
 	await get_tree().create_timer(1).timeout
@@ -127,6 +128,7 @@ func takedmg():
 	can_be_hurt = false
 	player.find_child("HurtTimer").start()
 	health -= 1
+	print(health)
 
 
 func _on_enemy_collider_body_entered(body):
